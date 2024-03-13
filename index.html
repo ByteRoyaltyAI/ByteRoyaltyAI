@@ -10,10 +10,6 @@
     content="Alpay Celik, ein erfahrener Fullstack Webentwickler, präsentiert seine neuesten Projekte, die mit dem MERN-Stack entwickelt wurden." />
   <title>Future is AI Website</title>
   <style>
-    /* link[rel="icon"] {
-      border-radius: 50%;
-    }
-
     .circle {
       height: 10px;
       width: 10px;
@@ -24,121 +20,77 @@
       left: 0;
       pointer-events: none;
       z-index: 99999999;
-    } */
-    body {
-      cursor: none;
-
+      display: none;
+      /* Hide circles initially */
     }
 
-    #cursor {
+    body {
+      cursor: none;
+      /* Hide default cursor */
+    }
+
+    .image {
+      height: 70px;
+      width: 100px;
+      position: fixed;
+      pointer-events: none;
+      z-index: 999999;
+      /* Ensure images are above circles */
+    }
+
+
+
+    /* #cursor {
       position: absolute;
       top: 0;
       left: 0;
       pointer-events: none;
-      /* Ensures the cursor doesn't interfere with click events */
       z-index: 9999;
-      /* Ensures the cursor is on top of other elements */
       display: none;
-      /* Initially hide the cursor */
       width: 90px;
-      /* Set the desired width */
       height: 60px;
-      /* Set the desired height */
-
-    }
+    } */
   </style>
 </head>
 
 <body>
-  <img id="cursor" src="./src/assets/AI-img/bot.gif">
-  <!-- <div class="circle"></div>
+  <!-- <img id="cursor" src="./src/assets/AI-img/bot.gif"> -->
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div>
-  <div class="circle"></div> -->
+  <!-- Add your images here -->
+  <img src="./src/assets/AI-img/bot.gif" class="image">
+  <img src="./src/assets/AI-img/bot.gif" class="image">
+  <!-- Add more images as needed -->
+
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
-  <!-- <script>
+  <script>
     const coords = { x: 0, y: 0 };
     const circles = document.querySelectorAll(".circle");
-
-    const colors = [
-      "#ffb56b",
-      "#fdaf69",
-      "#f89d63",
-      "#f59761",
-      "#ef865e",
-      "#ec805d",
-      "#e36e5c",
-      "#df685c",
-      "#d5585c",
-      "#d1525c",
-      "#c5415d",
-      "#c03b5d",
-      "#b22c5e",
-      "#ac265e",
-      "#9c155f",
-      "#950f5f",
-      "#830060",
-      "#7c0060",
-      "#680060",
-      "#60005f",
-      "#48005f",
-      "#3d005e"
-    ];
-
-    circles.forEach(function (circle, index) {
-      circle.x = 0;
-      circle.y = 0;
-      circle.style.backgroundColor = colors[index % colors.length];
-    });
+    const images = document.querySelectorAll(".image");
 
     window.addEventListener("mousemove", function (e) {
       coords.x = e.clientX;
       coords.y = e.clientY;
-
     });
 
-    function animateCircles() {
-
+    function animateImages() {
       let x = coords.x;
       let y = coords.y;
 
-      circles.forEach(function (circle, index) {
-        circle.style.left = x - 6 + "px";
-        circle.style.top = y - 6 + "px";
-
-        circle.style.scale = (circles.length - index) / circles.length;
-
-        circle.x = x;
-        circle.y = y;
-
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
+      images.forEach(function (image, index) {
+        image.style.left = x - (image.width / 2) + "px"; // Adjust for the image's width
+        image.style.top = y - (image.height / 2) + "px"; // Adjust for the image's height
       });
 
-      requestAnimationFrame(animateCircles);
+      requestAnimationFrame(animateImages);
     }
 
-    animateCircles();
-  </script> -->
-  <script>
+    animateImages();
+
+  </script>
+  <!-- <script>
     const cursor = document.getElementById('cursor');
 
     // Update cursor position on mousemove event
@@ -152,7 +104,7 @@
     window.addEventListener("mouseout", function () {
       cursor.style.display = "none";
     });
-  </script>
+  </script> -->
 </body>
 
 </html>
