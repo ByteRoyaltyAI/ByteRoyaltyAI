@@ -4,16 +4,19 @@ import Button from "./Button";
 import LiveTicker from "./ParallaxText";
 import { projectsData, toastMessages } from "../assets/lib/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards, Pagination } from "swiper/modules";
+import { Autoplay, EffectCards, Pagination, Navigation } from "swiper/modules";
 import { ToastContainer, toast } from "react-toastify";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
 import { useLanguage } from "../context/language-context";
 import { motion, useScroll, useTransform } from "framer-motion";
+
+
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
+import Testimonial from "./Testimonial";
 
 const ProjectSlider: React.FC = () => {
   const { ref } = useSectionInView("Projects");
@@ -32,6 +35,7 @@ const ProjectSlider: React.FC = () => {
       toast.info(toastMessages.loadingProject.en);
     }
   };
+
 
   return (
     <React.Fragment>
@@ -226,7 +230,7 @@ const ProjectSlider: React.FC = () => {
             ))}
           </div>
         </div>
-        <LiveTicker />
+
       </section>
       <ReactTooltip
         place="top"
@@ -235,7 +239,11 @@ const ProjectSlider: React.FC = () => {
           fontSize: "1.5rem",
           backgroundColor: "var(--orange)",
         }}
-      />
+      /><br />
+      <div style={{ zIndex: "99", marginTop: "120px", padding: "10px 0" }}>
+        <Testimonial />
+      </div>
+      <LiveTicker />
     </React.Fragment>
   );
 };
