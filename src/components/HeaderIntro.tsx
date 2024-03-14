@@ -5,7 +5,8 @@ import { headerIntroData } from "../assets/lib/data";
 import { useSectionInView } from "../assets/lib/hooks";
 import { useActiveSectionContext } from "../context/active-section-context";
 import { useLanguage } from "../context/language-context";
-import im from "../assets/img/logo.jpg"
+import logo from "../assets/img/logo.jpg"
+import CarouselSlider from "./CarouselSlider";
 
 
 const HeaderIntro: React.FC = () => {
@@ -21,36 +22,25 @@ const HeaderIntro: React.FC = () => {
     >
       <RadialGradient scale="scale-y-125" opacity="opacity-30" />
 
-      <img
-        src={headerIntroData.profilepicture}
-        alt={headerIntroData.profilepicture}
-        className="w-1/6 drop-shadow-2xl rounded-full shadow-2xl avatar-img max-lg:w-3/4"
-      />
-      <center>
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
 
+
+      <div className="flex items-center justify-center">
+        <h1>FUTURE IS AI</h1>
+        <img src={logo} style={{ width: "40px", height: "40px", borderRadius: "50%" }} />
+      </div>
+
+      <div className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4">
+        <div className="col-span-12 sm:col-span-7 text-center">
           <h1>
-            {language === "DE"
-              ? headerIntroData.title.de
-              : headerIntroData.title.en}
-            <span >
-              <img src={im} alt="Logo" style={{ width: "60px", height: "60px", borderRadius: "50%" }} />
-            </span>
+            Unlock the future: AI revolutionizes the way we live, work, and connect, shaping tomorrow's everyday experience.
           </h1>
         </div>
-      </center>
+        <div className="col-span-12 sm:col-span-5">
+          <CarouselSlider />
+        </div>
+      </div>
 
-      <center>
-        <h2 className="px-10 md:px-48">{headerIntroData.subtitle}</h2>
-      </center>
-
-      <p className="w-1/2 text-center max-lg:hidden">
-        {language === "DE"
-          ? headerIntroData.description.de
-          : headerIntroData.description.en}
-      </p>
-
-      <div className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center">
+      <div className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center" style={{ zIndex: "9" }}>
         {headerIntroData.buttons.map((button, index) => (
           <Button
             key={index}
