@@ -1,15 +1,18 @@
-import React, { useRef } from "react";
-import { aboutMeData } from "../assets/lib/data";
+// import React, { useRef } from "react";
 import { Autoplay, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useLanguage } from "../context/language-context";
-import Ai from "../assets/img/healthiq.png";
+// import { useLanguage } from "../context/language-context";
+import Ai from "../assets/img/human.gif";
+import web from "../assets/img/web.gif";
+import world from "../assets/img/world.gif";
+import ai5 from "../assets/img/ai5.gif";
+
 
 const CarouselSlider: React.FC = () => {
-    const { language } = useLanguage();
+    // const { language } = useLanguage();
     // const paragraphs =
     //     language === "DE" ? aboutMeData.paragraphs_DE : aboutMeData.paragraphs_EN;
 
@@ -20,13 +23,13 @@ const CarouselSlider: React.FC = () => {
                     spaceBetween={50}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 3000, // Adjust the delay as needed
+                        delay: 2000, // Adjust the delay as needed
                         disableOnInteraction: false,
                     }}
                     scrollbar={{ draggable: true }}
                     modules={[Autoplay, Scrollbar]}
                     className="3/4"
-                    style={{ maxWidth: "90%", height: "200px" }} // Set maximum width to 100%
+                    style={{ maxWidth: "80%", height: "250px" }} // Set maximum width to 100%
                 >
                     <SwiperSlide>
                         <div className="bg-red-500 h-full flex justify-center items-center" style={{
@@ -36,32 +39,44 @@ const CarouselSlider: React.FC = () => {
                             backgroundSize: "cover",
                             backgroundPosition: "center"
                         }}>
-                            <h2>kavin</h2>
+                            
                         </div>
 
 
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="bg-red-500 h-full flex justify-center items-center" style={{
-                            backgroundImage: `url(${Ai})`,
+                            backgroundImage: `url(${web})`,
                             borderRadius: "10px",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
                             backgroundPosition: "center"
                         }}>
-                            <h2>kavin</h2>
+                            
                         </div>
 
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="bg-red-500 h-full flex justify-center items-center" style={{
-                            backgroundImage: `url(${Ai})`,
+                            backgroundImage: `url(${world})`,
                             borderRadius: "10px",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
                             backgroundPosition: "center"
                         }}>
-                            <h2>kavin</h2>
+                            
+                        </div>
+
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="bg-red-500 h-full flex justify-center items-center" style={{
+                            backgroundImage: `url(${ai5})`,
+                            borderRadius: "10px",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}>
+                            
                         </div>
 
                     </SwiperSlide>

@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useTheme } from "../context/theme-context";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
-import linkedinicon from "../../assets/icons/linkedinicon.svg";
+// import linkedinicon from "../../assets/icons/linkedinicon.svg";
 
 const Contact: React.FC = () => {
 

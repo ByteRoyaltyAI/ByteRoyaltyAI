@@ -44,7 +44,7 @@ export default function ThemeSwitch() {
       <button
         className={`shortcut-btn fixed z-10 bottom-5 right-10  w-[4rem] h-[4rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 ${theme === "dark" ? "bg-[--darkblue]" : "bg-white"
           }
-        ${isMobile ? "top-10" : "bottom-5"}
+        ${isMobile ? "bottom-5" : "bottom-5"}
         `}
         onClick={toggleTheme}
         aria-label="Switch Dark and Light"

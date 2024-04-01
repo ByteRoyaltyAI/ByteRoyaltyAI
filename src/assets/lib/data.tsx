@@ -46,6 +46,7 @@ import P2 from "../../assets/Testimonial/p2.jpg";
 import P3 from "../../assets/Testimonial/p3.jpg";
 
 export const headerIntroData = {
+  link:"",
   title: {
     de: "ZUKUNFT IST KI",
     en: "FUTURE IS AI",
@@ -58,6 +59,7 @@ export const headerIntroData = {
 
   buttons: [
     {
+      link:"contact",
       name: "Contact",
       label: {
         de: "Kontaktiere mich",
@@ -67,6 +69,7 @@ export const headerIntroData = {
       color: "main-btn",
     },
     {
+      link:"projects",
       name: "Projects",
       label: {
         de: "Unsere Projekte",
@@ -340,7 +343,7 @@ export const projectsData = [
 export const liveTickerData = {
   content: {
     de: "Unsere Projekte auf Github",
-    en: "Our Projects on Github",
+    en: "Future is AI",
   },
 } as const;
 
@@ -526,11 +529,11 @@ export const sideBarLeftSocials = [
     icon: FiLinkedin,
     altimgname: "linkedin",
   },
-  {
-    link: "https://github.com/ShaikMohammadUsman",
-    icon: FiGithub,
-    altimgname: "github",
-  },
+  // {
+  //   // link: "https://github.com/ShaikMohammadUsman",
+  //   icon: FiGithub,
+  //   altimgname: "github",
+  // },
   {
     link: "mailto:byteroyality20@gmail.com",
     icon: FiMail,

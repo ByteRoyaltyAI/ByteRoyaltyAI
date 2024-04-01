@@ -6,7 +6,7 @@ import { useTheme } from "../context/theme-context";
 import { useLanguage } from "../context/language-context";
 import RadialGradient from "./RadialGradient";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Banner from "./Banner";
+import Banner from "./ServiceBanner";
 
 const TechStack: React.FC = () => {
   const { ref } = useSectionInView("Services");
@@ -40,7 +40,7 @@ const TechStack: React.FC = () => {
               opacity: opacityProgess,
             }}
           >
-            <div className="rainbow " style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 10px", width:"330px" }}>
+            <div className="rainbow " style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 8px", width: "300px" }}>
               <p className="font-black  text-center" >
                 <div className="waviy">
                   <span className="waviy-span" style={{ color: "orange" }}>O</span>

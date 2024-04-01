@@ -1,10 +1,9 @@
 import bannerBg from "../assets/img/bannerbg.webp";
 import React, { useRef } from "react";
 import Button from "./Button";
-import LiveTicker from "./ParallaxText";
 import { projectsData, toastMessages } from "../assets/lib/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, EffectCards, Pagination } from "swiper/modules";
 import { ToastContainer, toast } from "react-toastify";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
@@ -240,10 +239,10 @@ const ProjectSlider: React.FC = () => {
           backgroundColor: "var(--orange)",
         }}
       /><br />
-      <div style={{ zIndex: "99", marginTop: "120px", padding: "10px 0" }}>
+      <div style={{ zIndex: "99", marginTop: "120px", padding: "10px 0" }} id="testimonials">
         <Testimonial />
       </div>
-      <LiveTicker />
+
     </React.Fragment>
   );
 };

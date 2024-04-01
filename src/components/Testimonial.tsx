@@ -1,21 +1,22 @@
-import bannerBg from "../assets/img/bannerbg.webp";
-import React, { useRef } from "react";
-import Button from "./Button";
-import LiveTicker from "./ParallaxText";
-import { projectsData, toastMessages } from "../assets/lib/data";
+// import bannerBg from "../assets/img/bannerbg.webp";
+// import React, { useRef } from "react";
+// import Button from "./Button";
+// import LiveTicker from "./ParallaxText";
+// import { projectsData, toastMessages } from "../assets/lib/data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCards, Pagination, Navigation } from "swiper/modules";
-import { ToastContainer, toast } from "react-toastify";
-import { Tooltip as ReactTooltip } from "react-tooltip";
-import { useSectionInView } from "../assets/lib/hooks";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+// import { ToastContainer, toast } from "react-toastify";
+// import { Tooltip as ReactTooltip } from "react-tooltip";
+// import { useSectionInView } from "../assets/lib/hooks";
 import { useLanguage } from "../context/language-context";
-import { motion, useScroll, useTransform } from "framer-motion";
+// import { motion, useScroll, useTransform } from "framer-motion";
 import { aboutMeData } from "../assets/lib/data";
 
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
+import { useRef } from "react";
 
 function Testimonial() {
     const { language } = useLanguage();
@@ -32,7 +33,7 @@ function Testimonial() {
         }
     };
     return (
-        <>
+        <div>
             <center>  <h1 style={{ color: "skyblue", zIndex: "999" }}>Testimonial</h1></center>
             <div className="flex flex-row justify-center gap-6 items-center   max-lg:flex-col max-lg:p-16 min-[1921px]:px-[45rem] min-[1921px]:mb-48" style={{ marginTop: "-40px" }}>
                 <Swiper
@@ -77,7 +78,9 @@ function Testimonial() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </div></>
+            </div>
+        </div>
+
     )
 }
 export default Testimonial;

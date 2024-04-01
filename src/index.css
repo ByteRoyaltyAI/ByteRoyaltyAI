@@ -5,6 +5,40 @@
 
 
 
+
+.btn-shine {
+
+  padding: 12px 20px;
+  color: black;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 3.6rem;
+
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0
+  }
+
+  60% {
+    background-position: 180px
+  }
+
+  100% {
+    background-position: 240px
+  }
+}
+
 /*border animation*/
 
 .rainbow {
@@ -165,22 +199,22 @@
 
 /* FONT IMPORTS */
 @font-face {
-  font-family: "poppins-bold";
+  font-family: "WorkSans-SemiBold";
   src: url("./assets/fonts/font3.woff2");
 }
 
 @font-face {
-  font-family: "poppins-semibold";
+  font-family: "WorkSans-SemiBold";
   src: url("./assets/fonts/font2.woff2");
 }
 
 @font-face {
-  font-family: "poppins-black";
+  font-family: "WorkSans-SemiBold";
   src: url("./assets/fonts/font4.woff2");
 }
 
 @font-face {
-  font-family: "poppins-regular";
+  font-family: "WorkSans-SemiBold";
   src: url("./assets/fonts/font1.woff2");
 }
 
@@ -207,7 +241,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 52.5%;
   scroll-behavior: smooth;
 }
 
@@ -248,7 +282,7 @@ input,
 textarea,
 nav a span,
 a {
-  font-family: 'Alfa Slab One', cursive, Arial, sans-serif;
+  font-family: 'WorkSans-SemiBold';
 }
 
 h1 {
