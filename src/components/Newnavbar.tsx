@@ -46,7 +46,7 @@ const Newnavbar = () => {
                             style={{ width: "50px", height: "50px", borderRadius: "50%" }}
                         />
                         {/* <h3 className="ml-2 text-white text-lg " style={{ fontSize: "20px"}}>FUTURE IS AI</h3> */}
-                        <h3 className="ml-2 btn-shine " >FUTURE IS AI</h3>
+                        <h3 className="ml-2 btn-shine " >IMAIGEN</h3>
                     </div>
                     <div className="hidden  lg:flex items-center space-x-4">
                         <NavLink to="/" active={activeButton === "home"} onClick={() => scroll("home")}>
