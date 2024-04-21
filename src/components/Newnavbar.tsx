@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/img/logo.jpg";
+import Logo from "../assets/img/Brain_Circuit_Final.png";
 
 const Newnavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
