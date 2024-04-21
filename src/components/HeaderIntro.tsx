@@ -39,10 +39,10 @@ const HeaderIntro: React.FC = () => {
       <div className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4" style={{ marginTop: "40px" }}>
         <div className="col-span-12 md:col-span-7 text-center">
           <div className="typing-container">
-            <img className="typing-image" src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=WELCOME+TO;+FUTURE+IS+AI;" />
+            <img className="typing-image" src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=WELCOME+TO;+Imaigen;" />
           </div>
           <h1>
-            AI revolutionizes the way we live, work, and connect, shaping tomorrow's everyday experience.
+            Empower Your Business Today: Streamline Operations, Enhance Customer Experiences, and Gain a Competitive Edge with AI.
           </h1>
         </div>
         <div className="col-span-12 md:col-span-5" style={{ zIndex: "-1" }}>
