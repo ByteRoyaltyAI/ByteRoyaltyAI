@@ -22,7 +22,7 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'CUSTOM', 
         port: 465,
-        host: 'smtp.namecheap.com',
+        host: 'smtp.imaigen.ai',
         secure: true,
         auth: {
             user: 'support@imaigen.ai', 
