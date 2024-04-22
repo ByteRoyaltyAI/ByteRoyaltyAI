@@ -22,7 +22,7 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail', 
         auth: {
-            user: 'byteroyality20@gmail.com', 
+            user: 'support@imaigen.ai', 
             pass: password 
         }
     });
@@ -30,7 +30,7 @@ app.post('/send-email', (req, res) => {
     // Email message to Admin
     const mailAdminOptions = {
         from: user_email,
-        to: 'byteroyality20@gmail.com',
+        to: 'support@imaigen.ai',
         subject: user_subject,
         text: `Name: ${user_name}\nEmail: ${user_email}\nMessage: ${user_message}`,
         html: `
@@ -57,7 +57,7 @@ app.post('/send-email', (req, res) => {
 
     // Email message to client
     const mailClientOptions = {
-        from: 'byteroyality20@gmail.com',
+        from: 'support@imaigen.ai',
         to: user_email, 
         subject: "Thank You for Contacting Us",
         html: `
@@ -116,15 +116,15 @@ app.post('/send-email', (req, res) => {
             <div class="container">
                 <h2>Thank You for Contacting Us</h2>
                 <p>Dear ${user_name},</p>
-                <p>We extend our sincere gratitude for reaching out to us. With regards, we value your interest and the opportunity to connect with you. Our team is actively reviewing your message, and we'll respond at the earliest opportunity.</p>
-                <p>In the meantime, feel free to explore our website at <a href="https://www.yourwebsite.com" target="_blank">www.yourwebsite.com</a> for detailed insights into our services and offerings. If you have specific questions or topics you'd like to discuss, please don't hesitate to let us know.</p>
+                <p>We extend our sincere gratitude for reaching out to us. Our team is actively reviewing your request, and we'll respond at the earliest opportunity.</p>
+                <p>In the meantime, feel free to explore our website at <a href="https://imaigen.ai/" target="_blank">https://imaigen.ai/</a> for detailed insights into our services and offerings. If you have specific questions or topics you'd like to discuss, please don't hesitate to let us know.</p>
                 <p>We highly value your engagement with our platform and look forward to the possibility of collaborating together.</p>
         
                 <div class="contact-info">
                     <p>Best regards,</p>
-                    <p>Shaik Mohammad Usman</p>
-                    <p>@FUTURE IS AI</p>
-                    <p>Contact:+917396202326</p>
+                    <p>shaikmohammadusman</p>
+                    <p>@imaigen.ai</p>
+                    <p>Contact:+91 8179871764</p>
                 </div>
             </div>
         </body>
