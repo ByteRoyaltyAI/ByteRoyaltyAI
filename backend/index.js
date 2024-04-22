@@ -20,7 +20,10 @@ app.post('/send-email', (req, res) => {
     // console.log( user_name+ user_email+ user_subject+user_message);
     // Create a transporter with your email service details
     const transporter = nodemailer.createTransport({
-        service: 'gmail', 
+        service: 'CUSTOM', 
+        port: 465,
+        host: 'smtp.namecheap.com',
+        secure: true,
         auth: {
             user: 'support@imaigen.ai', 
             pass: Shaik@321 
