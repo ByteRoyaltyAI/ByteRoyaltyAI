@@ -23,7 +23,7 @@ app.post('/send-email', (req, res) => {
         service: 'gmail', 
         auth: {
             user: 'support@imaigen.ai', 
-            pass: password 
+            pass: Shaik@321 
         }
     });
     console.log(user_email);
