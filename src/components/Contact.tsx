@@ -105,20 +105,20 @@ const Contact: React.FC = () => {
   }, []);
 
   const codeSnippet = `
-import "Future is AI";
+import "IMAIGEN";
 
 // 🌈 Spreading Our Technologies: 
 // Crafting Cosmic Email 🌌
 
-Name : ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""
-    }🏌️\n
-Email : ${email}${lastUpdatedField === "email" ? (cursorBlink ? "|" : " ") : ""
+Name : ${name}${lastUpdatedField === "Name" ? (cursorBlink ? "|" : " ") : ""
+    }💭\n
+Email : ${email}${lastUpdatedField === "Email" ? (cursorBlink ? "|" : " ") : ""
     }📧;
 
  "AI ignites endless possibilities"
   "AI fuels boundless innovation"
 
-Wishing you from Future is AI,
+Wishing you from IMAIGEN,
 ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
 `;
   //   const codeSnippet2 = `
