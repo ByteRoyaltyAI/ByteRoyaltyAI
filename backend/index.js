@@ -21,8 +21,8 @@ app.post('/send-email', (req, res) => {
     // Create a transporter with your email service details
     const transporter = nodemailer.createTransport({
         service: 'CUSTOM', 
-        port: 587,
-        host: 'smtp.imaigen.ai',
+        port: 465,
+        host: 'mail.privateemail.com',
         secure: true,
         auth: {
             user: 'support@imaigen.ai', 
