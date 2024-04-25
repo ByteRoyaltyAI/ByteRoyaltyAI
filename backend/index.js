@@ -22,7 +22,7 @@ app.post('/send-email', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'CUSTOM', 
         port: 587,
-        host: 'smtp.ox.io',
+        host: 'smtp.mxtoolbox.com',
         secure: true,
         auth: {
             user: 'support@imaigen.ai', 
