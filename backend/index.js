@@ -15,27 +15,25 @@ app.use(bodyParser.json());
 
 
 app.post('/send-email', (req, res) => {
-    // console.log(req.body);
     const { user_name, user_email, user_subject, user_message } = req.body;
-    // console.log( user_name+ user_email+ user_subject+user_message);
+
     // Create a transporter with your email service details
     const transporter = nodemailer.createTransport({
-        service: 'CUSTOM', 
-        port: 993,
-        host: 'imap.ox.io',
-        secure: true,
+        host: 'mail.privateemail.com',
+        port: 587,
+        secure: false, // Use TLS
         auth: {
-            user: 'support@imaigen.ai', 
-            pass: Shaik@321 
-        }
+            user: 'support@imaigen.ai',
+            pass: 'Shaik@321' // Remove the space after 'Shaik@321'
+        },
     });
-    console.log(user_email);
+
     // Email message to Admin
     const mailAdminOptions = {
-        from: user_email,
+        from: 'support@imaigen.ai',
         to: 'support@imaigen.ai',
         subject: user_subject,
-        text: `Name: ${user_name}\nEmail: ${user_email}\nMessage: ${user_message}`,
+        text: Name: ${user_name}\nEmail: ${user_email}\nMessage: ${user_message},
         html: `
             <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
                 <p style="color: #333; font-size: 18px;"><strong>Name:</strong> ${user_name}</p>
@@ -46,19 +44,16 @@ app.post('/send-email', (req, res) => {
             </div>
         `
     };
-    
-    // Send email
+
+    // Send email to Admin
     transporter.sendMail(mailAdminOptions, (error, info) => {
         if (error) {
             console.log(error);
-            res.status(500).send('Internal Server Error');
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.send('Email sent successfully!');
+            return res.status(500).send('Internal Server Error');
         }
+        console.log('Email sent to Admin: ' + info.response);
     });
 
-    // Email message to client
     const mailClientOptions = {
         from: 'support@imaigen.ai',
         to: user_email, 
@@ -134,20 +129,18 @@ app.post('/send-email', (req, res) => {
         
         </html>`
     };
-    // Send email
+
+    // Send email to client
     transporter.sendMail(mailClientOptions, (error, info) => {
         if (error) {
             console.log(error);
-            res.status(500).send('Internal Server Error');
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.send('Email sent successfully!');
+            return res.status(500).send('Internal Server Error');
         }
+        console.log('Email sent to Client: ' + info.response);
+        res.send('Email sent successfully!');
     });
-
 });
-
 // Start server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(Server running at http://localhost:${port});
 });
