@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
     try {
 
       console.log(JSON.stringify(data));
-      const response = await axios.post("https://imaigen-websitee-backend.vercel.app/send-email", data);
+      const response = await axios.post("https://imaigen-websitee-backend.onrender.com/send-email", data);
       console.log(response);
       if (language === "DE") {
         toast.success(toastMessages.successEmailSent.de);
