@@ -35,7 +35,7 @@ app.post('/send-email', (req, res) => {
         from: 'support@imaigen.ai',
         to: 'support@imaigen.ai',
         subject: user_subject,
-        text: Name: ${user_name}\nEmail: ${user_email}\nMessage: ${user_message},
+        text: `Name: ${user_name}\nEmail: ${user_email}\nMessage: ${user_message}`,
         html: `
             <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
                 <p style="color: #333; font-size: 18px;"><strong>Name:</strong> ${user_name}</p>
