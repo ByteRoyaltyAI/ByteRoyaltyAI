@@ -13,7 +13,9 @@ const port = 5000;
 app.use(cors()); 
 app.use(bodyParser.json());
 
-
+app.get("/",(req,res)=>{
+    res.send("Got it!");
+})
 app.post('/send-email', (req, res) => {
     const { user_name, user_email, user_subject, user_message } = req.body;
 
