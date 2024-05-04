@@ -121,9 +121,8 @@ app.post('/send-email', (req, res) => {
                 <p>We highly value your engagement with our platform and look forward to the possibility of collaborating together.</p>
         
                 <div class="contact-info">
-                    <p>Best regards,</p>
-                    <p>shaikmohammadusman</p>
-                    <p>@imaigen.ai</p>
+                    <p>Best Regards,</p>
+                    <p>Imaigen Support Team</p>
                     <p>Contact:+91 8179871764</p>
                 </div>
             </div>
