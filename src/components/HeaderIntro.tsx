@@ -39,7 +39,7 @@ const HeaderIntro: React.FC = () => {
       <div className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4" style={{ marginTop: "40px" }}>
         <div className="col-span-12 md:col-span-7 text-center">
           <div className="typing-container">
-            <img className="typing-image" src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=WELCOME+TO;+Imaigen;" />
+            <img className="typing-image" src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=WELCOME+TO;+IMAIGEN&color=fcb045;" />
           </div>
           <h1>
             Empower Your Business Today: Streamline Operations, Enhance Customer Experiences, and Gain a Competitive Edge with AI.
