@@ -71,7 +71,7 @@ function Testimonial() {
                                     </div>
                                 </div>
                                 <div className="flex flex-row gap-9 max-lg:flex-col" style={{ fontSize: "15px" }}>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ad quas earum alias eos, temporibus eius corporis necessitatibus aut enim odit eum! Ipsum obcaecati quam ex aliquid veniam mollitia ipsa?
+                                    {paragraph.description}
                                 </div>
 
                             </div>
