@@ -1,0 +1,22 @@
+/* body{
+    color: #42e0e2;
+    color: #9daaf2;
+    color: #0c1220;
+    color: #4d7979;
+} */
+
+.textContainer{
+    background-color: rgba(17, 25, 40, 0.142);
+  backdrop-filter: blur(1px) saturate(100%);
+
+}
+
+.text-with-stroke {
+  color: #00fbff;
+  text-shadow: 1px 1px 25px #ffffff;
+  /* -webkit-text-stroke: 0.001px white;  */
+}
+
+.remainText {
+  text-shadow: 1px 1px 20px #00fbff;
+}

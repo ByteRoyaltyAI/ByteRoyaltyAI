@@ -4,6 +4,7 @@ import RadialGradient from "./RadialGradient";
 import { headerIntroData } from "../assets/lib/data";
 import { useLanguage } from "../context/language-context";
 import CarouselSlider from "./CarouselSlider";
+import NeoAI from "./NeoAI";
 
 
 
@@ -31,13 +32,13 @@ const HeaderIntro: React.FC = () => {
 
   return (
     <section
-      className="hero flex flex-col justify-center gap-10 items-center  max-lg:gap-6"
+      className="hero flex flex-col justify-center gap-10 items-center  max-lg:gap-6 relative h-[100vh]"
       id="home"
-      style={{ marginTop: "100px" }}
+      style={{ }}
     >
-      <RadialGradient scale="scale-y-125" opacity="opacity-30" />
-      <div className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4" style={{ marginTop: "40px" }}>
-        <div className="col-span-12 md:col-span-7 text-center">
+      {/* <RadialGradient scale="scale-y-125" opacity="opacity-30" /> */}
+       <div className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4" style={{ marginTop: "40px" }}>
+        {/* <div className="col-span-12 md:col-span-7 text-center">
           <div className="typing-container">
             <img className="typing-image" src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=WELCOME+TO;+IMAIGEN&color=fcb045;" />
           </div>
@@ -47,10 +48,12 @@ const HeaderIntro: React.FC = () => {
         </div>
         <div className="col-span-12 md:col-span-5" style={{ zIndex: "-1" }}>
           <CarouselSlider />
-        </div>
+        </div> */}
+      <NeoAI />
+
       </div>
 
-      <div className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center z-9999" style={{ zIndex: "9" }}>
+      <div className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center z-9999 absolute bottom-28" style={{ zIndex: "9" }}>
         {headerIntroData.buttons.map((button, index) => (
           <Button
             key={index}
@@ -63,7 +66,7 @@ const HeaderIntro: React.FC = () => {
             }}
           />
         ))}
-      </div>
+      </div> 
 
     </section>
   );

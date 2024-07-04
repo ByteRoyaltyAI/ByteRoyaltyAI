@@ -63,7 +63,7 @@ export const headerIntroData = {
       name: "Contact",
       label: {
         de: "Kontaktiere mich",
-        en: "Contact me",
+        en: "Contact Us",
       },
       icon: FiMail,
       color: "main-btn",
