@@ -27,7 +27,7 @@ const About: React.FC = () => {
 
   return (
     <React.Fragment>
-      <section className="about-me relative mt-16 " id="aboutus" ref={ref} style={{ display: "flex", justifyContent: "center" }}>
+      <section className="about-me mt-10" id="aboutus" ref={ref} style={{ display: "flex", justifyContent: "center" }}>
         <div className="title-container flex flex-col gap-6 justify-center items-center p-32 w-full max-lg:w-full max-lg:p-7 max-lg:items-start">
           <motion.div
             ref={animationReference}
@@ -39,7 +39,7 @@ const About: React.FC = () => {
             <center>
               <div className="rainbow " style={{ width: "330px", marginTop: "10px", display: "flex", alignItems: "center", justifyContent: "center", padding: "10px 10px" }}>
 
-                <p className="text-[--black] " style={{ padding: "10px 0px" }}>
+                <div className="text-[--black] " style={{ padding: "10px 0px" }}>
                   <div className="waviy">
                     <span className="waviy-span" style={{ color: "orange" }}>A</span>
                     <span className="waviy-span" style={{ color: "orange" }}>b</span>
@@ -50,7 +50,7 @@ const About: React.FC = () => {
                     <span className="waviy-span" style={{ color: "orange" }}>U</span>
                     <span className="waviy-span" style={{ color: "orange" }}>s</span>
                   </div>
-                </p>
+                </div>
 
               </div>
             </center>

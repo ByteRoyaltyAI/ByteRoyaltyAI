@@ -17,6 +17,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import { useRef } from "react";
+// import RadialGradient from "./RadialGradient";
 
 function Testimonial() {
     const { language } = useLanguage();
@@ -34,6 +35,7 @@ function Testimonial() {
     };
     return (
         <div>
+            {/* <RadialGradient scale="scale-y-125" opacity="opacity-70" /> */}
             <center>  <h1 style={{ color: "skyblue", zIndex: "999" }}>Testimonial</h1></center>
             <div className="flex flex-row justify-center gap-6 items-center   max-lg:flex-col max-lg:p-16 min-[1921px]:px-[45rem] min-[1921px]:mb-48" style={{ marginTop: "-40px" }}>
                 <Swiper

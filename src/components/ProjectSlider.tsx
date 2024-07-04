@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import Testimonial from "./Testimonial";
+// import RadialGradient from "./RadialGradient";
 
 const ProjectSlider: React.FC = () => {
   const { ref } = useSectionInView("Projects");
