@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "./Button";
-import RadialGradient from "./RadialGradient";
+// import RadialGradient from "./RadialGradient";
 import { headerIntroData } from "../assets/lib/data";
 import { useLanguage } from "../context/language-context";
-import CarouselSlider from "./CarouselSlider";
+// import CarouselSlider from "./CarouselSlider";
 import NeoAI from "./NeoAI";
 
 

@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import Footer from "../components/Footer";
 import ThemeSwitch from "../components/theme-switch";
-import { useTheme } from "../context/theme-context";
+// import { useTheme } from "../context/theme-context";
 import { ScrollProgress } from "../components/ScrollProgress";
 import ProjectSlider from "../components/ProjectSlider";
 import Newnavbar from "../components/Newnavbar";
-import RadialGradient from "../components/RadialGradient";
+// import RadialGradient from "../components/RadialGradient";
 import GlassmorphismWrapper from "../components/GlassmorphismWrapper";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));

@@ -2,15 +2,15 @@ import React, { useRef } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
 
-import { useTheme } from "../context/theme-context";
+// import { useTheme } from "../context/theme-context";
 import { useLanguage } from "../context/language-context";
-import RadialGradient from "./RadialGradient";
+// import RadialGradient from "./RadialGradient";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Banner from "./ServiceBanner";
 
 const TechStack: React.FC = () => {
   const { ref } = useSectionInView("Services");
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   const { language } = useLanguage();
   const animationReference = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({

@@ -17,7 +17,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import { useRef } from "react";
-import RadialGradient from "./RadialGradient";
+// import RadialGradient from "./RadialGradient";
 
 function Testimonial() {
     const { language } = useLanguage();

@@ -10,7 +10,7 @@ interface RadialGradientProps {
 }
 
 const RadialGradient: React.FC<RadialGradientProps> = ({
-  scale,
+  // scale,
   opacity,
   position,
   overflow,
