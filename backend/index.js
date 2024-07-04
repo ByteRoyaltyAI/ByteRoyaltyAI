@@ -26,7 +26,7 @@ app.post('/send-email', (req, res) => {
         secure: false, // Use TLS
         auth: {
             user: 'support@imaigen.ai',
-            pass: 'Shaik@321' // Remove the space after 'Shaik@321'
+            pass: 'Crisp@Trump123' // Remove the space after 'Shaik@321'
         },
     });
 
