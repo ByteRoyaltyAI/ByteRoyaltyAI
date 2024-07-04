@@ -195,7 +195,7 @@ const NeoAI: React.FC = () => {
       >
         <h1
           style={{
-            fontSize: "clamp(2rem, 5vw, 7rem)",
+            fontSize: "clamp(4rem, 5vw, 7rem)",
             textShadow: "0 0 10px rgba(0,255,255,0.5)",
             height: "clamp(4rem, 15vw, 8rem)",
             fontWeight: "600",
@@ -225,7 +225,7 @@ const NeoAI: React.FC = () => {
           />
         </h1>
         
-        <h1 className="font-bold textContainer">
+        <h1 className="font-bold textContainer sm:text-sm md:text-6xl" style={{fontSize: "clamp(2rem, 5vw, 4rem)"}}>
           <span className="text-with-stroke">You IMAGINE... We AI-MAGINE...</span><br /> <span className="remainText">Let's make it real... </span>
         </h1>
         {/* <a href="#" className="cta-button" 
