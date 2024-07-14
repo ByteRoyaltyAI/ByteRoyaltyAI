@@ -19,7 +19,7 @@ import "swiper/css/pagination";
 import { useRef } from "react";
 // import RadialGradient from "./RadialGradient";
 
-function Testimonials() {
+function Testimonial() {
     const { language } = useLanguage();
     const progressCircle = useRef<SVGSVGElement | null>(null);
     const progressContent = useRef<HTMLSpanElement | null>(null);
@@ -85,4 +85,4 @@ function Testimonials() {
 
     )
 }
-export default Testimonials;
+export default Testimonial;
