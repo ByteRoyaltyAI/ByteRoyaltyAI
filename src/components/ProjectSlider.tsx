@@ -252,6 +252,7 @@ const ProjectSlider: React.FC = () => {
       >
         &lt;
       </button>
+      
       <button
         className="absolute md:hidden right-5 top-1/2 transform -translate-y-1/2 bg-lightblue text-darkblue rounded-full h-16 w-16"
         onClick={handleNext}
