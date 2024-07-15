@@ -314,6 +314,7 @@ const ProjectSlider: React.FC = () => {
         </div>
 
       </section>
+      
       <ReactTooltip
         place="top"
         id="my-tooltip"
