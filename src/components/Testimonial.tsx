@@ -36,7 +36,64 @@ function Testimonial() {
     return (
         <div>
             {/* <RadialGradient scale="scale-y-125" opacity="opacity-70" /> */}
-            <center>  <h1 style={{ color: "skyblue", zIndex: "999" }}>Testimonial</h1></center>
+            {/* <center>  <h1 style={{ color: "skyblue", zIndex: "999" }}>Testimonial</h1></center> */}
+            <center>
+              <div
+                className="rainbow "
+                style={{
+                  width: "350px",
+                  marginTop: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "10px 10px",
+                }}
+              >
+                <div
+                  className="text-[--black] "
+                  style={{ padding: "10px 0px" }}
+                >
+                  <div className="waviy">
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      T
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      E
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      S
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      T
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      I
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      M
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      O
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      N
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      I
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      A
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      L
+                    </span>
+                    <span className="waviy-span" style={{ color: "orange" }}>
+                      S
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </center>
             <div className="flex flex-row justify-center gap-6 items-center   max-lg:flex-col max-lg:p-16 min-[1921px]:px-[45rem] min-[1921px]:mb-48" style={{ marginTop: "-40px" }}>
                 <Swiper
                     spaceBetween={100}
