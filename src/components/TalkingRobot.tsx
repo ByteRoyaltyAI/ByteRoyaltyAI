@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './TalkingRobot.css';
 import robotImage from '../assets/AI-img/AI-img/drib_blink_bot.gif'; // Make sure you have a robot.png in your public folder or adjust the path accordingly.
 
@@ -36,7 +36,8 @@ const TalkingRobot = () => {
   }, [text.length, messages.length]);
 
   useEffect(() => {
-    let timer;
+    // let timer;
+    let timer: ReturnType<typeof setTimeout>;
     if (isTyping) {
       timer = setTimeout(typeText, 50);
     } else {

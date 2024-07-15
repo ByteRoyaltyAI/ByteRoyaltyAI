@@ -7,7 +7,7 @@ import ProjectSlider from "../components/ProjectSlider";
 import Newnavbar from "../components/Newnavbar";
 // import RadialGradient from "../components/RadialGradient";
 import GlassmorphismWrapper from "../components/GlassmorphismWrapper";
-import TalkingRobot from "../components/TalkingRobot";
+// import TalkingRobot from "../components/TalkingRobot";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
 const LazyTechStack = lazy(() => import("../components/TechStack"));

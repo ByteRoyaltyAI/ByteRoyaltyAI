@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+// import React, { useCallback, useEffect, useRef, useState } from "react";
 import { aboutMeData } from "../assets/lib/data";
-
+import * as React from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -55,9 +56,11 @@ const About: React.FC = () => {
       setIsTyping(true);
     }
   }, [text.length, messages.length]);
-
+  
   useEffect(() => {
-    let timer;
+    // let timer;
+    // let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
     if (isTyping) {
       timer = setTimeout(typeText, 80);
     } else {
