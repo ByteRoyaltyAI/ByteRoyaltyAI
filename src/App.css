@@ -45,3 +45,30 @@
 .carousel-container button.right {
   right: 1rem;
 }
+
+/* Add this to your global CSS or a separate stylesheet */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #2563eb;
+  --rdp-background-color: #ffffff;
+  --rdp-accent-color-dark: #2563eb;
+  --rdp-background-color-dark: #f3f4f6;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color);
+  color: white;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: #e5e7eb;
+}
+
+.rdp-head_cell {
+  font-weight: 600;
+  color: #4b5563;
+}

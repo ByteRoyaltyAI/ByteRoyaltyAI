@@ -7,6 +7,7 @@ import ProjectSlider from "../components/ProjectSlider";
 import Newnavbar from "../components/Newnavbar";
 // import RadialGradient from "../components/RadialGradient";
 import GlassmorphismWrapper from "../components/GlassmorphismWrapper";
+import Consultation from "../components/Consultation";
 // import TalkingRobot from "../components/TalkingRobot";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
@@ -78,6 +79,10 @@ const Home: React.FC = () => {
 
             <GlassmorphismWrapper>
               <LazyContact />
+            </GlassmorphismWrapper>
+
+            <GlassmorphismWrapper>
+              <Consultation />
             </GlassmorphismWrapper>
             
           </div>
