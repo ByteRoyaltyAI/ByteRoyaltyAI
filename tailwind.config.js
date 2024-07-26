@@ -16,6 +16,9 @@ export default {
         silentmooncolor: "#FFD5BD",
         instorcolor: "#E3964A",
       },
+      boxShadow: {
+        'custom-shadow': '10px 10px 0px 3px rgba(0, 0, 0, 0.75)',
+      },
     },
   },
   plugins: [],
