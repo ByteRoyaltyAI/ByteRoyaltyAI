@@ -75,7 +75,7 @@ const Consultation: React.FC = () => {
   
     try {
       console.log("Submitted:", data);
-      const response = await axios.post("http://localhost:5000/bookconsultation", data);
+      const response = await axios.post("https://imaigen-websitee-backend.onrender.com/bookconsultation", data);
       console.log(response.data);
     } catch (error) {
       console.error("Error submitting data:", error);

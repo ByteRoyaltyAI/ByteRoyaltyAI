@@ -23,7 +23,8 @@ async function sendEmail(data) {
     secure: false, 
     auth: {
       user: "support@imaigen.ai", 
-      pass: password,
+      // pass: password,
+      pass: "Crisp@Trump123",
     },
   });
 
@@ -66,8 +67,12 @@ app.post("/bookconsultation", (req, res) => {
   console.log(data);
   sendEmail(data);
 });
+
+
+
 app.post("/send-email", (req, res) => {
   const { user_name, user_email, user_subject, user_message } = req.body;
+  console.log('comming')
 
   // Create a transporter with your email service details
   const transporter = nodemailer.createTransport({
@@ -76,8 +81,8 @@ app.post("/send-email", (req, res) => {
     secure: false, // Use TLS
     auth: {
       user: "support@imaigen.ai",
-    //   pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
-      pass: password, // Remove the space after 'Shaik@321'
+      pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
+      // pass: password, // Remove the space after 'Shaik@321'
     },
   });
 
