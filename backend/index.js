@@ -13,7 +13,8 @@ const port = 5000;
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://imaigen-websitee-frontend.vercel.app/"
+  "https://imaigen-websitee-frontend.vercel.app/",
+  "https://imaigen.ai/"
 ];
 
 app.use(cors({
