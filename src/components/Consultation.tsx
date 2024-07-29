@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import axios from "axios";
 
+
 const Consultation: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("");
@@ -23,6 +24,7 @@ const Consultation: React.FC = () => {
     "November",
     "December",
   ];
+
 
   const generateTimeSlots = (): string[] => {
     const slots: string[] = [];
@@ -75,10 +77,13 @@ const Consultation: React.FC = () => {
   
     try {
       console.log("Submitted:", data);
-      const response = await axios.post("https://imaigen-websitee-backend.onrender.com/bookconsultation", data);
+      const response = await axios.post("https://imaigen-website-backend-fgce.vercel.app/bookconsultation", data);
+      // const response = await axios.post("http://localhost:5000/bookconsultation", data);
       console.log(response.data);
+      alert("Consultation Successfully Booked!");
     } catch (error) {
       console.error("Error submitting data:", error);
+      alert("Consultation Booking Failed :(");
     }
   };
 
