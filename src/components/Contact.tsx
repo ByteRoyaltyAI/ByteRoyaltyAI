@@ -40,6 +40,7 @@ const Contact: React.FC = () => {
     let data = {
       user_email: email, user_name: name, user_subject: subject, user_message: message
     }
+    
 
     try {
 

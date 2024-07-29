@@ -74,6 +74,7 @@ const Consultation: React.FC = () => {
       email,
       message,
     };
+    
   
     try {
       console.log("Submitted:", data);
