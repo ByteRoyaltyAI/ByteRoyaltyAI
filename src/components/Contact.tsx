@@ -40,11 +40,14 @@ const Contact: React.FC = () => {
     let data = {
       user_email: email, user_name: name, user_subject: subject, user_message: message
     }
+    
 
     try {
 
       console.log(JSON.stringify(data));
-      const response = await axios.post("https://imaigen-websitee-backend.onrender.com/send-email", data);
+      // const response = await axios.post("https://imaigen-websitee-backend.onrender.com/send-email", data);
+      const response = await axios.post("https://imaigen-website-backend-fgce.vercel.app/send-email", data);
+      // const response = await axios.post("http://localhost:5000/send-email", data);
       console.log(response);
       if (language === "DE") {
         toast.success(toastMessages.successEmailSent.de);

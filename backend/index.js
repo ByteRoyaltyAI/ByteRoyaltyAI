@@ -9,8 +9,23 @@ const password = process.env.PASS;
 const app = express();
 const port = 5000;
 
+
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://imaigen-websitee-frontend.vercel.app/"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
+
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
@@ -23,15 +38,16 @@ async function sendEmail(data) {
     secure: false, 
     auth: {
       user: "support@imaigen.ai", 
-      pass: password,
+      // pass: password,
+      pass: "Crisp@Trump123",
     },
   });
 
   // Email options
   
   let mailOptions = {
-    from: data.email, 
-    to: 'support@imaigen.ai',
+    from: 'support@imaigen.ai', 
+    to:'support@imaigen.ai',
     subject: "New Consultation Booking from",
     html: `
         <h2>New Message Details</h2>
@@ -64,10 +80,19 @@ app.post("/bookconsultation", (req, res) => {
   const data = req.body;
   console.log("comming");
   console.log(data);
-  sendEmail(data);
+  try {
+    sendEmail(data);
+    res.sendStatus(200).send("success")
+  } catch (error) {
+    res.sendStatus(400).send('error')
+  }
 });
+
+
+
 app.post("/send-email", (req, res) => {
   const { user_name, user_email, user_subject, user_message } = req.body;
+  console.log('comming')
 
   // Create a transporter with your email service details
   const transporter = nodemailer.createTransport({
@@ -76,8 +101,8 @@ app.post("/send-email", (req, res) => {
     secure: false, // Use TLS
     auth: {
       user: "support@imaigen.ai",
-    //   pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
-      pass: password, // Remove the space after 'Shaik@321'
+      pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
+      // pass: password, // Remove the space after 'Shaik@321'
     },
   });
 
