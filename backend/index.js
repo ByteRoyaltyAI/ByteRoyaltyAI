@@ -9,6 +9,7 @@ const password = process.env.PASS;
 const app = express();
 const port = 5000;
 
+
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",
