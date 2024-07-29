@@ -63,7 +63,7 @@ export const headerIntroData = {
       name: "Contact",
       label: {
         de: "Kontaktiere mich",
-        en: "Contact me",
+        en: "Contact Us",
       },
       icon: FiMail,
       color: "main-btn",
@@ -519,23 +519,23 @@ export const FooterLinks = [
 ] as const;
 
 export const sideBarRightMail = {
-  link: "mailto:byteroyality@gmail.com",
-  text: "FUTURE IS AI",
+  link: "mailto:support@imaigen.ai",
+  text: "IMAIGEN",
 } as const;
 
 export const sideBarLeftSocials = [
   {
-    link: "https://www.linkedin.com/in/shaik-mohammad-usman/",
+    link: "https://www.linkedin.com/company/102466043/admin/notifications/all/",
     icon: FiLinkedin,
     altimgname: "linkedin",
   },
   // {
-  //   // link: "https://github.com/ShaikMohammadUsman",
+  //   // link: "https://www.linkedin.com/company/102466043/admin/notifications/all/",
   //   icon: FiGithub,
   //   altimgname: "github",
   // },
   {
-    link: "mailto:byteroyality20@gmail.com",
+    link: "mailto:support@imaigen.ai",
     icon: FiMail,
     altimgname: "mail",
   },

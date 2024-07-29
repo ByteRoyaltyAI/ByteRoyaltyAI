@@ -44,7 +44,9 @@ const Contact: React.FC = () => {
     try {
 
       console.log(JSON.stringify(data));
-      const response = await axios.post("http://localhost:5000/send-email", data);
+      // const response = await axios.post("https://imaigen-websitee-backend.onrender.com/send-email", data);
+      const response = await axios.post("https://imaigen-website-backend-fgce.vercel.app/send-email", data);
+      // const response = await axios.post("http://localhost:5000/send-email", data);
       console.log(response);
       if (language === "DE") {
         toast.success(toastMessages.successEmailSent.de);
@@ -105,20 +107,20 @@ const Contact: React.FC = () => {
   }, []);
 
   const codeSnippet = `
-import "Future is AI";
+import "IMAIGEN";
 
 // 🌈 Spreading Our Technologies: 
 // Crafting Cosmic Email 🌌
 
-Name : ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""
-    }🏌️\n
-Email : ${email}${lastUpdatedField === "email" ? (cursorBlink ? "|" : " ") : ""
+Name : ${name}${lastUpdatedField === "Name" ? (cursorBlink ? "|" : " ") : ""
+    }💭\n
+Email : ${email}${lastUpdatedField === "Email" ? (cursorBlink ? "|" : " ") : ""
     }📧;
 
  "AI ignites endless possibilities"
   "AI fuels boundless innovation"
 
-Wishing you from Future is AI,
+Wishing you from IMAIGEN,
 ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
 `;
   //   const codeSnippet2 = `
@@ -151,7 +153,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
   return (
     <React.Fragment>
       <section
-        className="contact-container w-full min-[1921px]:px-[55rem] mt-16"
+        className="contact-container w-full min-[1921px]:px-[55rem] pt-36 pb-28"
         id="contact"
       >
         <div

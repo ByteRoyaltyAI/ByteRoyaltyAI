@@ -1,0 +1,74 @@
+/* body{
+    color: #42e0e2;
+    color: #9daaf2;
+    color: #0c1220;
+    color: #4d7979;
+} */
+
+.textContainer{
+    background-color: rgba(17, 25, 40, 0.142);
+  backdrop-filter: blur(1px) saturate(100%);
+
+}
+
+.text-with-stroke {
+  color: #00fbff;
+  text-shadow: 1px 1px 25px #ffffff;
+  /* -webkit-text-stroke: 0.001px white;  */
+}
+
+.remainText {
+  text-shadow: 1px 1px 20px #00fbff;
+}
+
+
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel-container button ~ .button-89 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1e3a8a;
+  color: #1e3a8a;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-container button.left {
+  left: 1rem;
+}
+
+.carousel-container button.right {
+  right: 1rem;
+}
+
+/* Add this to your global CSS or a separate stylesheet */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #2563eb;
+  --rdp-background-color: #ffffff;
+  --rdp-accent-color-dark: #2563eb;
+  --rdp-background-color-dark: #f3f4f6;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+}
+
+.rdp-day_selected, 
+.rdp-day_selected:focus-visible, 
+.rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color);
+  color: white;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: #e5e7eb;
+}
+
+.rdp-head_cell {
+  font-weight: 600;
+  color: #4b5563;
+}

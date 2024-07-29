@@ -1,5 +1,5 @@
 import bannerBg from "../assets/img/bannerbg.webp";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { projectsData, toastMessages } from "../assets/lib/data";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import Testimonial from "./Testimonial";
+// import RadialGradient from "./RadialGradient";
 
 const ProjectSlider: React.FC = () => {
   const { ref } = useSectionInView("Projects");
@@ -34,6 +35,24 @@ const ProjectSlider: React.FC = () => {
       toast.info(toastMessages.loadingProject.en);
     }
   };
+
+
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === projectsData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const project = projectsData[currentIndex];
 
 
   return (
@@ -177,7 +196,71 @@ const ProjectSlider: React.FC = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {projectsData.map((project, index: number) => (
+            <div className="carousel-container relative w-full">
+      <article className="bg-darkblue flex flex-col gap-10 w-[80%] h-full border-lightblue border-[0.4rem] p-8 rounded-xl mb-10 min-[1024px]:hidden max-lg:w-[90%] mx-auto">
+        <h2 className="text-white text-2xl lg:text-3xl">{project.title}</h2>
+        <img
+          src={project.image}
+          alt={project.image}
+          className="h-[35vh] w-full object-cover object-top rounded-3xl"
+        />
+        {/* <div className="buttons flex gap-10 max-lg:flex-col">
+          <center>
+            <Button
+              label="Visit site"
+              link={project.deploymenturl}
+              iconSVG={project.deploymenticon}
+              buttoncolor={project.colors.main}
+              iconcolor={project.colors.icon}
+            />
+          </center>
+        </div> */}
+        <div className="buttons flex gap-10 justify-center max-lg:flex-col max-lg:items-center">
+          <Button
+            label="Visit site"
+            link={project.deploymenturl}
+            iconSVG={project.deploymenticon}
+            buttoncolor={project.colors.main}
+            iconcolor={project.colors.icon}
+          />
+        </div>
+        <p className="text-white text-base lg:text-lg max-lg:text-lg">
+          {language === "DE" ? project.description : project.description_EN}
+        </p>
+
+        <div className="technologies">
+          <h3 className="text-white text-lg lg:text-xl">
+            {language === "DE" ? "Technologien" : "Technologies"}
+          </h3>
+          <div className="grid grid-cols-3 gap-10 p-4">
+            {project.technologies.map((technology, innerIndex) => (
+              <img
+                key={innerIndex}
+                src={technology.icon}
+                alt={`${project.title}-icon`}
+                className="h-[5rem] w-[60%]"
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={technology.name}
+              />
+            ))}
+          </div>
+        </div>
+      </article>
+      <button
+        className="absolute md:hidden left-5 top-1/2 transform -translate-y-1/2 bg-lightblue text-darkblue rounded-full h-16 w-16"
+        onClick={handlePrev}
+      >
+        &lt;
+      </button>
+      
+      <button
+        className="absolute md:hidden right-5 top-1/2 transform -translate-y-1/2 bg-lightblue text-darkblue rounded-full h-16 w-16"
+        onClick={handleNext}
+      >
+        &gt;
+      </button>
+    </div>
+            {/* {projectsData.map((project, index: number) => (
               <article
                 key={index}
                 className="bg-darkblue flex flex-col gap-10 w-[80%] h-full  border-lightblue border-[0.4rem] p-8 rounded-xl mb-10 min-[1024px]:hidden max-lg:w-[90%]"
@@ -226,11 +309,12 @@ const ProjectSlider: React.FC = () => {
                   </div>
                 </div>
               </article>
-            ))}
+            ))} */}
           </div>
         </div>
 
       </section>
+      
       <ReactTooltip
         place="top"
         id="my-tooltip"

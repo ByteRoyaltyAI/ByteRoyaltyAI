@@ -10,7 +10,7 @@ interface RadialGradientProps {
 }
 
 const RadialGradient: React.FC<RadialGradientProps> = ({
-  scale,
+  // scale,
   opacity,
   position,
   overflow,
@@ -40,7 +40,7 @@ const RadialGradient: React.FC<RadialGradientProps> = ({
   }, []);
 
   const radialGradientStyle: React.CSSProperties = {
-    background: `radial-gradient(at ${mouseXpercentage}% ${mouseYpercentage}%, #ff6a3d, ${
+    background: `radial-gradient(at ${mouseXpercentage}% ${mouseYpercentage}%, #1b243a, ${
       theme === "light" ? "#9daaf2" : "#0c1220"
     })`,
   };
@@ -49,7 +49,7 @@ const RadialGradient: React.FC<RadialGradientProps> = ({
     <React.Fragment>
       <div
         // rotate-180 for mirrored effect
-        className={`radial-gradient-styling absolute ${position} left-0 h-full w-full -z-[1]   ${opacity} ${scale} ${overflow}`}
+        className={`radial-gradient-styling absolute ${position} left-0 w-full -z-[1] h-[100vh]   ${opacity} ${overflow}`}
         style={radialGradientStyle}
       ></div>
     </React.Fragment>
