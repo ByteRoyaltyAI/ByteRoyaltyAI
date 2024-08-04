@@ -12,7 +12,7 @@ import Consultation from "../components/Consultation";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
 const LazyTechStack = lazy(() => import("../components/TechStack"));
-const LazyAboutMe = lazy(() => import("../components/About"));
+// const LazyAboutMe = lazy(() => import("../components/About"));
 const LazyContact = lazy(() => import("../components/Contact"));
 const LazyHeaderIntro = lazy(() => import("../components/HeaderIntro"));
 // const LazyRadialGradient = lazy(() => import("../components/RadialGradient"));
