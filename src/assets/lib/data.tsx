@@ -509,7 +509,7 @@ export const navLinks = [
   { de: "Home", en: "Home", hash: "#home", icon: GoHome },
   { de: "Services", en: "Services", hash: "#services", icon: GoStack },
   { de: "Projekte", en: "Projects", hash: "#projects", icon: GoProject },
-  { de: "About Us", en: "About Us", hash: "#aboutus", icon: GoPerson },
+  // { de: "About Us", en: "About Us", hash: "#aboutus", icon: GoPerson },
   { de: "Kontakt", en: "Contact", hash: "#contact", icon: GoMail },
 ] as const;
 

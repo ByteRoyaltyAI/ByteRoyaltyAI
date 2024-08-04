@@ -72,9 +72,9 @@ const Newnavbar = () => {
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Testimonials</button>
                             </div></NavLink>
-                        <NavLink to="/" active={activeButton === "aboutus"} onClick={() => scroll("aboutus")}><div style={{ padding: "8px 10px" }}>
+                        {/* <NavLink to="/" active={activeButton === "aboutus"} onClick={() => scroll("aboutus")}><div style={{ padding: "8px 10px" }}>
                             <button> About Us</button>
-                        </div></NavLink>
+                        </div></NavLink> */}
 
                         <NavLink to="/" active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ padding: "8px 10px" }}>
                             <button> Contact</button>

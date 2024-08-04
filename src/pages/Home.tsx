@@ -72,10 +72,10 @@ const Home: React.FC = () => {
               position="-top-24"
             /> */}
 
-            <GlassmorphismWrapper>
+            {/* <GlassmorphismWrapper>
               <LazyAboutMe />
-              {/* <TalkingRobot /> */}
-            </GlassmorphismWrapper>
+               <TalkingRobot />
+            </GlassmorphismWrapper> */}
 
             <GlassmorphismWrapper>
               <LazyContact />
@@ -84,7 +84,6 @@ const Home: React.FC = () => {
             <GlassmorphismWrapper>
               <Consultation />
             </GlassmorphismWrapper>
-            
           </div>
         </Suspense>
       </main>
