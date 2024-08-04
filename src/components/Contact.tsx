@@ -154,7 +154,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
   return (
     <React.Fragment>
       <section
-        className="contact-container w-full min-[1921px]:px-[55rem] pt-36 pb-28"
+        className="contact-container w-full min-[1921px]:px-[55rem] pt-36 pb-28 mt-10"
         id="contact"
       >
         <div

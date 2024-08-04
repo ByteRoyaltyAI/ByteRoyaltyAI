@@ -12,7 +12,7 @@ import Consultation from "../components/Consultation";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
 const LazyTechStack = lazy(() => import("../components/TechStack"));
-const LazyAboutMe = lazy(() => import("../components/About"));
+// const LazyAboutMe = lazy(() => import("../components/About"));
 const LazyContact = lazy(() => import("../components/Contact"));
 const LazyHeaderIntro = lazy(() => import("../components/HeaderIntro"));
 // const LazyRadialGradient = lazy(() => import("../components/RadialGradient"));
@@ -72,10 +72,10 @@ const Home: React.FC = () => {
               position="-top-24"
             /> */}
 
-            <GlassmorphismWrapper>
+            {/* <GlassmorphismWrapper>
               <LazyAboutMe />
-              {/* <TalkingRobot /> */}
-            </GlassmorphismWrapper>
+               <TalkingRobot />
+            </GlassmorphismWrapper> */}
 
             <GlassmorphismWrapper>
               <LazyContact />
@@ -84,7 +84,6 @@ const Home: React.FC = () => {
             <GlassmorphismWrapper>
               <Consultation />
             </GlassmorphismWrapper>
-            
           </div>
         </Suspense>
       </main>
