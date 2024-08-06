@@ -11,8 +11,6 @@ const Newnavbar = () => {
         setIsOpen(!isOpen);
     };
 
-
-
     function scroll(val: string) {
         let element = document.getElementById(`${val}`);
 
@@ -58,16 +56,22 @@ const Newnavbar = () => {
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Services</button>
                             </div></NavLink>
-                        <NavLink to="/" active={activeButton === "projects"} onClick={() => scroll("projects")} >
+
                             <div style={{ padding: "8px 10px" }} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                        <NavLink to="/" active={activeButton === "projects"} onClick={() => scroll("projects")} >
                                 <button className="hover:text-gray-300" >
                                     Projects
                                 </button>
+                                </NavLink>
                                 <div onClick={() => scroll("services")} onMouseLeave={() => setIsHovering(false)} onMouseEnter={() => setIsHovering(true)} className={`${isHovering ? 'block' : 'hidden'} absolute bg-gray-700 text-white py-2 px-4 mt-2 rounded-md shadow-lg z-999999999999`}>
-                                    <a href="" style={{ padding: "8px 10px" }} className="block mt-4" >Health Care</a>
-                                    <a href="" style={{ padding: "8px 10px" }} className="block mt-4">Machine Learning</a>
-                                    <a href="" style={{ padding: "8px 10px" }} className="block mt-4">Cloud Computing</a>
-                                </div></div></NavLink>
+                                    <a href="https://fe-finance.de/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 " >Finance</a>
+                                    <a href="https://assignmentgpt.ai/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Edu Tech</a>
+                                    <a href="https://bluejestic.com/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">E-commerce</a>
+                                    <a href="https://healthiq.plus/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Health Care</a>
+                                    <a href="https://tweetfox.io/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Social Media</a>
+                                    <a href="https://ourleisurehome.com/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Real Estate</a>
+                                </div></div>
+
                         <NavLink to="/" active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Testimonials</button>

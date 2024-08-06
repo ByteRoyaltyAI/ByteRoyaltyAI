@@ -32,60 +32,84 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.send("Got it!");
 });
-async function sendEmail(data) {
-  let transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
-    port: 587,
-    secure: false, 
-    auth: {
-      user: "support@imaigen.ai", 
-      // pass: password,
-      pass: "Crisp@Trump123",
-    },
-  });
 
-  // Email options
+// async function sendEmail(data) {
+//   let transporter = nodemailer.createTransport({
+//     host: "mail.privateemail.com",
+//     port: 587,
+//     secure: false, 
+//     auth: {
+//       user: "support@imaigen.ai", 
+//       // pass: password,
+//       pass: "Crisp@Trump123",
+//     },
+//   });
+
+//   // Email options
   
-  let mailOptions = {
-    from: 'support@imaigen.ai', 
-    to:'support@imaigen.ai',
-    subject: "New Consultation Booking from",
+//   let mailOptions = {
+//     from: 'support@imaigen.ai', 
+//     to:'support@imaigen.ai',
+//     subject: "New Consultation Booking from",
+//     html: `
+//         <h2>New Message Details</h2>
+//         <p><strong>Date:</strong> ${data.date}</p>
+//         <p><strong>Time:</strong> ${data.time}</p>
+//         <p><strong>Email:</strong> ${data.email}</p>
+//         <p><strong>Message:</strong></p>
+//         <p>${data.message}</p>
+//       `,
+//   };
+
+//   // Send email
+//   try {
+//     let info = await transporter.sendMail(mailOptions);
+//     console.log("Email sent: " + info.response);
+//   } catch (error) {
+//     console.error("Error sending email:", error);
+//   }
+// }
+
+// Transporter for both endpoints
+const transporter = nodemailer.createTransport({
+  host: "mail.privateemail.com",
+  port: 587,
+  secure: false, // Use TLS
+  auth: {
+    user: "support@imaigen.ai",
+    pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
+    // pass: password, // Remove the space after 'Shaik@321'
+  },
+});
+
+app.post("/bookconsultation", async (req, res) => {
+  const { date, time, email, message } = req.body;
+  console.log("Data Received:");
+  console.log(message);
+
+  const mailAdminOptions = {
+    from: "support@imaigen.ai",
+    to: "support@imaigen.ai",
+    subject: "New Consultation Booking",
+    text: `Email: ${email}\nTime: ${time}\nDate: ${date}\nMessage: ${message}`,
     html: `
-        <h2>New Message Details</h2>
-        <p><strong>Date:</strong> ${data.date}</p>
-        <p><strong>Time:</strong> ${data.time}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${data.message}</p>
-      `,
+      <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
+        <p style="color: #333; font-size: 18px;"><strong>Email:</strong> ${email}</p>
+        <p style="color: #333; font-size: 18px;"><strong>Time:</strong> ${time}, ${date}</p>
+        <hr style="border-top: 1px solid #ccc; margin: 20px 0;">
+        <p style="color: #555; font-size: 16px;"><strong>Message:</strong></p>
+        <p style="color: #777; font-size: 16px;">${message}</p>
+      </div>
+    `,
   };
 
-  // Send email
   try {
-    let info = await transporter.sendMail(mailOptions);
-    console.log("Email sent: " + info.response);
+    await transporter.sendMail(mailAdminOptions);
+    console.log("Email sent to Admin");
+    res.status(200).send("Success");
   } catch (error) {
-    console.error("Error sending email:", error);
-  }
-}
-
-// // Example usage
-// const messageData = {
-//   date: "25-07-2024",
-//   time: "09:30",
-//   email: "teste@exemplo.us",
-//   message: "summa",
-// };
-
-app.post("/bookconsultation", (req, res) => {
-  const data = req.body;
-  console.log("comming");
-  console.log(data);
-  try {
-    sendEmail(data);
-    res.sendStatus(200).send("success")
-  } catch (error) {
-    res.sendStatus(400).send('error')
+    console.error("Error in /bookconsultation:", error);
+    res.status(500).send("Internal Server Error");
   }
 });
 
@@ -93,19 +117,8 @@ app.post("/bookconsultation", (req, res) => {
 
 app.post("/send-email", (req, res) => {
   const { user_name, user_email, user_subject, user_message } = req.body;
-  console.log('comming')
 
-  // Create a transporter with your email service details
-  const transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
-    port: 587,
-    secure: false, // Use TLS
-    auth: {
-      user: "support@imaigen.ai",
-      pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
-      // pass: password, // Remove the space after 'Shaik@321'
-    },
-  });
+  
 
   // Email message to Admin
   const mailAdminOptions = {

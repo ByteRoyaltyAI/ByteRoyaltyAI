@@ -74,14 +74,13 @@ const Consultation: React.FC = () => {
       email,
       message,
     };
-
+    
     try {
-      console.log("Submitted:", data);
+      console.log("Data Sent:", data);
       const response = await axios.post(
         "https://imaigen-website-backend-fgce.vercel.app/bookconsultation",
         data
       );
-      // const response = await axios.post("http://localhost:5000/bookconsultation", data);
       console.log(response.data);
       alert("Consultation Successfully Booked!");
     } catch (error) {
@@ -107,7 +106,7 @@ const Consultation: React.FC = () => {
           <span className="absolute text-3xl -top-2 -left-8 -rotate-[20deg] bg-yellow-300 text-black px-5 py-2 rounded-sm">
             Book Your
           </span>
-          CONSULTATION{" "}
+          CONSULTATION
         </h1>
         <div className=" text-white p-4 rounded-lg flex flex-col md:flex-row md:justify-center md:items-center w-full md:h-[80vh]">
           <div className="w-full md:w-1/2  md:rounded-l-lg p-4 md:px-32 flex justify-center flex-col items-center md:items-end ">
@@ -185,7 +184,7 @@ const Consultation: React.FC = () => {
                 >
                   <option value="">Choose a time</option>
                   {timeSlots.map((slot) => (
-                    <option key={slot} value={slot}>
+                    <option key={slot} value={slot} >
                       {slot}
                     </option>
                   ))}

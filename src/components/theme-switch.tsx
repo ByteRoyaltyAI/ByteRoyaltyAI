@@ -1,12 +1,12 @@
-import { useTheme } from "../context/theme-context";
-import {
-  BsMoon,
-  BsSun,
-} from "react-icons/bs";
+// import { useTheme } from "../context/theme-context";
+// import {
+//   BsMoon,
+//   BsSun,
+// } from "react-icons/bs";
 import { useState, useEffect } from "react";
 
 export default function ThemeSwitch() {
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -41,7 +41,7 @@ export default function ThemeSwitch() {
       onMouseEnter={() => setIsTooltipVisible(true)}
       onMouseLeave={() => setIsTooltipVisible(false)}
     >
-      <button
+      {/* <button
         className={`shortcut-btn fixed z-10 bottom-5 right-10  w-[4rem] h-[4rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950 ${theme === "dark" ? "bg-[--darkblue]" : "bg-white"
           }
         ${isMobile ? "bottom-5" : "bottom-5"}
@@ -50,7 +50,7 @@ export default function ThemeSwitch() {
         aria-label="Switch Dark and Light"
       >
         {theme === "light" ? <BsSun /> : <BsMoon />}
-      </button>
+      </button> */}
 
     </div>
   );
