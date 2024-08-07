@@ -61,7 +61,6 @@ const HeaderIntro: React.FC = () => {
           <Button
             label="Book Free Consultation"
             iconSVG={FiMail}
-            link="consultation"
             buttoncolor={"main-btn"}
             onClick={() => {
               scroll("consultation");

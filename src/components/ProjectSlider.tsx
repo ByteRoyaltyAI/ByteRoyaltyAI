@@ -16,7 +16,6 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
 import Testimonial from "./Testimonial";
-// import RadialGradient from "./RadialGradient";
 
 const ProjectSlider: React.FC = () => {
   const { ref } = useSectionInView("Projects");
@@ -97,11 +96,6 @@ const ProjectSlider: React.FC = () => {
                 textAlign: "center",
               }}
             >
-              {/* <p className="text-[--white] mt-16 mb-6">
-                <span className="text-[--orange]"></span>
-                {language === "DE" ? "Projekte" : "Projects"}
-                <span className="text-[--orange]">👨🏻‍💻</span>
-              </p> */}
               <div className="rainbow " style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "15px 10px" }}>
                 <h2 className="text-[--white]">
                   <div className="waviy">
@@ -141,6 +135,7 @@ const ProjectSlider: React.FC = () => {
               {projectsData.map((project, index: number) => (
                 <SwiperSlide
                   key={index}
+                  id={project.title}
                   className="quote-outer-container bg-[--darkblue] text-[--white] flex flex-row justify-between  rounded-2xl p-20 text-left max-lg:hidden "
                 >
                   <div className=" w-[55%] flex flex-col gap-12 justify-between ">
@@ -204,17 +199,6 @@ const ProjectSlider: React.FC = () => {
           alt={project.image}
           className="h-[35vh] w-full object-cover object-top rounded-3xl"
         />
-        {/* <div className="buttons flex gap-10 max-lg:flex-col">
-          <center>
-            <Button
-              label="Visit site"
-              link={project.deploymenturl}
-              iconSVG={project.deploymenticon}
-              buttoncolor={project.colors.main}
-              iconcolor={project.colors.icon}
-            />
-          </center>
-        </div> */}
         <div className="buttons flex gap-10 justify-center max-lg:flex-col max-lg:items-center">
           <Button
             label="Visit site"
@@ -260,56 +244,7 @@ const ProjectSlider: React.FC = () => {
         &gt;
       </button>
     </div>
-            {/* {projectsData.map((project, index: number) => (
-              <article
-                key={index}
-                className="bg-darkblue flex flex-col gap-10 w-[80%] h-full  border-lightblue border-[0.4rem] p-8 rounded-xl mb-10 min-[1024px]:hidden max-lg:w-[90%]"
-              >
-                <h2 className="text-white">{project.title}</h2>
-                <img
-                  src={project.image}
-                  alt={project.image}
-                  className="h-[35vh] w-full object-cover object-top rounded-3xl"
-                />
-                <div className="buttons flex gap-10 max-lg:flex-col " >
-                  <center>
-                    <Button
-                      label="Visit site"
-                      link={project.deploymenturl}
-                      iconSVG={project.deploymenticon}
-                      buttoncolor={project.colors.main}
-                      iconcolor={project.colors.icon}
-                    />
-                  </center>
-
-                </div>
-                <p className="text-white  max-lg:text-4xl">
-                  {language === "DE"
-                    ? project.description
-                    : project.description_EN}
-                </p>
-
-                <div className="technologies">
-                  <h3 className="text-white">
-                    {language === "DE" ? "Technologien" : "Technologies"}
-                  </h3>
-                  <div className="grid grid-cols-3 gap-10 p-4">
-                    {project.technologies.map(
-                      (technology, innerIndex: number) => (
-                        <img
-                          key={innerIndex}
-                          src={technology.icon}
-                          alt={`${project.title}-icon`}
-                          className="h-[5rem] w-[60%] "
-                          data-tooltip-id="my-tooltip"
-                          data-tooltip-content={technology.name}
-                        />
-                      )
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))} */}
+          
           </div>
         </div>
 
