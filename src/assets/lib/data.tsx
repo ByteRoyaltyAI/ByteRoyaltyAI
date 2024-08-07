@@ -57,28 +57,28 @@ export const headerIntroData = {
     en: "",
   },
 
-  buttons: [
-    {
-      link:"contact",
-      name: "Contact",
-      label: {
-        de: "Kontaktiere mich",
-        en: "Contact Us",
-      },
-      icon: FiMail,
-      color: "main-btn",
-    },
-    {
-      link:"projects",
-      name: "Projects",
-      label: {
-        de: "Unsere Projekte",
-        en: "Our Projects",
-      },
-      icon: FaProjectDiagram,
-      color: "secondary-btn",
-    },
-  ],
+  // buttons: [
+  //   {
+  //     link:"consultation",
+  //     name: "Book Free Consultation",
+  //     label: {
+  //       de: "Kontaktiere mich",
+  //       en: "Contact Us",
+  //     },
+  //     icon: FiMail,
+  //     color: "main-btn",
+  //   },
+  //   {
+  //     link:"projects",
+  //     name: "Projects",
+  //     label: {
+  //       de: "Unsere Projekte",
+  //       en: "Our Projects",
+  //     },
+  //     icon: FaProjectDiagram,
+  //     color: "secondary-btn",
+  //   },
+  // ],
   profilepicture: profilepicture,
 } as const;
 
