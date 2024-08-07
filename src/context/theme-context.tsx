@@ -1,6 +1,6 @@
-import { useEffect, useState, createContext, useContext } from "react";
+import { useEffect, createContext, useContext } from "react";
 
-type Theme = "light" | "dark";
+type Theme = "dark";
 
 type ThemeContextProviderProps = {
   children: React.ReactNode;
@@ -18,35 +18,21 @@ const THEME_STORAGE_KEY = "theme";
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    window.localStorage.setItem(THEME_STORAGE_KEY, newTheme);
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
-  };
-
   useEffect(() => {
-    const localTheme = window.localStorage.getItem(
-      THEME_STORAGE_KEY
-    ) as Theme | null;
-    const preferredColorScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches
-      ? "dark"
-      : "light";
-    const initialTheme = localTheme || preferredColorScheme;
-
-    setTheme(initialTheme);
+    const initialTheme: Theme = "dark";
+    window.localStorage.setItem(THEME_STORAGE_KEY, initialTheme);
     document.documentElement.classList.add(initialTheme);
   }, []);
+
+  const toggleTheme = () => {
+    // Since the theme is always dark, the toggle function can be omitted.
+    // If needed, handle any future theme changes here.
+  };
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
+        theme: "dark", // Always dark
         toggleTheme,
       }}
     >
@@ -58,8 +44,8 @@ export default function ThemeContextProvider({
 export function useTheme() {
   const context = useContext(ThemeContext);
 
-  // if (context === null) {
-  //   throw new Error("useTheme must be used within a ThemeContextProvider");
-  // }
+  if (context === null) {
+    throw new Error("useTheme must be used within a ThemeContextProvider");
+  }
   return context; 
 }

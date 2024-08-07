@@ -11,7 +11,7 @@ import Consultation from "../components/Consultation";
 // import TalkingRobot from "../components/TalkingRobot";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
-const LazyTechStack = lazy(() => import("../components/TechStack"));
+const LazyServices = lazy(() => import("../components/OurServices"));
 // const LazyAboutMe = lazy(() => import("../components/About"));
 const LazyContact = lazy(() => import("../components/Contact"));
 const LazyHeaderIntro = lazy(() => import("../components/HeaderIntro"));
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             containerType="quote"
           />
           <GlassmorphismWrapper>
-            <LazyTechStack />
+            <LazyServices />
           </GlassmorphismWrapper>
 
           <GlassmorphismWrapper>

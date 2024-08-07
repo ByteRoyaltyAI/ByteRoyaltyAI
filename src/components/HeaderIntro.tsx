@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "./Button";
 // import RadialGradient from "./RadialGradient";
-import { headerIntroData } from "../assets/lib/data";
-import { useLanguage } from "../context/language-context";
+// import { headerIntroData } from "../assets/lib/data";
+// import { useLanguage } from "../context/language-context";
 // import CarouselSlider from "./CarouselSlider";
 import NeoAI from "./NeoAI";
-import RippleButton from "../components/RippleButton";
+// import RippleButton from "../components/RippleButton";
+import {FiMail } from "react-icons/fi";
 
 const HeaderIntro: React.FC = () => {
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
 
   function scroll(val: string) {
     let element = document.getElementById(`${val}`);
@@ -35,7 +36,7 @@ const HeaderIntro: React.FC = () => {
     >
       {/* <RadialGradient scale="scale-y-125" opacity="opacity-30" /> */}
       <div
-        className="grid grid-cols-12 flex justify-center px-30 sm:px-32 py-4"
+        className="grid grid-cols-12  justify-center px-30 sm:px-32 py-4"
         style={{ marginTop: "40px" }}
       >
         {/* <div className="col-span-12 md:col-span-7 text-center">
@@ -56,21 +57,15 @@ const HeaderIntro: React.FC = () => {
         className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center z-9999 absolute bottom-28"
         style={{ zIndex: "9" }}
       >
-        {headerIntroData.buttons.map((button, index) => (
+        
           <Button
-            key={index}
-            label={language === "DE" ? button.label.de : button.label.en}
-            iconSVG={button.icon}
-            link={`#${button.name.toLocaleLowerCase()}`}
-            buttoncolor={button.color}
+            label="Book Free Consultation"
+            iconSVG={FiMail}
+            buttoncolor={"main-btn"}
             onClick={() => {
-              scroll(button.link);
+              scroll("consultation");
             }}
           />
-        ))}
-        <center>
-          <RippleButton label="Free Consultation Now" />
-        </center>
       </div>
     </section>
   );

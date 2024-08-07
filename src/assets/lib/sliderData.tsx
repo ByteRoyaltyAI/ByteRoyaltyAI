@@ -18,9 +18,12 @@ import ChatBot_l from "../../assets/Slider-Images/chatbot-l.png";
 import Ml from "../../assets/Slider-Images/ml.gif";
 import Ml_l from "../../assets/Slider-Images/ML_logo-l.png";
 
+// import NLP_GIF from "../../assets/Slider-Images/NLP GIF.webp"
+import NLP_GIF from "../../assets/Slider-Images/Nlp.gif"
 
 
-export const slidesData = [
+
+export const servicesSlidesData = [
     {
         tool: It_l,
         imageUrl: It,
@@ -53,6 +56,12 @@ export const slidesData = [
         imageUrl: Ml,
         title: 'Machine Learning Solutions',
         description: 'Developing algorithms for computers to learn, enabling accurate predictions and recommendations.',
+    },
+    {
+        tool: ChatBot_l,
+        imageUrl: NLP_GIF,
+        title: 'Natural Language Processing',
+        description: 'Leveraging AI to understand, interpret, and generate human language, enhancing communication.'
     }
 
 

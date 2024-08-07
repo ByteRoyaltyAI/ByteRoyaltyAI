@@ -35,7 +35,7 @@ import { GoHome, GoPerson, GoMail, GoStack, GoProject } from "react-icons/go";
 import { FiGithub, FiLink, FiLinkedin, FiMail } from "react-icons/fi";
 import Imprint from "../../components/Imprint";
 import Privacy from "../../components/Privacy";
-import { FaProjectDiagram } from "react-icons/fa";
+// import { FaProjectDiagram } from "react-icons/fa";
 import leader from "../../assets/img/leader.jpeg";
 import home from "../../assets/img/home.jpeg";
 import blue from "../../assets/img/blue.jpeg";
@@ -57,28 +57,28 @@ export const headerIntroData = {
     en: "",
   },
 
-  buttons: [
-    {
-      link:"contact",
-      name: "Contact",
-      label: {
-        de: "Kontaktiere mich",
-        en: "Contact Us",
-      },
-      icon: FiMail,
-      color: "main-btn",
-    },
-    {
-      link:"projects",
-      name: "Projects",
-      label: {
-        de: "Unsere Projekte",
-        en: "Our Projects",
-      },
-      icon: FaProjectDiagram,
-      color: "secondary-btn",
-    },
-  ],
+  // buttons: [
+  //   {
+  //     link:"consultation",
+  //     name: "Book Free Consultation",
+  //     label: {
+  //       de: "Kontaktiere mich",
+  //       en: "Contact Us",
+  //     },
+  //     icon: FiMail,
+  //     color: "main-btn",
+  //   },
+  //   {
+  //     link:"projects",
+  //     name: "Projects",
+  //     label: {
+  //       de: "Unsere Projekte",
+  //       en: "Our Projects",
+  //     },
+  //     icon: FaProjectDiagram,
+  //     color: "secondary-btn",
+  //   },
+  // ],
   profilepicture: profilepicture,
 } as const;
 

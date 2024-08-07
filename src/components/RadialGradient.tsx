@@ -1,9 +1,8 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "../context/theme-context";
 
 interface RadialGradientProps {
-  scale: string;
+  scale?: string;
   opacity: string;
   position?: string;
   overflow?: string;
@@ -15,8 +14,8 @@ const RadialGradient: React.FC<RadialGradientProps> = ({
   position,
   overflow,
 }) => {
-  const [mouseXpercentage, setMouseXPercentage] = useState<number>(0);
-  const [mouseYpercentage, setMouseYPercentage] = useState<number>(0);
+  const [mouseXPercentage, setMouseXPercentage] = useState<number>(0);
+  const [mouseYPercentage, setMouseYPercentage] = useState<number>(0);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -40,19 +39,17 @@ const RadialGradient: React.FC<RadialGradientProps> = ({
   }, []);
 
   const radialGradientStyle: React.CSSProperties = {
-    background: `radial-gradient(at ${mouseXpercentage}% ${mouseYpercentage}%, #1b243a, ${
-      theme === "light" ? "#9daaf2" : "#0c1220"
+    background: `radial-gradient(at ${mouseXPercentage}% ${mouseYPercentage}%, #1b243a, ${
+      theme === "dark" ? "#0c1220" : "" // No need for conditional check as theme is always "dark"
     })`,
   };
 
   return (
-    <React.Fragment>
-      <div
-        // rotate-180 for mirrored effect
-        className={`radial-gradient-styling absolute ${position} left-0 w-full -z-[1] h-[100vh]   ${opacity} ${overflow}`}
-        style={radialGradientStyle}
-      ></div>
-    </React.Fragment>
+    <div
+      // rotate-180 for mirrored effect
+      className={`radial-gradient-styling absolute ${position} left-0 w-full -z-[1] h-[100vh] ${opacity} ${overflow}`}
+      style={radialGradientStyle}
+    ></div>
   );
 };
 

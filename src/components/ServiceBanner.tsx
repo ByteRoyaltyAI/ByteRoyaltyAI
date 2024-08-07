@@ -1,4 +1,4 @@
-import { slidesData } from "../assets/lib/sliderData";
+import { servicesSlidesData } from "../assets/lib/sliderData";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -32,7 +32,7 @@ function Banner() {
                 initialSlide={1}
                 style={{ width: '100%', paddingTop: '20px', paddingBottom: '50px' }}
             >
-                {slidesData.map((slide, index) => (
+                {servicesSlidesData.map((slide, index) => (
                     <SwiperSlide key={index} style={{
                         background: "rgba(255, 255, 255, 0.5)", // White with 50% opacity
                         backdropFilter: "blur(5px)", // Adding blur effect
@@ -41,7 +41,7 @@ function Banner() {
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         width: "300px",
-                        height: "400px",
+                        height: "410px",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
@@ -53,7 +53,7 @@ function Banner() {
                                 <img src={slide.imageUrl} style={{ width: "300px", height: "210px", borderRadius: "10px", }} alt={slide.title} />
                             </div>
                             <div>
-                                <center> <h4>{slide.title}</h4></center>
+                                <center> <h4 style={{fontSize:"2.2rem",paddingTop:"3px",paddingBottom:"3px"}}>{slide.title}</h4></center>
                                 <p style={{ fontSize: "small", opacity: ".8", textAlign: "center" }}>{slide.description}</p>
                             </div>
                         </div>
