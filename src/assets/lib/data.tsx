@@ -35,7 +35,7 @@ import { GoHome, GoPerson, GoMail, GoStack, GoProject } from "react-icons/go";
 import { FiGithub, FiLink, FiLinkedin, FiMail } from "react-icons/fi";
 import Imprint from "../../components/Imprint";
 import Privacy from "../../components/Privacy";
-import { FaProjectDiagram } from "react-icons/fa";
+// import { FaProjectDiagram } from "react-icons/fa";
 import leader from "../../assets/img/leader.jpeg";
 import home from "../../assets/img/home.jpeg";
 import blue from "../../assets/img/blue.jpeg";
