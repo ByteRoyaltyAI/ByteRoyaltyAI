@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/img/Brain_Circuit_Final.png";
+import { ScrollProgress } from "../components/ScrollProgress";
+
 
 const Newnavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,11 +29,13 @@ const Newnavbar = () => {
                 behavior: 'smooth'
             });
         }
-        setActiveButton(val); // Set active button on click
+        setActiveButton(val); 
 
     }
 
     return (
+         <>
+        
         <nav
             className={"fixed top-0 left-0 right-0 z-50 bg-gray-800 transition-all"}
             style={{ padding: "19px 0" }}
@@ -170,6 +174,14 @@ const Newnavbar = () => {
             )}
         </nav>
 
+        <ScrollProgress
+          position={"left"}
+          color={"orange"}
+          height={7}
+          smoothness={true}
+        />
+        
+      </> 
     );
 };
 
