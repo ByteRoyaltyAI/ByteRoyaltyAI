@@ -5,7 +5,8 @@ import Logo from "../assets/img/Brain_Circuit_Final.png";
 const Newnavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeButton, setActiveButton] = useState("home");
-    const [isHovering, setIsHovering] = useState(false);
+    const [projectsHovering, setProjectsHovering] = useState(false);
+    const [productsHovering, setProductsHovering] = useState(false);
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
@@ -46,24 +47,24 @@ const Newnavbar = () => {
                         {/* <h3 className="ml-2 text-white text-lg " style={{ fontSize: "20px"}}>FUTURE IS AI</h3> */}
                         <h3 className="ml-2 btn-shine " >IMAIGEN</h3>
                     </div>
+                    {/* Nav Buttons Here Large screens */}
                     <div className="hidden  lg:flex items-center space-x-4">
-                        <NavLink to="/" active={activeButton === "home"} onClick={() => scroll("home")}>
+                        <ScrollLink active={activeButton === "home"} onClick={() => scroll("home")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button>Home</button>
                             </div>
-                        </NavLink>
-                        <NavLink to="/" active={activeButton === "services"} onClick={() => scroll("services")}>
+                        </ScrollLink>
+                        <ScrollLink active={activeButton === "services"} onClick={() => scroll("services")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Services</button>
-                            </div></NavLink>
+                            </div></ScrollLink>
 
-                            <div style={{ padding: "8px 10px" }} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-                        <NavLink to="/" active={activeButton === "projects"} onClick={() => scroll("projects")} >
-                                <button className="hover:text-gray-300" >
+                        <ScrollLink active={activeButton === "projects"} onClick={() => scroll("projects")} >
+                            <div style={{ padding: "8px 10px" }} className="px-8 py10" onMouseEnter={() => setProjectsHovering(true)} onMouseLeave={() => setProjectsHovering(false)}>
+                                <button className=" " >
                                     Projects
                                 </button>
-                                </NavLink>
-                                <div onClick={() => scroll("services")} onMouseLeave={() => setIsHovering(false)} onMouseEnter={() => setIsHovering(true)} className={`${isHovering ? 'block' : 'hidden'} absolute bg-gray-700 text-white py-2 px-4 mt-2 rounded-md shadow-lg z-999999999999`}>
+                                <div onClick={() => scroll("services")} onMouseLeave={() => setProjectsHovering(false)} onMouseEnter={() => setProjectsHovering(true)} className={`${projectsHovering ? 'block' : 'hidden'} absolute mt-7 bg-gray-700 text-white py-2 px-4  rounded-md shadow-lg z-999999999999`}>
                                     <a href="https://fe-finance.de/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 " >Finance</a>
                                     <a href="https://assignmentgpt.ai/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Edu Tech</a>
                                     <a href="https://bluejestic.com/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">E-commerce</a>
@@ -71,19 +72,31 @@ const Newnavbar = () => {
                                     <a href="https://tweetfox.io/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Social Media</a>
                                     <a href="https://ourleisurehome.com/" className="block mt-4 px-[8px] py-[10px] hover:bg-gray-800 ">Real Estate</a>
                                 </div></div>
+                                </ScrollLink>
 
-                        <NavLink to="/" active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}>
+                        <ScrollLink active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Testimonials</button>
-                            </div></NavLink>
-                        {/* <NavLink to="/" active={activeButton === "aboutus"} onClick={() => scroll("aboutus")}><div style={{ padding: "8px 10px" }}>
-                            <button> About Us</button>
-                        </div></NavLink> */}
+                            </div></ScrollLink>
 
-                        <NavLink to="/" active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ padding: "8px 10px" }}>
+                        <ScrollLink active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ padding: "8px 10px" }}>
                             <button> Contact</button>
-                        </div></NavLink>
+                        </div></ScrollLink>
+                        
+                        <div style={{ padding: "8px 10px" }}
+                        className={`text-gray-300 hover:bg-gray-700  px-3 py-2 rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
+                         onClick={() => setActiveButton("products")}
+                         onMouseEnter={() => setProductsHovering(true)} onMouseLeave={() => setProductsHovering(false)}
+                         >
+                            <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} className={`${productsHovering ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-2 px-3.5  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
+                                    <Link to="/product/career-advice" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Career Advice</Link>
+                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Matcher</Link>
+                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Loan Validator</Link>
+                                </div>
+                            <button>Products</button>
+                            </div>
                     </div>
+
                     <div className="-mr-2 flex lg:hidden" style={{ transition: "1s" }}>
                         <button
                             onClick={toggleNavbar}
@@ -134,36 +147,40 @@ const Newnavbar = () => {
             {isOpen && (
                 <div className="lg:hidden w-full" id="mobile-menu" style={{ transition: "1s" }}>
                     <div className="flex w-full flex-col items-center mt-4" style={{ transition: "1s" }}>
-                        <NavLink to="/" active={activeButton === "home"} onClick={() => scroll("home")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Home</button></div></NavLink>
-                        <NavLink to="/" active={activeButton === "services"} onClick={() => scroll("services")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Services</button></div></NavLink>
-                        <NavLink to="/" active={activeButton === "projects"} onClick={() => scroll("projects")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
-                            <button className="hover:text-gray-300" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                        <ScrollLink active={activeButton === "home"} onClick={() => scroll("home")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Home</button></div></ScrollLink>
+                        <ScrollLink active={activeButton === "services"} onClick={() => scroll("services")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Services</button></div></ScrollLink>
+                        <ScrollLink active={activeButton === "projects"} onClick={() => scroll("projects")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
+                            <button className="hover:text-gray-300"
+                            //  onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
+                             >
                                 Projects
                             </button>
-                            <div onClick={() => scroll("services")} onMouseLeave={() => setIsHovering(false)} onMouseEnter={() => setIsHovering(true)} className={`${isHovering ? 'block' : 'hidden'} absolute bg-gray-700 text-white py-2 px-4 mt-2 rounded-md shadow-lg`}>
+                            {/* <div onClick={() => scroll("services")} onMouseLeave={() => setIsHovering(false)} onMouseEnter={() => setIsHovering(true)} className={`${isHovering ? 'block' : 'hidden'} absolute bg-gray-700 text-white py-2 px-4 mt-2 rounded-md shadow-lg`}>
                                 <a href="/" style={{ width: "200px", padding: "8x", textAlign: "center" }} className="block mt-4" >Health Care</a>
                                 <a href="/" style={{ width: "200px", padding: "8x", textAlign: "center" }} className="block mt-4">Machine Learning</a>
                                 <a href="/" style={{ width: "200px", padding: "8x", textAlign: "center" }} className="block mt-4">Cloud Computing</a>
-                            </div></div></NavLink>
-                        <NavLink to="/" active={activeButton === "aboutus"} onClick={() => scroll("aboutus")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>About</button></div></NavLink>
-                        <NavLink to="/" active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Testimonials</button></div></NavLink>
-                        <NavLink to="/" active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Contact</button></div></NavLink>
+                            </div> */}
+                            </div></ScrollLink>
+                        <ScrollLink active={activeButton === "aboutus"} onClick={() => scroll("aboutus")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>About</button></div></ScrollLink>
+                        <ScrollLink active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Testimonials</button></div></ScrollLink>
+                        <ScrollLink active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Contact</button></div></ScrollLink>
+                        <ScrollLink active={activeButton === "products"} onClick={() => setActiveButton("products")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Products</button></div></ScrollLink>
                     </div>
                 </div>
             )}
         </nav>
+
     );
 };
 
-const NavLink = ({ to, children, active, onClick }: { to: string; children: React.ReactNode; active: boolean; onClick: () => void; }) => {
+const ScrollLink = ({  children, active, onClick }: {  children: React.ReactNode; active: boolean; onClick: () => void; }) => {
     return (
-        <Link
-            to={to}
+        <div
             onClick={onClick}
             className={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium ${active ? 'bg-gray-700' : ''}`}
         >
             {children}
-        </Link>
+        </div>
     );
 };
 
