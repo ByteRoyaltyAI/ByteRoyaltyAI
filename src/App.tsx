@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import ActiveSectionContextProvider from "./context/active-section-context";
 import ThemeContextProvider from "./context/theme-context";
 import LanguageContextProvider from "./context/language-context";
-import CareerAdvice from "./pages/CareerAdvice"
+import SubProductPage from "./pages/SubProductPage"
 import Newnavbar from "./components/Newnavbar";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/imprint" element={<Home />}></Route>
                 <Route path="/privacy" element={<Home />}></Route>
-                <Route path="/product/career-advice" element={<CareerAdvice />}></Route>
+                <Route path="/product/:hr-services" element={<ProductsPage />}></Route>
+                <Route path="/product/:productName/:subProduct" element={<SubProductPage />}></Route>
               </Routes>
             </ActiveSectionContextProvider>
           </LanguageContextProvider>
