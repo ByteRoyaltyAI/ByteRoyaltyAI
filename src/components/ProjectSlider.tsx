@@ -15,7 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
-import Testimonial from "./Testimonial";
+// import Testimonial from "./Testimonial";
 
 const ProjectSlider: React.FC = () => {
   const { ref } = useSectionInView("Projects");
@@ -258,9 +258,9 @@ const ProjectSlider: React.FC = () => {
           backgroundColor: "var(--orange)",
         }}
       /><br />
-      <div style={{ zIndex: "99", marginTop: "120px", padding: "10px 0" }} id="testimonials">
+      {/* <div style={{ zIndex: "99", marginTop: "120px", padding: "10px 0" }} id="testimonials">
         <Testimonial />
-      </div>
+      </div> */}
 
     </React.Fragment>
   );
