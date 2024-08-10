@@ -1,22 +1,46 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import Footer from "../components/Footer";
 import ProjectSlider from "../components/ProjectSlider";
 import GlassmorphismWrapper from "../components/GlassmorphismWrapper";
 import Consultation from "../components/Consultation";
+import { useLocation } from "react-router-dom";
 
 const LazyBannerQuote = lazy(() => import("../components/BannerQuote"));
 const LazyServices = lazy(() => import("../components/OurServices"));
 const LazyContact = lazy(() => import("../components/Contact"));
 const LazyHeaderIntro = lazy(() => import("../components/HeaderIntro"));
 
-
 const Home: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#consultation") {
+      scroll("consultation");
+    }
+  }, [location]);
+
+  function scroll(val: string) {
+    let element = document.getElementById(`${val}`);
+
+    if (element) {
+      const offset = -70; // Adjust the offset according to your need
+
+      // Get the element's top position relative to the viewport
+      const elementTop = element.getBoundingClientRect().top;
+
+      // Scroll to the element's position with an offset
+      window.scrollBy({
+        top: elementTop + offset,
+        behavior: "smooth",
+      });
+    }
+  }
 
   return (
     <>
-    <Suspense fallback={<div>Loading...</div>}>
-    <LazyHeaderIntro />
-    </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyHeaderIntro />
+      </Suspense>
 
       <main className="relative">
         <Suspense fallback={<div>Loading...</div>}>
