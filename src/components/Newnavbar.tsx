@@ -13,7 +13,7 @@ const Newnavbar = () => {
     const [productsHovering, setProductsHovering] = useState(false);
     const [showProducts,setShowProducts]=useState(false)
     const location =useLocation()
-    const isProductPath = location.pathname.includes('/product');
+    const isNotHomePath = location.pathname.includes('/product');
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
@@ -46,7 +46,7 @@ const Newnavbar = () => {
             style={{ padding: "19px 0" }}
         >
             <div className=" mx-auto px-4 sm:px-6 lg:px-8 w-full" >
-                <div className={"flex items-center  h-16 w-full "+(isProductPath?" justify-between px-[3%] sm:px-[10%] :":"justify-around")} >
+                <div className={"flex items-center  h-16 w-full "+(isNotHomePath?" justify-between px-[3%] sm:px-[10%] :":"justify-around")} >
                     <div className="flex items-center">
                         <img
                             src={Logo}
@@ -58,16 +58,15 @@ const Newnavbar = () => {
                     </div>
                     {/* Nav Buttons Here Large screens */}
                     <div className="hidden  lg:flex items-center space-x-4">
-                        {isProductPath &&
                         <Link to="/">
                         <ScrollLink active={activeButton === "home"} onClick={() => scroll("home")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button>Home</button>
                             </div>
                         </ScrollLink>
-                        </Link>}
+                        </Link>
 
-                        {!isProductPath &&<>
+                        {!isNotHomePath &&<>
                         <ScrollLink active={activeButton === "services"} onClick={() => scroll("services")}>
                             <div style={{ padding: "8px 10px" }}>
                                 <button> Services</button>
@@ -97,12 +96,12 @@ const Newnavbar = () => {
                         </div></ScrollLink>
                         </>}
                         
-                        <div style={{ padding: "8px 10px" }}
-                        className={`text-gray-300 hover:bg-gray-700  px-3 py-2 rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
+                        <div 
+                        className={`text-gray-300 hover:bg-gray-700  px-8 py-6  rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
                          onClick={() => setActiveButton("products")}
                          onMouseEnter={() => setProductsHovering(true)} onMouseLeave={() => setProductsHovering(false)}
                          >
-                            <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} className={`${productsHovering ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-2 px-3.5  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
+                            <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} className={`${productsHovering ? 'block' : 'hidden'} absolute  bg-gray-700 text-white py-2 px-3.5  mt-[4.6rem] rounded-md shadow-lg z-999999999999`}>
                                     <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Hr Services</Link>
                                     <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Matcher</Link>
                                     <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Loan Validator</Link>
@@ -161,23 +160,43 @@ const Newnavbar = () => {
             {isOpen && (
                 <div className="lg:hidden w-full" id="mobile-menu" style={{ transition: "1s" }}>
                     <div className="flex w-full flex-col items-center mt-4" style={{ transition: "1s" }}>
+                        <Link to="/">
                         <ScrollLink active={activeButton === "home"} onClick={() => scroll("home")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Home</button></div></ScrollLink>
+                        </Link>
+                        {!isNotHomePath &&<>
                         <ScrollLink active={activeButton === "services"} onClick={() => scroll("services")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Services</button></div></ScrollLink>
                         <ScrollLink active={activeButton === "projects"} onClick={() => scroll("projects")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
-                            <button onClick={()=>setShowProducts(!showProducts)}>
+                            <button >
                                 Projects
                             </button>
                             </div></ScrollLink>
-                            {
-                             <div  className={`${showProducts ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-2 px-3.5  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
-                             <Link to="/product/career-advice" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Career Advice</Link>
-                             <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Matcher</Link>
-                             <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Loan Validator</Link>
-                         </div>
-                            }
+                            
                         {/* <ScrollLink active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Testimonials</button></div></ScrollLink> */}
                         <ScrollLink active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Contact</button></div></ScrollLink>
-                        <ScrollLink active={activeButton === "products"} onClick={() => setActiveButton("products")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Products</button></div></ScrollLink>
+                        </>}
+                        {isNotHomePath && 
+                        <Link to="/product/book-a-demo">
+                        <ScrollLink active={activeButton === "bookDemo"} onClick={() => setActiveButton("bookDemo")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Book a Demo</button></div>
+                        </ScrollLink>
+                        </Link>}
+                        {/* add sub butons here */}
+                        <ScrollLink
+                            active={activeButton === "products"}
+                            onClick={() => {
+                                setActiveButton("products");
+                                setShowProducts(prevShowProducts => !prevShowProducts);
+                            }}
+                            >
+                            <div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
+                                <button >Products</button></div>
+                                </ScrollLink>
+                                {
+                             <div  className={`${showProducts ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-2 px-3.5  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
+                             <Link to="/product/hr-servcies/hrChatbot" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Hr ChatBot</Link>
+                             <Link to="/product/hr-servcies/interviewGeneration" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Job Matching</Link>
+                             <Link to="/product/hr-servcies/resumeMatching" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >AI Interview</Link>
+                         </div>
+                            }
                     </div>
                 </div>
             )}
