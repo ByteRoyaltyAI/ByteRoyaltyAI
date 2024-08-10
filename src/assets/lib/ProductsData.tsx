@@ -1,4 +1,10 @@
-
+import uploadImg from "../subProductImages/upload_img.jpg"
+import enterJobDesc from "../subProductImages/Enter-Job_Desc.jpg"
+import generateInterviewQuestions from "../subProductImages/Generate_Interview_Questions.jpg"
+import selectdifficulty from "../subProductImages/Select_Difficulty.jpg"
+import similarityAnalysis from "../subProductImages/Similarity_Analysis.jpg"
+// import startInterview from "../subProductImages/Start_Interview.jpg"
+import analyzeSimility from "../subProductImages/Analyze_Similarity.jpg"
 
 export const productsData = {
     hrChatbot: {
@@ -34,28 +40,28 @@ export const productsData = {
           answer: "Getting started is easy. Simply reach out to our sales team, and we'll guide you through the onboarding process, including the integration of the chatbot into your website or internal systems.",
         },
       ],
-      imagesData: [
-        {
-          img: "https://downloads.intercomcdn.com/i/o/1036158341/ebc1350948c45ba1e5e2cbfb/create-multi-ai-agent.jpeg?expires=1723178700&signature=7963e33ef1393a0c1a440c2a51fba80b32233615a2c38442e83134c08dc005eb",
-          text: "Explain Code",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Test Cases",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Write Documentation",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Design Apps",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Setup Apis",
-        },
-      ],
+      // imagesData: [
+      //   {
+      //     img: "https://downloads.intercomcdn.com/i/o/1036158341/ebc1350948c45ba1e5e2cbfb/create-multi-ai-agent.jpeg?expires=1723178700&signature=7963e33ef1393a0c1a440c2a51fba80b32233615a2c38442e83134c08dc005eb",
+      //     text: "Explain Code",
+      //   },
+      //   {
+      //     img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
+      //     text: "Test Cases",
+      //   },
+      //   {
+      //     img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
+      //     text: "Write Documentation",
+      //   },
+      //   {
+      //     img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
+      //     text: "Design Apps",
+      //   },
+      //   {
+      //     img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
+      //     text: "Setup Apis",
+      //   },
+      // ],
     },
   
     interviewGeneration: {
@@ -93,24 +99,16 @@ export const productsData = {
       ],
       imagesData: [
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "AI Interview Process",
+          img: enterJobDesc,
+          text: "Step 1: Enter Job Description",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Candidate Assessment",
+          img: selectdifficulty,
+          text: "Step 3: Enter Difficulty",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Technical Evaluation",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Customizable Interviews",
-        },
-        {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "GDPR Compliant",
+          img: generateInterviewQuestions,
+          text: "Step 3: Generate Interview Questions",
         },
       ],
     },
@@ -150,24 +148,24 @@ export const productsData = {
       ],
       imagesData: [
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "AI Interview Process",
+          img: uploadImg,
+          text: "Step 1: Upload Image",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Candidate Assessment",
+          img: enterJobDesc,
+          text: "Step 2: Enter Job Description",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Technical Evaluation",
+          img: selectdifficulty,
+          text: "Step 3: Enter Difficulty",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "Customizable Interviews",
+          img: analyzeSimility,
+          text: "Step 4: Analyze Similarity",
         },
         {
-          img: "https://cdn.sanity.io/images/bj34pdbp/migration/38f9250d18202f13974b3ce76a5a262637b82013-2048x1544.png?w=1600&q=60&fit=clip&auto=format",
-          text: "GDPR Compliant",
+          img: similarityAnalysis,
+          text: "Step 5: Review Similarity",
         },
       ],
     },

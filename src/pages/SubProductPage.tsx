@@ -6,6 +6,7 @@ import { RxDotFilled } from "react-icons/rx";
 import { productsData } from "../assets/lib/ProductsData";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import { motion } from 'framer-motion';
 
 // interface CurrentSituation {
 //   current_profession: string;
@@ -78,9 +79,10 @@ const SubProductPage = () => {
       </div>
 
       <div className="flex jusitify-center ">
-          
+        {data.imagesData ? 
             <div className="flex w-[95%] sm:w-[90%]  " >
-              <div className="flex flex-col sm:flex-row items-center gap-16 sm:gap-0  ">
+              
+                <div className="flex flex-col sm:flex-row items-center gap-16 sm:gap-0  ">
                 <div className="w-full sm:w-[70%]  ">
                   {data.imagesData.map((data, index) => (
                     <img
@@ -97,7 +99,7 @@ const SubProductPage = () => {
 
               <div className="flex items-center justify-center  w-full  sm:w-[30%]">
                 <div className="flex flex-col gap-5 text-justify">
-              {data.imagesData.map((data,index)=>(
+              {data?.imagesData.map((data,index)=>(
                 <div className="flex items-center" key={index}>
                   <div className="h-12 w-12">
                 {imageIndex===index && <RxDotFilled className="h-12 w-12  text-[#58BE4F]"/>}
@@ -109,6 +111,17 @@ const SubProductPage = () => {
               </div>
                 </div>
              </div>
+             :
+             <div className='flex justify-center w-full my-40 '>
+            <div className='flex flex-col items-center  gap-10 '>
+                {/* <p className='text-[55px]'>Coming Soon...</p> */}
+                <ComingSoon/>
+                <p className='text-[25px]'>Contact us to stay updated with the best AI tools in market.</p>
+                <p className='text-[16px] font-[500]'>Streamline hiring, enhance candidate selection, and empower your HR team with AI-driven tools.</p>
+                
+            </div>
+                </div>
+             }
       </div>
 
       <div className="flex flex-col gap-5 items-center">
@@ -144,5 +157,81 @@ const SubProductPage = () => {
     </div>
   );
 }
+
+
+
+const ComingSoon: React.FC = () => {
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          opacity: 1,
+          transition: {
+            delayChildren: 0.3, // Delay between each child animation
+            staggerChildren: 0.3, // Staggering effect for children
+          },
+        },
+        hidden: { opacity: 0 },
+      }}
+      className="flex justify-center items-center"
+    >
+      <motion.p
+        className="text-[55px]"
+        variants={{
+          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: -100 },
+        }}
+      >
+        Coming
+      </motion.p>
+      <motion.p
+        className="text-[55px] ml-4"
+        variants={{
+          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: -100 },
+        }}
+      >
+        Soon
+      </motion.p>
+      <motion.div
+        className="flex items-center ml-4 text-[55px]"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: {
+            opacity: 1,
+            transition: {
+              delayChildren: 0.3,
+              staggerChildren: 0.5, // Staggering effect for dots
+              repeat: Infinity, // Repeat animation infinitely
+              repeatType: "loop", // Repeat type for infinite loop
+            },
+          },
+          hidden: { opacity: 0 },
+        }}
+      >
+        {['.', '.', '.'].map((dot, index) => (
+          <motion.span
+            key={index}
+            className="inline-block"
+            variants={{
+              visible: {
+                opacity: 1,
+                transition: { duration: 0.5, repeat: Infinity, repeatType: "loop" },
+              },
+              hidden: { opacity: 0 },
+            }}
+            transition={{ duration: 0.5 }} // Duration for each dot
+          >
+            {dot}
+          </motion.span>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
+
 
 export default SubProductPage;

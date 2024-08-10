@@ -1,15 +1,17 @@
 // import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import { motion } from 'framer-motion';
 
 const ProductsPage = () => {
     // const [activeBtn,setActiveButton]=useState<string>("RJM")
   return (
-    <div className='flex flex-col gap-32 min-h-screen mt-60 '>
+    <div className='flex flex-col gap-60 min-h-screen mt-[20rem] '>
         <div className='flex justify-center'>
             <div className='flex flex-col items-center w-[70%] gap-10'>
-                <p className='text-[55px]'>Transform Your Hiring Process</p>
-                <p className='text-[16px] font-[500]'>Streamline hiring, enhance candidate selection, and empower your HR team with AI-driven tools.</p>
+                {/* <p className='text-[55px]'>Transform Your Hiring Process</p> */}
+                <AnimatedHeading/>
+                <p className='text-[16px] font-[500] mt-10'>Streamline hiring, enhance candidate selection, and empower your HR team with AI-driven tools.</p>
                 <Link to="/product/book-a-demo" className="">
                 <button className='px-10 py-6 text-[18px] rounded-md bg-[#0378f5] hover:opacity-90'>
                     Get a Demo</button>
@@ -62,7 +64,22 @@ let data=[
 
 export default ProductsPage;
 
-
+const AnimatedHeading: React.FC = () => {
+    return (
+      <motion.p
+        className="text-[55px]"
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.02 }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
+      >
+        Transform Your Hiring Process
+      </motion.p>
+    );
+  };
 
 /* <div className='flex w-full gap-3'>
 <button className={'p-6 text-[18px] rounded-md hover:bg-[#1e2a51] '+(activeBtn==="RJM"?" bg-[#202e58]":"bg-[#131c35]")}
