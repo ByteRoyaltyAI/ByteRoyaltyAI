@@ -18,6 +18,7 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [cursor, setCursor] = useState<string>("");
+  const [loading,setLoading]=useState<boolean>(false)
   const [lastUpdatedField, setLastUpdatedField] = useState<string | null>(null);
   const { ref } = useSectionInView("Contact");
   const { language } = useLanguage();
@@ -41,13 +42,12 @@ const Contact: React.FC = () => {
       user_email: email, user_name: name, user_subject: subject, user_message: message
     }
     
-
+    setLoading(true)
     try {
-
-      console.log(JSON.stringify(data));
-      // const response = await axios.post("https://imaigen-websitee-backend.onrender.com/send-email", data);
-      const response = await axios.post("https://imaigen-website-backend-fgce.vercel.app/send-email", data);
-      // const response = await axios.post("http://localhost:5000/send-email", data);
+      const response = 
+      await axios.post(
+         import.meta.env.VITE_AI_API_URL +"send-email",
+         data);
       console.log(response);
       if (language === "DE") {
         toast.success(toastMessages.successEmailSent.de);
@@ -68,6 +68,7 @@ const Contact: React.FC = () => {
       }
       setError("An Error occured, try again later");
     }
+    setLoading(false)
   };
 
   const handleInputFocus = (fieldName: string) => {
@@ -309,6 +310,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
             </p>
             <Button
               value={
+                loading? "Loading...":
                 language === "DE"
                   ? `${contactData.button.value.de}`
                   : `${contactData.button.value.en}`

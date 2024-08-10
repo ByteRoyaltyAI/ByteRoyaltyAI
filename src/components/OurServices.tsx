@@ -2,15 +2,12 @@ import React, { useRef } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { useSectionInView } from "../assets/lib/hooks";
 
-// import { useTheme } from "../context/theme-context";
 import { useLanguage } from "../context/language-context";
-// import RadialGradient from "./RadialGradient";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Banner from "./ServiceBanner";
 
 const TechStack: React.FC = () => {
   const { ref } = useSectionInView("Services");
-  // const { theme } = useTheme();
   const { language } = useLanguage();
   const animationReference = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -27,11 +24,7 @@ const TechStack: React.FC = () => {
         id="services"
         ref={ref}
       >
-        {/* <RadialGradient
-          scale="scale-y-[0]"
-          opacity={theme === "light" ? "opacity-70" : "opacity-70"}
-          position="-top-[0rem]"
-        /> */}
+        
         <div className="title-container flex flex-col justify-center items-center p-32    gap-6 min-[1921px]:px-[55rem] max-lg:p-0  max-lg:w-full max-lg:items-start max-lg:py-16 ">
           <motion.div
             ref={animationReference}

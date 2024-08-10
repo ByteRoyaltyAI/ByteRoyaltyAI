@@ -4,7 +4,6 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 require("dotenv").config();
 
-const password = process.env.PASS;
 
 const app = express();
 const port = 5000;
@@ -12,11 +11,11 @@ const port = 5000;
 
 // Middleware
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://imaigen-websitee-frontend.vercel.app/",
-  "https://imaigen.ai/"
+  process.env.ALLOWED_ORIGIN1,
+  process.env.ALLOWED_ORIGIN3,
+  process.env.ALLOWED_ORIGIN3
 ];
-
+console.log(process.env.NODEMAILER_PASS,process.env.ALLOWED_ORIGIN3)
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -33,42 +32,6 @@ app.get("/", (req, res) => {
   res.send("Got it!");
 });
 
-// async function sendEmail(data) {
-//   let transporter = nodemailer.createTransport({
-//     host: "mail.privateemail.com",
-//     port: 587,
-//     secure: false, 
-//     auth: {
-//       user: "support@imaigen.ai", 
-//       // pass: password,
-//       pass: "Crisp@Trump123",
-//     },
-//   });
-
-//   // Email options
-  
-//   let mailOptions = {
-//     from: 'support@imaigen.ai', 
-//     to:'support@imaigen.ai',
-//     subject: "New Consultation Booking from",
-//     html: `
-//         <h2>New Message Details</h2>
-//         <p><strong>Date:</strong> ${data.date}</p>
-//         <p><strong>Time:</strong> ${data.time}</p>
-//         <p><strong>Email:</strong> ${data.email}</p>
-//         <p><strong>Message:</strong></p>
-//         <p>${data.message}</p>
-//       `,
-//   };
-
-//   // Send email
-//   try {
-//     let info = await transporter.sendMail(mailOptions);
-//     console.log("Email sent: " + info.response);
-//   } catch (error) {
-//     console.error("Error sending email:", error);
-//   }
-// }
 
 // Transporter for both endpoints
 const transporter = nodemailer.createTransport({
@@ -77,8 +40,7 @@ const transporter = nodemailer.createTransport({
   secure: false, // Use TLS
   auth: {
     user: "support@imaigen.ai",
-    pass: "Crisp@Trump123", // Remove the space after 'Shaik@321'
-    // pass: password, // Remove the space after 'Shaik@321'
+    pass: process.env.NODEMAILER_PASS, 
   },
 });
 
@@ -106,13 +68,46 @@ app.post("/bookconsultation", async (req, res) => {
   try {
     await transporter.sendMail(mailAdminOptions);
     console.log("Email sent to Admin");
-    res.status(200).send("Success");
+    res.status(200).send("Consultation Successfully Booked!");
   } catch (error) {
     console.error("Error in /bookconsultation:", error);
     res.status(500).send("Internal Server Error");
   }
 });
 
+
+app.post("/book-a-demo", async (req, res) => {
+  const { workEmail,firstName,lastName,companyName, message } = req.body;
+  console.log("Data Received:");
+  console.log(message);
+
+  const mailAdminOptions = {
+    from: "support@imaigen.ai",
+    to: "support@imaigen.ai",
+    subject: "New Consultation Booking",
+    text: `Company Name: ${companyName} Work Email: ${workEmail}\n Company Name: ${companyName} 
+    \n First Name: ${firstName}\n Last Name: ${lastName}\n Message: ${message}`,
+    html: `
+      <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
+        <p style="color: #333; font-size: 18px;"><strong>Work Email:</strong> ${workEmail}</p>
+        <p style="color: #333; font-size: 18px;"><strong>Company Name:</strong> ${companyName}</p>
+        <p style="color: #333; font-size: 18px;"><strong>Client Name:</strong> ${firstName}, ${lastName}</p>
+        <hr style="border-top: 1px solid #ccc; margin: 20px 0;">
+        <p style="color: #555; font-size: 16px;"><strong>Message:</strong></p>
+        <p style="color: #777; font-size: 16px;">${message}</p>
+      </div>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailAdminOptions);
+    console.log("Email sent to Admin");
+    res.status(200).send("Success");
+  } catch (error) {
+    console.error("Error in /bookconsultation:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 
 app.post("/send-email", (req, res) => {

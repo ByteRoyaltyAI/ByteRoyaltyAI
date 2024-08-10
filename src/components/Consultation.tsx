@@ -78,11 +78,12 @@ const Consultation: React.FC = () => {
     try {
       console.log("Data Sent:", data);
       const response = await axios.post(
-        "https://imaigen-website-backend-fgce.vercel.app/bookconsultation",
+        import.meta.env.VITE_AI_API_URL +"bookconsultation",
         data
       );
-      console.log(response.data);
-      alert("Consultation Successfully Booked!");
+      if(response?.data)
+      alert(response.data);
+      
     } catch (error) {
       console.error("Error submitting data:", error);
       alert("Consultation Booking Failed :(");
