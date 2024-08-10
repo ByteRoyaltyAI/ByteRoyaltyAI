@@ -102,9 +102,9 @@ const Newnavbar = () => {
                          onMouseEnter={() => setProductsHovering(true)} onMouseLeave={() => setProductsHovering(false)}
                          >
                             <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} className={`${productsHovering ? 'block' : 'hidden'} absolute  bg-gray-700 text-white py-2 px-3.5  mt-[4.6rem] rounded-md shadow-lg z-999999999999`}>
-                                    <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Hr Services</Link>
-                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Matcher</Link>
-                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Loan Validator</Link>
+                                    <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >HR Recruitment</Link>
+                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Finance</Link>
+                                    <Link to="" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Education</Link>
                                 </div>
                             <button>Products</button>
                             </div>
@@ -192,9 +192,9 @@ const Newnavbar = () => {
                                 </ScrollLink>
                                 {
                              <div  className={`${showProducts ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-2 px-3.5  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
-                             <Link to="/product/hr-servcies/hrChatbot" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Hr ChatBot</Link>
-                             <Link to="/product/hr-servcies/interviewGeneration" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Resume Job Matching</Link>
-                             <Link to="/product/hr-servcies/resumeMatching" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >AI Interview</Link>
+                             <Link to="/product/hr-servcies/hrChatbot" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >HR Recruitment</Link>
+                             <Link to="/product/hr-servcies/resumeMatching" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Finance</Link>
+                             <Link to="/product/hr-servcies/interviewGeneration" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Education</Link>
                          </div>
                             }
                     </div>
