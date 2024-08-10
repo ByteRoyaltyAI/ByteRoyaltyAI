@@ -1,21 +1,25 @@
 // import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const ProductsPage = () => {
     // const [activeBtn,setActiveButton]=useState<string>("RJM")
   return (
-    <div className='flex flex-col gap-32 min-h-screen mt-60 mb-32'>
+    <div className='flex flex-col gap-32 min-h-screen mt-60 '>
         <div className='flex justify-center'>
             <div className='flex flex-col items-center w-[70%] gap-10'>
                 <p className='text-[55px]'>Transform Your Hiring Process</p>
                 <p className='text-[16px] font-[500]'>Streamline hiring, enhance candidate selection, and empower your HR team with AI-driven tools.</p>
-                <button className='px-10 py-6 text-[18px] rounded-md bg-[#0378f5] hover:opacity-90'>Get a Demo</button>
+                <Link to="/product/book-a-demo" className="">
+                <button className='px-10 py-6 text-[18px] rounded-md bg-[#0378f5] hover:opacity-90'>
+                    Get a Demo</button>
+                </Link>
             </div>
         </div>
 
-        <div className='flex justify-center'>
+        <div className='flex justify-center mb-32'>
          
-            <div className='flex flex-col md:flex-row justify-center items-center w-[90%] gap-14 border-[#131C35] border-b-2 pb-32'>
+            <div className='flex flex-col md:flex-row justify-center items-center w-[90%] gap-14 border-[#131C35] border-b-2 pb-16'>
             {data.map((card,index)=>(
                 <Link to={"/product/hrServices/"+card.link} key={index} className="w-full sm:w-3/4 md:w-[30%] ">
                 <div className='flex flex-col  p-10 gap-5 rounded-lg  bg-[#1b1b28] hover:bg-[#1d1d2c] min-h-[360px]'>
@@ -30,6 +34,7 @@ const ProductsPage = () => {
             </div>
 
         </div>
+        <Footer/>
     </div>
   );
 };
