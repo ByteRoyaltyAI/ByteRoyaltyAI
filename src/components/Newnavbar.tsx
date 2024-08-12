@@ -103,7 +103,7 @@ const Newnavbar = () => {
                                     <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >HR Recruitment</Link>
                                     <Link to="/product/finance" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Finance</Link>
                                     <Link to="/product/education" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Education</Link>
-                                    <Link to="/product/health-care" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Education</Link>
+                                    <Link to="/product/health-care" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Health Care</Link>
                                 </div>
                             <button>Products</button>
                             </div>
@@ -203,7 +203,7 @@ const Newnavbar = () => {
                              <Link to="/product/health-care" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" 
                               onClick={() => {
                                 setShowProducts(prevShowProducts => !prevShowProducts);
-                            }}>Education</Link>
+                            }}>Health Care</Link>
                          </div>
                             }
                     </div>
