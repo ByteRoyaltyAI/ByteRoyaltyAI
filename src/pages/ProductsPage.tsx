@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { motion } from 'framer-motion';
 import { productCardsData } from "../assets/lib/ProductsData";
 import { useParams,useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 const ProductsPage: React.FC = () => {
@@ -13,7 +14,9 @@ const ProductsPage: React.FC = () => {
   const cardsData= productCardsData[params.productName as string] ;
 
   if(cardsData===undefined){
-    navigate("/")
+    useEffect(()=>{
+      navigate("/")
+    },[])
     return null
   }
 
