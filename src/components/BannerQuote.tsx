@@ -49,7 +49,7 @@ const BannerQuote: React.FC<BannerProps> = ({
       <section className="quote-banner relative overflow-x-clip min-[1921px]:px-96">
         <div className="h-[50vh] -rotate-3 flex justify-center items-center scale-55">
           <div className="statement-container rotate-3 flex items-center flex-col justify-center p-56 max-lg:p-20">
-            <h3 className="text-[--blue] text-center text-8xl  max-lg:text-[6rem] max-lg:mb-10 max-lg:leading-tight">
+            <h3 className="text-[--blue] text-center text-[35px]  sm:text-[6rem] max-lg:mb-10 max-lg:leading-tight">
               {quoteTranslation}
             </h3>
           </div>

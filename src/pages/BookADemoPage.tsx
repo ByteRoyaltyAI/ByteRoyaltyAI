@@ -66,11 +66,11 @@ const BookADemoPage: React.FC = () => {
   
 
   return (
-    <div className='flex flex-col items-center min-h-screen mt-60'>
+    <div className='flex flex-col items-center min-h-screen my-60'>
       <div className="flex flex-col lg:flex-row w-[80%] gap-10">
         {/* First Child Div */}
-        <div className="flex flex-col w-full lg:w-1/2 p-4 text-white">
-          <h1 className="text-[45px] font-bold mb-4 w-5/6">CONTACT OUR SALES TEAM</h1>
+        <div className="flex flex-col w-full lg:w-1/2 p-4 text-white gap-3">
+          <h1 className="text-[4rem] sm:text-[45px] text-center font-bold mb-4 w-full sm:w-5/6">CONTACT OUR SALES TEAM</h1>
           <p className="mb-6 text-[18px]">Let's explore how Imaigen can work for you.</p>
           <ul className="list-disc list-inside space-y-4">
             <li className="text-[16px] ">AI-powered resume and job matching to streamline your hiring process.</li>
