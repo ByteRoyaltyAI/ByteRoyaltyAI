@@ -14,9 +14,14 @@ const Home: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log(location.hash)
     if (location.hash === "#contact") {
       scroll("contact");
+    }else if(location.hash === "#consulation") {
+      scroll("consultation");
+    }else if(location.hash === "#projects") {
+      scroll("projects");
+    }else if(location.hash === "#services") {
+      scroll("services");
     }
   }, [location]);
 
