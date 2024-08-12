@@ -1,10 +1,10 @@
 // import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
 import { RxDotFilled } from "react-icons/rx";
 import { productsData } from "../assets/lib/ProductsData";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from 'framer-motion';
 import ResumeMatcher from "../components/ResumeMatcher"
@@ -26,10 +26,18 @@ import ResumeMatcher from "../components/ResumeMatcher"
 
 const SubProductPage = () => {
   const params = useParams();
+  const navigate = useNavigate();
 
   // Force resolve the TypeScript error by using 'as' assertion
  
   const data = productsData[params.subProduct as string];
+
+  if(data===undefined){
+    useEffect(()=>{
+      navigate("/")
+    },[])
+    return null
+  }
 
   const [showAns, setShowAns] = useState<boolean[]>(
     new Array(data?.faq.length).fill(false)
