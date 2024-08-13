@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent ,useEffect} from 'react';
 import axios from 'axios';
 import { InputField } from './FormInputFeild';
 import { formInputData } from '../assets/lib/Formdata';
+import { useNavigate } from 'react-router-dom';
 
 
 interface ProductFormProps {
@@ -9,7 +10,15 @@ interface ProductFormProps {
 }
 
 const ProductForm: React.FC<ProductFormProps> = ({ productName }) =>  {
+  const navigate=useNavigate()
   const inputData=formInputData[productName] 
+
+  if(inputData===undefined){
+    useEffect(()=>{
+      navigate("/")
+    },[])
+    return null
+  }
 
   const [formData, setFormData] = useState<Record<string, string | number>>({});
   const [result, setResult] = useState<string | null>(null);
