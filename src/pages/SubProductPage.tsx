@@ -7,7 +7,7 @@ import { productsData } from "../assets/lib/ProductsData";
 import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import { motion } from 'framer-motion';
-import ResumeMatcher from "../components/ResumeMatcher"
+import DynammicInputComponents from "../components/DynammicInputComponents";
 
 // interface CurrentSituation {
 //   current_profession: string;
@@ -78,7 +78,8 @@ const SubProductPage = () => {
      {/* <h3 className="text-[1.2rem] text-[#E8E8E8] mt-2">Updated over a week ago</h3> */}
      </div>
       </div>
-       <ResumeMatcher/>
+       
+       <DynammicInputComponents/>
        
       <div className="flex jusitify-center ">
         {data.imagesData ? 

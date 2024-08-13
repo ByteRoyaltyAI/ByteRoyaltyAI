@@ -9,12 +9,14 @@ const ResumeJobMatcher: React.FC = () => {
   const [result, setResult] = useState<MatchResult | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
+
   const handleResumeUpload = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setResume(event.target.files[0]);
       setErrorMessage('');
     }
   };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
@@ -30,7 +32,7 @@ const ResumeJobMatcher: React.FC = () => {
     }
     // Use a CORS proxy for development/testing purposes
     // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-    const API_URL = 'http://20.197.48.217:8000/api/extract_resume';
+    const API_URL = 'http://localhost:8000/api/extract_resume';
     try {
       const response = await axios.post<MatchResult>(
         API_URL,
@@ -64,6 +66,7 @@ const ResumeJobMatcher: React.FC = () => {
       setLoading(false);
     }
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-8 flex items-center justify-center">
       <div className="max-w-5xl w-full  rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">

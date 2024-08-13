@@ -148,6 +148,135 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+  investmentInsights: {
+    topic: {
+      name: "AI-Driven Investment Insights",
+      desc: "Our AI-driven investment insights platform helps you make informed decisions by analyzing your financial data and providing tailored recommendations to optimize your portfolio.",
+    },
+    faq: [
+      {
+        question: "How does the AI investment insights system work?",
+        answer: "The AI system analyzes your financial data, including income, credit score, and existing debt, to provide personalized investment recommendations that align with your financial goals.",
+      },
+      {
+        question: "Can the AI system accommodate different financial profiles?",
+        answer: "Yes, our AI system is designed to handle various financial profiles, offering insights and recommendations that are tailored to your specific situation and objectives.",
+      },
+      {
+        question: "How accurate are the AI's investment recommendations?",
+        answer: "Our AI system's recommendations are based on extensive data analysis and real-world performance, ensuring accurate and reliable investment guidance.",
+      },
+      {
+        question: "Is the AI system customizable to my financial goals?",
+        answer: "Yes, the AI system can be customized to reflect your unique financial goals and preferences, ensuring that the recommendations align with your investment strategy.",
+      },
+      {
+        question: "How do I get started with the investment insights system?",
+        answer: "Contact our support team to learn more about how our AI-driven investment insights platform can help you achieve your financial goals and to start using the service.",
+      },
+    ],
+    imagesData: [
+      {
+        img: enterJobDesc,
+        text: "Step 1: Enter Annual Income",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 2: Enter Credit Score",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 3: Enter Existing Debt",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 4: Enter Employment Status",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 5: Enter Other Relevant Info",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 6: Select Country",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 7: Select City",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 8: Analyze Investment Options",
+      },
+      {
+        img: enterJobDesc,
+        text: "Step 9: Review Investment Insights",
+      },
+    ],
+  },
+  loanRecommendation: {
+    topic: {
+      name: "AI-Powered Loan Recommendation",
+      desc: "Our AI-powered loan recommendation system evaluates your financial profile and provides personalized loan options to help you find the best fit for your needs.",
+    },
+    faq: [
+      {
+        question: "How does the AI loan recommendation system work?",
+        answer: "The AI system assesses your financial data, such as income, credit score, and existing debt, to suggest loan options that align with your financial situation and goals.",
+      },
+      {
+        question: "Can the AI system handle different types of loans?",
+        answer: "Yes, our AI system can recommend various types of loans, including personal, auto, and home loans, based on your specific needs and financial profile.",
+      },
+      {
+        question: "How reliable are the AI's loan recommendations?",
+        answer: "The AI system's recommendations are based on comprehensive data analysis and real-world insights, ensuring reliable and relevant loan options.",
+      },
+      {
+        question: "Is the AI system customizable for different loan requirements?",
+        answer: "Yes, the AI system can be tailored to accommodate different loan requirements and preferences, providing recommendations that fit your unique needs.",
+      },
+      {
+        question: "How do I start using the loan recommendation system?",
+        answer: "Reach out to our support team to learn more about how our AI-powered loan recommendation system can assist you and to begin the process.",
+      },
+    ],
+    imagesData: [
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 1: Enter Annual Income",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 2: Enter Credit Score",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 3: Enter Existing Debt",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 4: Enter Employment Status",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 5: Enter Profession",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 6: Enter Location",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 7: Review Loan Options",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 8: Apply for a Loan",
+      },
+    ],
+  }
+  
 };
 
 
@@ -186,19 +315,19 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
       title: "Loan Recommendation",
       desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
       img: img1,
-      link: "loan-recommendation",
+      link: "loanRecommendation",
     },
     {
       title: "Investment Insights",
       desc: "Automatically generate relevant interview questions based on the candidate’s resume and the job description. Ensure consistency and fairness in the interview process.",
       img: img2,
-      link: "investment-insights",
+      link: "investmentInsights",
     },
     {
       title: "Loan Eligibilty Analysis",
       desc: "Leverage AI to create an HR chatbot that can answer employee queries, assist with onboarding, and automate routine HR tasks.",
       img: img3,
-      link: "loan-eligibility",
+      link: "loanEligibility",
     },
   ],
   "education": [
@@ -206,7 +335,7 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
       title: "AI Teacher",
       desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
       img: img1,
-      link: "ai-teacher",
+      link: "aiTeacher",
     },
   ],
   "health-care": [
@@ -214,7 +343,7 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
       title: "AI Doctor",
       desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
       img: img1,
-      link: "ai-doctor",
+      link: "aiDoctor",
     },
   ],
   // You can add more keys here as needed
