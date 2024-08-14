@@ -275,6 +275,130 @@ export const productsData: Record<string, ProductDataInterface> = {
         text: "Step 8: Apply for a Loan",
       },
     ],
+  },
+  loanEligibility: {
+    topic: {
+      name: "AI-Powered Loan Eligibility Assessment",
+      desc: "Our AI-driven loan eligibility assessment takes into account your financial and personal information to evaluate your eligibility for various loan options, ensuring you get the most suitable recommendation for your financial needs.",
+    },
+    faq: [
+      {
+        question: "How does the AI loan eligibility assessment work?",
+        answer: "The AI system analyzes key financial inputs like your income, credit score, employment status, and existing debt to determine your eligibility for different loan types and offers personalized recommendations.",
+      },
+      {
+        question: "What factors are considered in the loan eligibility assessment?",
+        answer: "The AI considers several factors, including your annual income, credit score, existing debt, employment status, and location to assess your loan eligibility.",
+      },
+      {
+        question: "Can I trust the loan eligibility results from the AI system?",
+        answer: "Yes, the AI system is designed to provide accurate and reliable loan eligibility assessments based on a comprehensive analysis of your financial data.",
+      },
+      {
+        question: "Are the loan options recommended by the AI system flexible?",
+        answer: "Absolutely! The AI system can recommend flexible loan options that cater to various financial needs, whether you’re looking for personal, auto, or home loans.",
+      },
+      {
+        question: "How can I start the loan eligibility assessment?",
+        answer: "Simply input your financial details into our system, and the AI will guide you through the process, providing instant feedback on your loan eligibility and the best options available.",
+      },
+    ],
+    imagesData: [
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 1: Enter Annual Income",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 2: Enter Credit Score",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 3: Enter Existing Debt",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 4: Enter Employment Status",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 5: Enter Profession",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 6: Enter Location",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 7: Review Eligibility and Loan Options",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 8: Apply for a Loan",
+      },
+    ],
+  },
+  careerAdvice: {
+    topic: {
+      name: "AI-Powered Career Advice",
+      desc: "Our AI-driven career advice system offers personalized guidance to help you make informed decisions about your career path, whether you're just starting or looking to advance in your field.",
+    },
+    faq: [
+      {
+        question: "How does the AI career advice system work?",
+        answer: "The AI system analyzes your current profession, years of experience, location, geographical preferences, personal commitments, and interests to provide tailored career advice that aligns with your professional goals.",
+      },
+      {
+        question: "Can the AI system help both experienced professionals and freshers?",
+        answer: "Yes, the AI system is designed to assist both experienced professionals and those new to the workforce, offering guidance that suits your level of experience and career aspirations.",
+      },
+      {
+        question: "What inputs does the AI require for career advice?",
+        answer: "The AI system considers your current profession, years of experience, location, geographical preferences, personal commitments, experience level, and areas of interest to generate personalized advice.",
+      },
+      {
+        question: "Is the career advice provided by the AI system reliable?",
+        answer: "The AI system uses a comprehensive data-driven approach to offer reliable and relevant career advice, helping you make the best decisions for your professional journey.",
+      },
+      {
+        question: "How can I start using the career advice AI system?",
+        answer: "Provide the necessary inputs, such as your current profession, experience, location, and interests, and the AI system will guide you through potential career paths and opportunities that match your profile.",
+      },
+    ],
+    imagesData: [
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 1: Enter Current Profession",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 2: Enter Years of Experience",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 3: Enter Your Location",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 4: Specify Geographical Preferences",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 5: Enter Personal Commitments",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 6: Indicate If You're Experienced or a Fresher",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 7: Enter Your Interests",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 8: Review Career Recommendations",
+      },
+    ],
   }
   
 };
@@ -332,10 +456,10 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
   ],
   "education": [
     {
-      title: "AI Teacher",
-      desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
+      title: "Career Advice",
+      desc: "Use AI-driven career advice system offers personalized guidance to help you make informed decisions about your career path.",
       img: img1,
-      link: "aiTeacher",
+      link: "careerAdvice",
     },
   ],
   "health-care": [
