@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Chatbot from "./Chatbot";
 
 const Footer: React.FC = () => {
   const linkedinStyle = { color: "#0077B5" };
@@ -21,6 +22,7 @@ const Footer: React.FC = () => {
           <FaInstagram style={instagramStyle} />
         </a>
       </div>
+      <Chatbot/>
     </footer>
   );
 };
