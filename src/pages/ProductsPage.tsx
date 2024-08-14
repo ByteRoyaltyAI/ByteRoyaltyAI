@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const ProductsPage: React.FC = () => {
   const params=useParams<{ productName: string }>()
   const navigate=useNavigate()
-
+  
   const cardsData= productCardsData[params.productName as string] ;
 
   if(cardsData===undefined){

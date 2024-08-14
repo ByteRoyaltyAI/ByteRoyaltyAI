@@ -11,6 +11,10 @@ interface ProductFormProps {
 const ProductForm: React.FC<ProductFormProps> = ({ productName }) =>  {
   const inputData=formInputData[productName] 
 
+  if(inputData===undefined){
+    return null
+  }
+
   const [formData, setFormData] = useState<Record<string, string | number>>({});
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);

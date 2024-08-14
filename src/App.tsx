@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import ActiveSectionContextProvider from "./context/active-section-context";
 import ThemeContextProvider from "./context/theme-context";
@@ -24,6 +24,7 @@ function App() {
                 <Route path="/product/:productName" element={<ProductsPage />}></Route>
                 <Route path="/product/:productName/:subProduct" element={<SubProductPage />}></Route>
                 <Route path="/product/book-a-demo" element={<BookADemoPage />}></Route>
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </ActiveSectionContextProvider>
           </LanguageContextProvider>

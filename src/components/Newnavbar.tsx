@@ -17,6 +17,7 @@ const Newnavbar = () => {
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
+        showProducts && setShowProducts(false)
     };
 
     function scroll(val: string) {
@@ -99,7 +100,8 @@ const Newnavbar = () => {
                          onClick={() => setActiveButton("products")}
                          onMouseEnter={() => setProductsHovering(true)} onMouseLeave={() => setProductsHovering(false)}
                          >
-                            <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} className={`${productsHovering ? 'block' : 'hidden'} absolute  bg-gray-700 text-white py-2 px-3.5  mt-[4.6rem] rounded-md shadow-lg z-999999999999`}>
+                            <div  onMouseLeave={() => setProductsHovering(false)} onMouseEnter={() => setProductsHovering(true)} 
+                             className={`${productsHovering ? 'block' : 'hidden'} absolute  bg-gray-700 text-white py-2 px-3.5  mt-[4.6rem] rounded-md shadow-lg z-999999999999`}>
                                     <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >HR Recruitment</Link>
                                     <Link to="/product/finance" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Finance</Link>
                                     <Link to="/product/education" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" >Education</Link>
@@ -159,35 +161,36 @@ const Newnavbar = () => {
             {isOpen && (
                 <div className="lg:hidden w-full" id="mobile-menu" style={{ transition: "1s" }}>
                     <div className="flex w-full flex-col items-center mt-4" style={{ transition: "1s" }}>
-                        <NavLink to="/" active={activeButton === "home"} onClick={() => scroll("home")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Home</button></div></NavLink>
-                        {!isNotHomePath &&<>
-                        <NavLink to="/#services" active={activeButton === "services"} onClick={() => scroll("services")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Services</button></div></NavLink>
-                        <NavLink to="/#projects" active={activeButton === "projects"} onClick={() => scroll("projects")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
+                        <NavLink to="/" active={activeButton === "home"} onClick={() => {scroll("home"),setIsOpen(false)}}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Home</button></div></NavLink>
+                       
+                        <NavLink to="/#services" active={activeButton === "services"} onClick={() => {scroll("services"),setIsOpen(false)}}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Services</button></div></NavLink>
+                        <NavLink to="/#projects" active={activeButton === "projects"} onClick={() => {scroll("projects"),setIsOpen(false)}}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
                             <button >
                                 Projects
                             </button>
                             </div></NavLink>
                             
                         {/* <NavLink active={activeButton === "testimonials"} onClick={() => scroll("testimonials")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Testimonials</button></div></NavLink> */}
-                        <NavLink to="/#contact" active={activeButton === "contact"} onClick={() => scroll("contact")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Contact</button></div></NavLink>
-                        </>}
+                        <NavLink to="/#contact" active={activeButton === "contact"} onClick={() => {scroll("contact"),setIsOpen(false)}}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Contact</button></div></NavLink>
+                        
                         {isNotHomePath && 
-                        <NavLink to="/product/book-a-demo" active={activeButton === "bookDemo"} onClick={() => setActiveButton("bookDemo")}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Book a Demo</button></div>
+                        <NavLink to="/product/book-a-demo" active={activeButton === "bookDemo"} onClick={() => {setActiveButton("bookDemo"),setIsOpen(false)}}><div style={{ width: "200px", padding: "8x", textAlign: "center" }} ><button>Book a Demo</button></div>
                         </NavLink>
                         }
                         {/* add sub butons here */}
                         <div
-                            className={`text-gray-300 hover:bg-gray-700  px-8 py-6  rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
+                            className={`text-gray-300 hover:bg-gray-700  px-4 py-3  rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
                             onClick={() => {
                                 setActiveButton("products");
-                                setShowProducts(prevShowProducts => !prevShowProducts);
+                                setShowProducts(prevShowProducts => !prevShowProducts)
                             }}
                             >
-                            <div style={{ width: "200px", padding: "8x", textAlign: "center" }} >
+                            <div style={{ width: "200px", padding: "", textAlign: "center" }} >
                                 <button >Products</button></div>
                                 </div>
                                 {
-                             <div  className={`${showProducts ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-1 px-2  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}>
+                             <div  className={`${showProducts ? 'block' : 'hidden'} absolute right-5 bg-gray-700 text-white py-1 px-2  mt-[4.2rem] rounded-md shadow-lg z-999999999999`}
+                             onClick={()=>setIsOpen(false)}>
                              <Link to="/product/hr-services" className="block mt-4 mx-[4px] px-4 py-[10px] hover:bg-gray-800 text-[16px]" 
                               onClick={() => {
                                 setShowProducts(prevShowProducts => !prevShowProducts);
