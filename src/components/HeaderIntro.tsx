@@ -55,7 +55,7 @@ const HeaderIntro: React.FC = () => {
 
       <div
         className="button-container flex items-center justify-center mr-8 gap-10 mb-15 max-lg:flex-col max-lg:items-center z-9999 absolute bottom-28"
-        style={{ zIndex: "9" }}
+        style={{ zIndex: "0" }}
       >
         
           <Button
