@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
     try {
       const response = 
       await axios.post(
-         import.meta.env.VITE_AI_API_URL +"send-email",
+         import.meta.env.VITE_BACKEND_API_URL +"send-email",
          data);
       console.log(response);
       if (language === "DE") {

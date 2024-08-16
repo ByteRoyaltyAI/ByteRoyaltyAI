@@ -47,7 +47,7 @@ const BookADemoPage: React.FC = () => {
 
     try {
       const response = await axios.post(
-        import.meta.env.VITE_AI_API_URL +"book-a-demo",
+        import.meta.env.VITE_BACKEND_API_URL +"book-a-demo",
         formData
       );
       console.log(response.data);

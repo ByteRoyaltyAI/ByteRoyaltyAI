@@ -76,9 +76,8 @@ const Consultation: React.FC = () => {
     };
     
     try {
-      console.log("Data Sent:", data);
       const response = await axios.post(
-        import.meta.env.VITE_AI_API_URL +"bookconsultation",
+        import.meta.env.VITE_BACKEND_API_URL +"bookconsultation",
         data
       );
       if(response?.data)

@@ -12,7 +12,7 @@ const port = 5000;
 // Middleware
 const allowedOrigins = [
   process.env.ALLOWED_ORIGIN1,
-  process.env.ALLOWED_ORIGIN3,
+  process.env.ALLOWED_ORIGIN2,
   process.env.ALLOWED_ORIGIN3
 ];
 console.log(process.env.NODEMAILER_PASS,process.env.ALLOWED_ORIGIN3)
@@ -45,6 +45,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/bookconsultation", async (req, res) => {
+  console.log("hello")
   const { date, time, email, message } = req.body;
   console.log("Data Received:");
   console.log(message);

@@ -32,7 +32,7 @@ const ResumeJobMatcher: React.FC = () => {
     }
     // Use a CORS proxy for development/testing purposes
     // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-    const API_URL = 'http://localhost:8000/api/extract_resume';
+    const API_URL = import.meta.env.VITE_AI_API_URL+'extract_resume';
     try {
       const response = await axios.post<MatchResult>(
         API_URL,
