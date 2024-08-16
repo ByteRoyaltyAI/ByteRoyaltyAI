@@ -1,12 +1,15 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
+
 interface MatchResult {
   error?: string;
   [key: string]: any;
 }
+
 const ResumeJobMatcher: React.FC = () => {
   const [resume, setResume] = useState<File | null>(null);
   const [result, setResult] = useState<MatchResult | null>(null);
+  const [jobDescription, setJobDescription] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -16,12 +19,17 @@ const ResumeJobMatcher: React.FC = () => {
       setErrorMessage('');
     }
   };
-// only resume is being send here, no job desc is sent here 
+
+  const handleJobDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setJobDescription(event.target.value);
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
     setErrorMessage('');
     setResult(null);
+
     const formData = new FormData();
     if (resume) {
       formData.append('pdf_file', resume);
@@ -30,9 +38,17 @@ const ResumeJobMatcher: React.FC = () => {
       setLoading(false);
       return;
     }
-    // Use a CORS proxy for development/testing purposes
-    // const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-    const API_URL = import.meta.env.VITE_AI_API_URL+'extract_resume';
+
+    if (jobDescription) {
+      formData.append('job_description', jobDescription);
+    } else {
+      setErrorMessage('Please provide a job description.');
+      setLoading(false);
+      return;
+    }
+
+    const API_URL = import.meta.env.VITE_AI_API_URL + 'extract_resume';
+    
     try {
       const response = await axios.post<MatchResult>(
         API_URL,
@@ -41,7 +57,7 @@ const ResumeJobMatcher: React.FC = () => {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          timeout: 30000, 
+          timeout: 30000,
         }
       );
       setResult(response.data);
@@ -65,14 +81,14 @@ const ResumeJobMatcher: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
-      <div className="max-w-5xl w-full  rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+      <div className="max-w-5xl w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="p-8">
-          <h1 className="text-4xl font-extrabold text-center  mb-8">
+          <h1 className="text-4xl font-extrabold text-center mb-8">
             Resume Job Matcher
           </h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="group space-y-2">
-              <label htmlFor="resume" className="text-[12px] ">
+              <label htmlFor="resume" className="text-[12px]">
                 Upload Resume (PDF only)
               </label>
               <div className="relative">
@@ -84,7 +100,7 @@ const ResumeJobMatcher: React.FC = () => {
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
                   required
                 />
-                <div className="absolute top-4 right-0 flex justify-center  items-center pr-3 pointer-events-none">
+                <div className="absolute top-4 right-0 flex justify-center items-center pr-3 pointer-events-none">
                   <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -98,10 +114,10 @@ const ResumeJobMatcher: React.FC = () => {
               </label>
               <textarea
                 id="jobDescription"
-                // value={jobDescription}
-                // onChange={handleJobDescriptionChange}
+                value={jobDescription}
+                onChange={handleJobDescriptionChange}
                 rows={5}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 resize-none !text-black"
+                className="w-full px-4 py-3 text-[15px] border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 resize-none !text-black"
                 placeholder="Paste the job description here..."
                 required
               />
@@ -137,4 +153,5 @@ const ResumeJobMatcher: React.FC = () => {
     </div>
   );
 };
+
 export default ResumeJobMatcher;
