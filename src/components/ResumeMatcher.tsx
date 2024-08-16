@@ -8,6 +8,7 @@ interface MatchResult {
 
 const ResumeJobMatcher: React.FC = () => {
   const [resume, setResume] = useState<File | null>(null);
+  const [jobDescription, setJobDescription] = useState<string>('');
   const [result, setResult] = useState<MatchResult | null>(null);
   const [jobDescription, setJobDescription] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -46,9 +47,8 @@ const ResumeJobMatcher: React.FC = () => {
       setLoading(false);
       return;
     }
-
     const API_URL = import.meta.env.VITE_AI_API_URL + 'extract_resume';
-    
+   
     try {
       const response = await axios.post<MatchResult>(
         API_URL,
@@ -57,7 +57,7 @@ const ResumeJobMatcher: React.FC = () => {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          timeout: 30000,
+          timeout: 3000000,
         }
       );
       setResult(response.data);
@@ -124,7 +124,7 @@ const ResumeJobMatcher: React.FC = () => {
             </div>
             <button
               type="submit"
-              className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-[14px] font-medium text-white bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f]  hover:opacity-95  ${loading ? 'opacity-50 cursor-not-allowed' : ' hover:scale-105'}`}
+              className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-[14px] font-medium text-white bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] hover:opacity-95 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'}`}
               disabled={loading}
             >
               {loading ? (
