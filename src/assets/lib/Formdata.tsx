@@ -65,7 +65,7 @@ export const formInputData: Record<string, FormSection> = {
     },
     loanRecommendation: {
         title: "Loan Recommendation",
-        endPoint: "loan_recommendation",
+        endPoint: "loan_recommendations",
         inputFields: [
             {
                 id: "annual_income",
@@ -107,7 +107,7 @@ export const formInputData: Record<string, FormSection> = {
     },
     loanEligibility: {
         title: "Loan Eligibilty Assesment",
-        endPoint: "loan_eligibility_assesment",
+        endPoint: "assess_eligibility",
         inputFields: [
             {
                 id: "annual_income",
