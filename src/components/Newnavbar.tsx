@@ -71,8 +71,8 @@ const Newnavbar = () => {
                                 <button> Services</button>
                             </div></NavLink>
                         <NavLink to="/#projects" active={activeButton === "projects"} onClick={() => scroll("projects")} >
-                            <div style={{ padding: "8px 10px" }} className="px-8 py10" onMouseEnter={() => setProjectsHovering(true)} onMouseLeave={() => setProjectsHovering(false)}>
-                                <button className=" " >
+                            <div style={{ padding: "8px 10px" }}   onMouseEnter={() => setProjectsHovering(true)} onMouseLeave={() => setProjectsHovering(false)}>
+                                <button >
                                     Projects
                                 </button>
                                 <div onClick={() => scroll("services")} onMouseLeave={() => setProjectsHovering(false)} onMouseEnter={() => setProjectsHovering(true)} className={`${projectsHovering ? 'block' : 'hidden'} absolute mt-7 bg-gray-700 text-white py-2 px-4  rounded-md shadow-lg z-999999999999`}>
@@ -96,7 +96,7 @@ const Newnavbar = () => {
                         </>}
                         
                         <div 
-                        className={`text-gray-300 hover:bg-gray-700  px-8 py-6  rounded-md text-lg font-medium ${activeButton === "products" && 'bg-gray-700' }`}
+                        className={`text-gray-300 hover:bg-gray-700  px-8 py-6  rounded-md text-lg font-medium border-[#1F2937] border-4 ${activeButton === "products" && 'bg-gray-700' }`}
                          onClick={() => setActiveButton("products")}
                          onMouseEnter={() => setProductsHovering(true)} onMouseLeave={() => setProductsHovering(false)}
                          >
@@ -230,7 +230,7 @@ const NavLink = ({to,  children, active, onClick }: {to:string,  children: React
         <Link
             to={to===""? "#": to}
             onClick={onClick}
-            className={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium ${active ? 'bg-gray-700' : ''}`}
+            className={`text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium  ${active ? 'bg-gray-700' : ''}`}
         >
             {children}
         </Link>
