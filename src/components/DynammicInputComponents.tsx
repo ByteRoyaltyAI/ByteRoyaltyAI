@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductForm from './ProductForm';
-import ResumeJobMatcher from './ResumeMatcher';
+import ResumeForm from './Resumeform';
 import { useParams } from 'react-router-dom';
 
 const DynamicInputComponents: React.FC = () => {
@@ -9,8 +9,9 @@ const DynamicInputComponents: React.FC = () => {
   return (
     <div>
       {
-        params.subProduct === "resumeMatching" ? (
-          <ResumeJobMatcher />
+        params.subProduct === "resumeMatching" ||
+        params.subProduct === "interviewGeneration" ? (
+          <ResumeForm /> 
         ) : (
           params.subProduct && <ProductForm productName={params.subProduct} />
         )
