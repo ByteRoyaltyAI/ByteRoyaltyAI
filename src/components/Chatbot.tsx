@@ -1,32 +1,56 @@
+import { useRef,useEffect } from "react";
 import { IoLogoOctocat } from "react-icons/io5";
 import { GoDotFill } from "react-icons/go";
 import { useState } from "react";
+import SendMessage from "./SendMessage";
+import Messages from "./Messages";
 
 const Chatbot = () => {
   const [isOpen,setIsOpen]=useState(false)
+  const [messages,setMessages]=useState([{own:false,text:"Hello there! 👋 It's nice to meet you!"}
+    ,{
+    own:false,
+    text:"What brings you here today? Please use the navigation below or ask me anything about ChatBot product. 🪄"
+  }])
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages,isOpen]);
 
   return (
     <div className="relative">
       {isOpen ?
-        <div className="fixed  bottom-16 right-6  sm:right-16 z-[60]  h-[80%] w-[90%] sm:h-[80%] sm:w-[40rem] bg-[#1A2238] rounded-lg shadow-gray-600 shadow-lg animate-slideDown">
+        <div className="fixed  bottom-16 right-6  sm:right-16 z-[60]  h-[80%] w-[90%] sm:h-[80%] sm:w-[42rem] bg-[#1A2238] rounded-lg shadow-gray-600 shadow-lg animate-slideDown ">
          {/* chatbot header */}
-         <div className="flex items-center gap-8 px-[10%] h-[20%] ">
+         <div className="flex items-center gap-8 px-[10%] h-[15%] ">
          <CloseIcon setIsOpen={setIsOpen} isOpen={isOpen}/>
 
-         <div className="flex justify-center items-center relative p-4 h-28 w-28 rounded-full bg-white">
-         <IoLogoOctocat className="h-28 w-28  text-[#1A2238]  "/>
-         <GoDotFill className="absolute bottom-0 right-1 text-green-600 h-8 w-8 "/>
+         <div className="flex justify-center items-center relative p-4 h-24 w-24 rounded-full bg-white">
+         <IoLogoOctocat className="h-24 w-24  text-[#1A2238]  "/>
+         <GoDotFill className="absolute bottom-0 right-0 text-green-600 h-8 w-8 "/>
           </div>
 
          <div className="space-y-2">
-          <p className="text-[22px] font-[500]">ChatBot</p>
-          <p style={{color:"#8D8D8D",fontSize:"14px"}}
+          <p className="text-[20px] font-[500]">ChatBot</p>
+          <p style={{color:"#8D8D8D",fontSize:"12px"}}
           >Online</p>
          </div>
 
          </div>
-         <div className="h-[65%] bg-[#878B94] text-center">body</div>
-         <div className="h-[15%] bg-[#1A2238] text-center">message</div>
+
+         <div className="h-[70%] bg-[#adb3be] flex flex-col overflow-hidden">
+          <div className="overflow-auto">
+         {messages?.map((message,index)=>(
+          <div ref={scrollRef} key={index}>
+          <Messages  
+          own={message.own} message={message.text}/>
+          </div>
+         ))}
+          </div>
+          </div>
+         
+         <SendMessage setMessages={setMessages}/>
          </div>
       :
       <IoLogoOctocat className="fixed  bottom-6 right-7  h-20 w-20 transform hover:scale-105 "
