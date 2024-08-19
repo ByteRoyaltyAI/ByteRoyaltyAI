@@ -338,31 +338,31 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
-  careerAdvice: {
+   careerCompass : {
     topic: {
-      name: "AI-Powered Career Advice",
-      desc: "Our AI-driven career advice system offers personalized guidance to help you make informed decisions about your career path, whether you're just starting or looking to advance in your field.",
+      name: "Your AI-Powered Career Advisor",
+      desc: "Introducing Career Compass - an innovative AI-driven platform designed to provide personalized career guidance and empower individuals to make informed decisions about their professional journey. This cutting-edge tool offers tailored advice, industry insights, and actionable strategies to help you navigate your career path with confidence.",
     },
     faq: [
       {
-        question: "How does the AI career advice system work?",
-        answer: "The AI system analyzes your current profession, years of experience, location, geographical preferences, personal commitments, and interests to provide tailored career advice that aligns with your professional goals.",
+        question: "What kind of career advice does Career Compass provide?",
+        answer: "Career Compass offers a wide range of advice, including career path suggestions, skill development recommendations, industry insights, and job market trends tailored to your profile and goals.",
       },
       {
-        question: "Can the AI system help both experienced professionals and freshers?",
-        answer: "Yes, the AI system is designed to assist both experienced professionals and those new to the workforce, offering guidance that suits your level of experience and career aspirations.",
+        question: "How accurate are the AI-generated recommendations?",
+        answer: "Our AI model is trained on extensive, up-to-date career data and is continuously refined to provide highly accurate and relevant recommendations. However, we always encourage users to combine our advice with their personal judgment and additional research.",
       },
       {
-        question: "What inputs does the AI require for career advice?",
-        answer: "The AI system considers your current profession, years of experience, location, geographical preferences, personal commitments, experience level, and areas of interest to generate personalized advice.",
+        question: "Can Career Compass help me if I'm considering a career change?",
+        answer: "Absolutely! Career Compass is especially useful for those considering a career transition. It can analyze your transferable skills, suggest potential new paths, and provide strategies for successfully pivoting to a new industry or role.",
       },
       {
-        question: "Is the career advice provided by the AI system reliable?",
-        answer: "The AI system uses a comprehensive data-driven approach to offer reliable and relevant career advice, helping you make the best decisions for your professional journey.",
+        question: "Is my personal information secure?",
+        answer: "We take data privacy very seriously. All personal information is encrypted and stored securely. We never share your data with third parties without your explicit consent.",
       },
       {
-        question: "How can I start using the career advice AI system?",
-        answer: "Provide the necessary inputs, such as your current profession, experience, location, and interests, and the AI system will guide you through potential career paths and opportunities that match your profile.",
+        question: "How often is the career and industry data updated?",
+        answer: "Our AI model and database are updated regularly to reflect the latest job market trends, emerging industries, and in-demand skills, ensuring you receive the most current and relevant advice.",
       },
     ],
     imagesData: [
@@ -399,7 +399,36 @@ export const productsData: Record<string, ProductDataInterface> = {
         text: "Step 8: Review Career Recommendations",
       },
     ],
+  },
+  careerAdvisor : {
+    topic: {
+      name: "Career Advisor",
+      desc: "Introducing our cutting-edge Career Advisor Application - a comprehensive platform designed to guide individuals in making informed career choices based on their skills, interests, and market trends. This innovative tool empowers users to explore career options, receive personalized advice, and plan their professional journey effectively.",
+    },
+    faq: [
+      {
+        question: "What kind of career advice does the application provide?",
+        answer: "Our Career Advisor Application offers a wide range of career insights, including personalized job recommendations, skills and interests assessment, market trend analysis, and career pathway suggestions tailored to your goals and preferences.",
+      },
+      {
+        question: "Is the application suitable for both students and working professionals?",
+        answer: "Absolutely! The application is designed to cater to both students and professionals at any stage of their career. Whether you're just starting out or considering a career change, the tool provides guidance tailored to your current situation.",
+      },
+      {
+        question: "How quickly can I receive career recommendations?",
+        answer: "The application provides instant results. After completing a brief assessment of your skills, interests, and goals, you will receive immediate career recommendations and suggestions for educational programs or job opportunities.",
+      },
+      {
+        question: "Can I explore different career paths using the application?",
+        answer: "Yes! Our platform allows you to explore various career paths based on your profile. You can compare different career options, view potential job roles, and plan your educational journey accordingly.",
+      },
+      {
+        question: "How do I get started with the Career Advisor Application?",
+        answer: "It's simple! Sign up on our website, complete a short questionnaire about your skills, interests, and career goals, and you'll receive personalized career advice and pathway planning tools to guide your professional journey.",
+      },
+    ],
   }
+  
   
 };
 
@@ -456,10 +485,16 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
   ],
   "education": [
     {
-      title: "Career Advice",
+      title: "Career Compass",
+      desc: "Use AI-driven platform designed to provide personalized career guidance and empower individuals to make informed decisions about their professional journey.",
+      img: img1,
+      link: "careerCompass",
+    },
+    {
+      title: "Career Advisor",
       desc: "Use AI-driven career advice system offers personalized guidance to help you make informed decisions about your career path.",
       img: img1,
-      link: "careerAdvice",
+      link: "careerAdvisor",
     },
   ],
   "health-care": [
