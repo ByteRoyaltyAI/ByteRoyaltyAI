@@ -70,7 +70,7 @@ const ResumeJobMatcher: React.FC = () => {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-          timeout: 30000,
+          timeout: 3000000,
         }
       );
       setResult(response.data);
