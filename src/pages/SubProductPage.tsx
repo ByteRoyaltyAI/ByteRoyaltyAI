@@ -2,34 +2,18 @@
 import { useState, useEffect } from "react";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
-import { RxDotFilled } from "react-icons/rx";
+// import { RxDotFilled } from "react-icons/rx";
 import { productsData } from "../assets/lib/ProductsData";
 import { useParams, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import DynammicInputComponents from "../components/DynammicInputComponents";
-
-// interface CurrentSituation {
-//   current_profession: string;
-//   years_experience: number;
-//   location: string;
-//   geographical_preference: string;
-//   commitments: string;
-// }
-
-// interface CareerAdviceData {
-//   current_situation: CurrentSituation;
-//   is_fresh_graduate: boolean;
-//   interests: string;
-// }
-
+import NeoAI from "../components/NeoAI";
 
 const SubProductPage = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  // Force resolve the TypeScript error by using 'as' assertion
- 
   const data = productsData[params.subProduct as string];
 
   if(data===undefined){
@@ -42,46 +26,36 @@ const SubProductPage = () => {
   const [showAns, setShowAns] = useState<boolean[]>(
     new Array(data?.faq.length).fill(false)
   );
-  const [imageIndex, setImageIndex] = useState<number>(0);
-
-  // const handleSubmit = async () => {
-  //   const careerData: CareerAdviceData = {
-  //     current_situation: {
-  //       current_profession: "Student",
-  //       years_experience: 0,
-  //       location: "Hyderabad, India",
-  //       geographical_preference: "Africa",
-  //       commitments: "I want to marry and settle in Africa with girlfriend",
-  //     },
-  //     is_fresh_graduate: true,
-  //     interests: "Playing chess",
-  //   };
-  //   try {
-  //     const response = await axios.post(import.meta.env.VITE_AI_API_URL + "career_advice", careerData);
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error("Error submitting data:", error);
-  //   }
-  // };
+  // const [imageIndex, setImageIndex] = useState<number>(0);
 
   return (
-    <div>
-    <div className='flex justify-center  min-h-screen mt-20 bg-[#0C1220] pb-60'>
-      <div className="flex flex-col gap-40 w-[90%] sm:w-[80%] text-[#FFFFFF]">
-     
-     <div className="flex justify-center gap-5 mt-40 text-center ">
-      <div className="w-full sm:w-[75%]">
-     <h1 className="font-bold text-[4rem] text-[#F1F3F4] mb-8">
+    <div >
+       <NeoAI/>
+    <div className='flex justify-center  min-h-screen mt-20 pb-60   '>
+      <div className="flex flex-col gap-72 w-[90%] sm:w-[80%] text-[#FFFFFF] ">
+     <div className="flex justify-center gap-5 mt-40 text-center  ">
+      <div className="w-full sm:w-[75%] mt-20">
+     <h1 
+      style={{
+        fontSize: "clamp(2.6rem, 5vw, 5rem)",
+        textShadow: "0 0 10px rgba(0,255,255,0.5)",
+        height: "clamp(2rem, 12vw, 4rem)",
+        fontWeight: "600",
+        marginBottom: "50px",
+      }}>
      {data.topic.name}
      </h1>
-     <h3 style={{color:"#C3C6C8",fontSize:"2rem"}} >{data.topic.desc} </h3>
+     <div >
+     <h3 style={{color:"white"}} className="backdrop-blur-[2px] text-[1.8rem] sm:text-[2.2rem]">{data.topic.desc} </h3>
+     </div>
+     
      {/* <h3 className="text-[1.2rem] text-[#E8E8E8] mt-2">Updated over a week ago</h3> */}
      </div>
       </div>
        
        <DynammicInputComponents/>
        
-      <div className="flex jusitify-center ">
+      {/* <div className="flex jusitify-center ">
         {data.imagesData ? 
             <div className="flex w-[95%] sm:w-[90%]  " >
               
@@ -124,11 +98,14 @@ const SubProductPage = () => {
             </div>
                 </div>
              }
+      </div> */}
+    
       </div>
-
-      <div className="flex flex-col gap-5 items-center">
+    </div>
+    
+      <div className="flex flex-col gap-5 items-center py-40 backdrop-blur-[1.5px]  ">
         <h2 className="text-[3rem] font-semibold mb-5" >Frequently Asked Questions</h2>
-          <div className="flex flex-col gap-16 items-center w-full sm:w-[70%] md:[w-50%] ">
+          <div className="flex flex-col gap-16 items-center w-full sm:w-[70%] md:[w-50%] pb-40 ">
             {data?.faq.map((faq, index) => (
               <div key={index} className=" relative w-full">
               <h3
@@ -142,7 +119,7 @@ const SubProductPage = () => {
                 {faq.question}
               </h3>
               {showAns[index] && (
-                <div className="text-[1.8rem] sm:text-[2rem] text-[#E8E8E8] mt-5">
+                <div className="text-[1.8rem] sm:text-[2rem] text-white font-semibold mt-5">
                   {faq.answer}
                 </div>
             )}
@@ -153,41 +130,39 @@ const SubProductPage = () => {
       </div>
     </div>
 
-      </div>
-    </div>
-<Footer/>
+   <Footer/>
     </div>
   );
 }
 
 
 
-const ComingSoon: React.FC = () => {
-  const letters = [
-    'C', 'o', 'm', 'i', 'n', 'g', ' ', 's', 'o', 'o',
-    'n', ' ','.','.','.'
-  ];
+// const ComingSoon: React.FC = () => {
+//   const letters = [
+//     'C', 'o', 'm', 'i', 'n', 'g', ' ', 's', 'o', 'o',
+//     'n', ' ','.','.','.'
+//   ];
 
-  return (
-    <div className="text-[4.rem] sm:text-[55px] font-semibold flex flex-wrap">
-      {letters.map((letter, index) => (
-        <motion.span
-          key={index}
-          className={letter === ' ' ? 'w-[10px]' : ''}
-          initial={{ opacity: 0, y: 20, color: '#4D4D4D' }}
-          animate={{ opacity: 1, y: 0, color: 'white' }}
-          transition={{
-            opacity: { duration: 0.4, delay: index * 0.1 },
-            y: { duration: 0.4, delay: index * 0.1 },
-            color: { duration: 0.4, delay: letters.length * 0.07 + index * 0.07 },
-          }}
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div className="text-[4.rem] sm:text-[55px] font-semibold flex flex-wrap">
+//       {letters.map((letter, index) => (
+//         <motion.span
+//           key={index}
+//           className={letter === ' ' ? 'w-[10px]' : ''}
+//           initial={{ opacity: 0, y: 20, color: '#4D4D4D' }}
+//           animate={{ opacity: 1, y: 0, color: 'white' }}
+//           transition={{
+//             opacity: { duration: 0.4, delay: index * 0.1 },
+//             y: { duration: 0.4, delay: index * 0.1 },
+//             color: { duration: 0.4, delay: letters.length * 0.07 + index * 0.07 },
+//           }}
+//         >
+//           {letter}
+//         </motion.span>
+//       ))}
+//     </div>
+//   );
+// };
 
 
 export default SubProductPage;

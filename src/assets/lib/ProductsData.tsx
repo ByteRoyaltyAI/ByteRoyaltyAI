@@ -150,95 +150,84 @@ export const productsData: Record<string, ProductDataInterface> = {
   },
   investmentInsights: {
     topic: {
-      name: "AI-Driven Investment Insights",
-      desc: "Our AI-driven investment insights platform helps you make informed decisions by analyzing your financial data and providing tailored recommendations to optimize your portfolio.",
+      name: "Cutting-edge Investment Insights Assistant",
+      desc: "Introducing our powerful tool designed to provide personalized investment guidance and market analysis at your fingertips. This innovative platform empowers investors of all levels to make informed decisions, stay updated on market trends, and optimize their portfolio performance.",
     },
     faq: [
       {
-        question: "How does the AI investment insights system work?",
-        answer: "The AI system analyzes your financial data, including income, credit score, and existing debt, to provide personalized investment recommendations that align with your financial goals.",
+        question: "What kind of investment insights does the assistant provide?",
+        answer: "Our Investment Insights Assistant offers a wide range of insights, including personalized stock recommendations, market trend analysis, portfolio diversification suggestions, and risk assessment evaluations tailored to your investment goals and risk tolerance.",
       },
       {
-        question: "Can the AI system accommodate different financial profiles?",
-        answer: "Yes, our AI system is designed to handle various financial profiles, offering insights and recommendations that are tailored to your specific situation and objectives.",
+        question: "Is the assistant suitable for both beginner and experienced investors?",
+        answer: "Absolutely! The assistant is designed to cater to investors at all levels. Beginners can benefit from educational resources and basic investment guidance, while experienced investors can leverage advanced analytics and in-depth market insights.",
       },
       {
-        question: "How accurate are the AI's investment recommendations?",
-        answer: "Our AI system's recommendations are based on extensive data analysis and real-world performance, ensuring accurate and reliable investment guidance.",
+        question: "How often is the market data updated?",
+        answer: "Our platform utilizes real-time data feeds to ensure that you have access to the most up-to-date market information. Stock prices, market indices, and other relevant data are updated continuously throughout trading hours.",
       },
       {
-        question: "Is the AI system customizable to my financial goals?",
-        answer: "Yes, the AI system can be customized to reflect your unique financial goals and preferences, ensuring that the recommendations align with your investment strategy.",
+        question: "Can I connect my existing investment accounts to the assistant?",
+        answer: "Yes, you can securely link your investment accounts to our platform. This allows the assistant to provide more accurate and personalized insights based on your current portfolio holdings and performance.",
       },
       {
-        question: "How do I get started with the investment insights system?",
-        answer: "Contact our support team to learn more about how our AI-driven investment insights platform can help you achieve your financial goals and to start using the service.",
+        question: "How do I get started with the Investment Insights Assistant?",
+        answer: "Getting started is easy. Simply sign up for an account on our website, complete a brief questionnaire about your investment goals and preferences, and you'll have immediate access to our powerful insights and tools.",
       },
     ],
     imagesData: [
       {
-        img: enterJobDesc,
-        text: "Step 1: Enter Annual Income",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 1: Sign Up for an Account",
       },
       {
-        img: enterJobDesc,
-        text: "Step 2: Enter Credit Score",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 2: Complete Investment Goals Questionnaire",
       },
       {
-        img: enterJobDesc,
-        text: "Step 3: Enter Existing Debt",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 3: Receive Personalized Insights",
       },
       {
-        img: enterJobDesc,
-        text: "Step 4: Enter Employment Status",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 4: Optimize Your Portfolio",
       },
       {
-        img: enterJobDesc,
-        text: "Step 5: Enter Other Relevant Info",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 5: Stay Updated with Market Trends",
       },
       {
-        img: enterJobDesc,
-        text: "Step 6: Select Country",
-      },
-      {
-        img: enterJobDesc,
-        text: "Step 7: Select City",
-      },
-      {
-        img: enterJobDesc,
-        text: "Step 8: Analyze Investment Options",
-      },
-      {
-        img: enterJobDesc,
-        text: "Step 9: Review Investment Insights",
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 6: Monitor and Adjust Your Investments",
       },
     ],
   },
+  
   loanRecommendation: {
     topic: {
-      name: "AI-Powered Loan Recommendation",
-      desc: "Our AI-powered loan recommendation system evaluates your financial profile and provides personalized loan options to help you find the best fit for your needs.",
+      name: "State-of-the-Art Loan Recommendation Tool",
+      desc: "Introducing our advanced solution designed to simplify the loan selection process and match borrowers with the most suitable loan options. Leveraging AI and machine learning, our platform analyzes user profiles, financial data, and market conditions to provide tailored loan recommendations for diverse borrowing needs.",
     },
     faq: [
       {
-        question: "How does the AI loan recommendation system work?",
-        answer: "The AI system assesses your financial data, such as income, credit score, and existing debt, to suggest loan options that align with your financial situation and goals.",
+        question: "What types of loans does the tool recommend?",
+        answer: "Our Loan Recommendation Tool covers a wide range of loan types, including personal loans, mortgages, auto loans, student loans, and business loans. It provides recommendations based on your specific financial situation and borrowing needs.",
       },
       {
-        question: "Can the AI system handle different types of loans?",
-        answer: "Yes, our AI system can recommend various types of loans, including personal, auto, and home loans, based on your specific needs and financial profile.",
+        question: "How accurate are the loan recommendations?",
+        answer: "The recommendations are highly accurate, as they are based on real-time data from our extensive lender network, your provided financial information, and current market conditions. However, final loan approval and terms are always subject to the lender's discretion.",
       },
       {
-        question: "How reliable are the AI's loan recommendations?",
-        answer: "The AI system's recommendations are based on comprehensive data analysis and real-world insights, ensuring reliable and relevant loan options.",
+        question: "Does using the tool affect my credit score?",
+        answer: "No, using our Loan Recommendation Tool does not impact your credit score. We use a soft credit inquiry for analysis purposes, which doesn't affect your credit rating. A hard credit check would only occur if you decide to proceed with a formal loan application with a lender.",
       },
       {
-        question: "Is the AI system customizable for different loan requirements?",
-        answer: "Yes, the AI system can be tailored to accommodate different loan requirements and preferences, providing recommendations that fit your unique needs.",
+        question: "Can I compare multiple loan offers?",
+        answer: "Absolutely! Our tool allows you to compare multiple loan offers side-by-side, including interest rates, repayment terms, and total cost of borrowing. This enables you to make an informed decision based on your specific needs and preferences.",
       },
       {
-        question: "How do I start using the loan recommendation system?",
-        answer: "Reach out to our support team to learn more about how our AI-powered loan recommendation system can assist you and to begin the process.",
+        question: "How do I get started with the Loan Recommendation Tool?",
+        answer: "Getting started is simple. Visit our website, answer a few questions about your loan requirements and financial situation, and our tool will instantly provide you with personalized loan recommendations. You can then explore these options in detail and even initiate the application process directly through our platform.",
       },
     ],
     imagesData: [
@@ -276,31 +265,32 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+  
   loanEligibility: {
     topic: {
       name: "AI-Powered Loan Eligibility Assessment",
-      desc: "Our AI-driven loan eligibility assessment takes into account your financial and personal information to evaluate your eligibility for various loan options, ensuring you get the most suitable recommendation for your financial needs.",
+      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately. This innovative tool empowers borrowers to understand their borrowing capacity, explore loan options, and make informed financial decisions.",
     },
     faq: [
       {
-        question: "How does the AI loan eligibility assessment work?",
-        answer: "The AI system analyzes key financial inputs like your income, credit score, employment status, and existing debt to determine your eligibility for different loan types and offers personalized recommendations.",
+        question: "What type of loans can I assess my eligibility for?",
+        answer: "Our Loan Eligibility Assessment Tool covers a wide range of loan types, including personal loans, home loans, auto loans, and business loans. The tool provides personalized recommendations based on your financial profile and loan preferences.",
       },
       {
-        question: "What factors are considered in the loan eligibility assessment?",
-        answer: "The AI considers several factors, including your annual income, credit score, existing debt, employment status, and location to assess your loan eligibility.",
+        question: "Is the tool suitable for individuals with varying credit scores?",
+        answer: "Yes! The tool is designed to cater to borrowers with different credit profiles. Whether you have excellent credit or are looking to improve your score, the tool offers tailored advice and loan options that match your financial situation.",
       },
       {
-        question: "Can I trust the loan eligibility results from the AI system?",
-        answer: "Yes, the AI system is designed to provide accurate and reliable loan eligibility assessments based on a comprehensive analysis of your financial data.",
+        question: "How quickly can I get my eligibility results?",
+        answer: "The tool delivers instant results. Once you input your financial details, you will receive an immediate assessment of your loan eligibility, along with recommended loan options and interest rate estimates.",
       },
       {
-        question: "Are the loan options recommended by the AI system flexible?",
-        answer: "Absolutely! The AI system can recommend flexible loan options that cater to various financial needs, whether you’re looking for personal, auto, or home loans.",
+        question: "Can I compare different loan options using the tool?",
+        answer: "Absolutely! Our platform includes a loan comparison feature that allows you to evaluate multiple loan offers side by side. This helps you choose the loan that best suits your needs and budget.",
       },
       {
-        question: "How can I start the loan eligibility assessment?",
-        answer: "Simply input your financial details into our system, and the AI will guide you through the process, providing instant feedback on your loan eligibility and the best options available.",
+        question: "How do I get started with the Loan Eligibility Assessment Tool?",
+        answer: "It's simple! Sign up on our website, enter your financial details, and within minutes, you'll receive a detailed assessment of your loan eligibility, along with personalized loan recommendations.",
       },
     ],
     imagesData: [

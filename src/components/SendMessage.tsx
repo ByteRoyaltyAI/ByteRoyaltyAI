@@ -31,7 +31,7 @@ const SendMessage: React.FC<SendMessageProps> = ({ setMessages }) => {
         type="text"
         value={newMessage}
         placeholder="Type a message"
-        className="p-4 rounded-md sm:w-full w-[50%] h-20 text-[15px] bg-[#FFFFFF] placeholder-[#667781] border border-[#dfe3e8]"
+        className="p-4 rounded-md w-full  h-20 text-[15px] bg-[#FFFFFF] placeholder-[#667781] border border-[#dfe3e8]"
         style={{ color: "black" }}
       />
       <IoSend

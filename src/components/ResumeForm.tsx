@@ -93,8 +93,8 @@ const ResumeJobMatcher: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
-      <div className="max-w-5xl w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+    <div className="py-10 bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
+      <div className="max-w-4xl  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="p-8">
           <h1 className="text-4xl font-extrabold text-center mb-8">
            {isInterviewGeneration?" Interview Questions Generator " :
