@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductForm from './ProductForm';
-import ResumeForm from './Resumeform';
+import ResumeForm from './ResumeForm';
 import { useParams } from 'react-router-dom';
 
 const DynamicInputComponents: React.FC = () => {
