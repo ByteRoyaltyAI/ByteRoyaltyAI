@@ -56,6 +56,7 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+
   interviewGeneration: {
     topic: {
       name: "AI Powered Interview",
@@ -98,6 +99,7 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+
   resumeMatching: {
     topic: {
       name: "AI Powered Resume Matching",
@@ -148,6 +150,7 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+
   investmentInsights: {
     topic: {
       name: "Cutting-edge Investment Insights Assistant",
@@ -328,6 +331,7 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+
    careerCompass : {
     topic: {
       name: "Your AI-Powered Career Advisor",
@@ -390,6 +394,7 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+
   careerAdvisor : {
     topic: {
       name: "Career Advisor",
@@ -418,8 +423,6 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   }
-  
-  
 };
 
 
@@ -456,19 +459,19 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
   "finance": [
     {
       title: "Loan Recommendation",
-      desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
+      desc: "Introducing our advanced solution designed to simplify the loan selection process and match borrowers with the most suitable loan options, providing tailored loan recommendations to meet diverse borrowing needs.",
       img: img1,
       link: "loanRecommendation",
     },
     {
       title: "Investment Insights",
-      desc: "Automatically generate relevant interview questions based on the candidate’s resume and the job description. Ensure consistency and fairness in the interview process.",
+      desc: "Our Investment Insights Assistant offers a wide range of insights, including personalized stock recommendations, market trend analysis, portfolio diversification suggestions, and risk assessment evaluations.",
       img: img2,
       link: "investmentInsights",
     },
     {
       title: "Loan Eligibilty Analysis",
-      desc: "Leverage AI to create an HR chatbot that can answer employee queries, assist with onboarding, and automate routine HR tasks.",
+      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately.",
       img: img3,
       link: "loanEligibility",
     },
@@ -476,13 +479,13 @@ export const productCardsData: { [key: string]: ProductCardInterface[] } = {
   "education": [
     {
       title: "Career Compass",
-      desc: "Use AI-driven platform designed to provide personalized career guidance and empower individuals to make informed decisions about their professional journey.",
+      desc: "Introducing Career Compass - an innovative AI-driven platform designed to provide personalized career guidance and empower individuals to make informed decisions about their professional journey.",
       img: img1,
       link: "careerCompass",
     },
     {
       title: "Career Advisor",
-      desc: "Use AI-driven career advice system offers personalized guidance to help you make informed decisions about your career path.",
+      desc: "Introducing our cutting-edge Career Advisor Application - a comprehensive platform designed to guide individuals in making informed career choices based on their skills, interests, and market trends.",
       img: img1,
       link: "careerAdvisor",
     },
