@@ -759,3 +759,31 @@ a {
   animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
   -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
 }
+
+
+
+@keyframes moveAndRotate {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5px, -5px) rotate(15deg); /* Move left and up, rotate right */
+  }
+  50% {
+    transform: translate(5px, 5px) rotate(0deg); /* Return to center */
+  }
+  75% {
+    transform: translate(5px, -5px) rotate(-15deg); /* Move right and up, rotate left */
+  }
+  100% {
+    transform: translate(-5px, 5px) rotate(0deg); /* Return to center */
+  }
+}
+
+.animate-move-rotate {
+  animation-name: moveAndRotate ;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+}
+

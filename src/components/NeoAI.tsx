@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { gsap } from "gsap";
 import ReactTypingEffect from "react-typing-effect";
+import { useLocation } from "react-router-dom";
 
 const NeoAI: React.FC = () => {
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -11,7 +12,9 @@ const NeoAI: React.FC = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-
+  const location=useLocation()
+  const isHomePage=location.pathname==="/"
+  console.log(isHomePage)
   useEffect(() => {
     if (!sceneRef.current) return;
 
@@ -177,6 +180,7 @@ const NeoAI: React.FC = () => {
           zIndex: -1,
         }}
       ></div>
+      {isHomePage &&
       <div
         className="content"
         style={{
@@ -246,7 +250,7 @@ const NeoAI: React.FC = () => {
            }}>
           Explore Our AI Universe
         </a> */}
-      </div>
+      </div>}
     </>
   );
 };
