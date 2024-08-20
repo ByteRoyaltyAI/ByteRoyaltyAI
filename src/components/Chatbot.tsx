@@ -21,7 +21,7 @@ const Chatbot = () => {
   return (
     <div className="relative">
       {isOpen ?
-        <div className="fixed  bottom-16 right-6  sm:right-16 z-[60]  h-[80%] w-[90%] sm:h-[80%] sm:w-[42rem] bg-[#1A2238] rounded-lg shadow-gray-600 shadow-lg animate-slideDown ">
+        <div className="fixed  bottom-10 right-6  sm:right-16 z-[60]  h-[80%] w-[90%] sm:h-[80%] sm:w-[42rem] bg-[#1A2238] rounded-lg shadow-gray-600 shadow-lg animate-slideDown ">
          {/* chatbot header */}
          <div className="flex items-center gap-8 px-[10%] h-[15%] ">
          <CloseIcon setIsOpen={setIsOpen} isOpen={isOpen}/>
@@ -53,7 +53,7 @@ const Chatbot = () => {
          <SendMessage setMessages={setMessages}/>
          </div>
       :
-      <IoLogoOctocat className="fixed  bottom-6 right-7  h-20 w-20 transform hover:scale-105 "
+      <IoLogoOctocat className="fixed  bottom-16 right-10  h-24 w-24 transform hover:scale-105 animate-move-rotate "
       onClick={()=>setIsOpen(!isOpen)}/>
       }
     </div>
