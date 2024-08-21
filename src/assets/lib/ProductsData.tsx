@@ -430,73 +430,94 @@ export const productsData: Record<string, ProductDataInterface> = {
 export interface ProductCardInterface {
   title: string;
   desc: string;
-  img: string; 
+  img: string;
   link: string;
 }
 
-// Define an object with keys and arrays of ProductCardInterface
-export const productCardsData: { [key: string]: ProductCardInterface[] } = {
-  "hr-services": [
-    {
-      title: "Resume-Job Matching",
-      desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
-      img: img1,
-      link: "resumeMatching",
-    },
-    {
-      title: "Interview Question Generation",
-      desc: "Automatically generate relevant interview questions based on the candidate’s resume and the job description. Ensure consistency and fairness in the interview process.",
-      img: img2,
-      link: "interviewGeneration",
-    },
-    {
-      title: "HR Chatbot",
-      desc: "Leverage AI to create an HR chatbot that can answer employee queries, assist with onboarding, and automate routine HR tasks.",
-      img: img3,
-      link: "hrChatbot",
-    },
-  ],
-  "finance": [
-    {
-      title: "Loan Recommendation",
-      desc: "Introducing our advanced solution designed to simplify the loan selection process and match borrowers with the most suitable loan options, providing tailored loan recommendations to meet diverse borrowing needs.",
-      img: img1,
-      link: "loanRecommendation",
-    },
-    {
-      title: "Investment Insights",
-      desc: "Our Investment Insights Assistant offers a wide range of insights, including personalized stock recommendations, market trend analysis, portfolio diversification suggestions, and risk assessment evaluations.",
-      img: img2,
-      link: "investmentInsights",
-    },
-    {
-      title: "Loan Eligibilty Analysis",
-      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately.",
-      img: img3,
-      link: "loanEligibility",
-    },
-  ],
-  "education": [
-    {
-      title: "Career Compass",
-      desc: "Introducing Career Compass - an innovative AI-driven platform designed to provide personalized career guidance and empower individuals to make informed decisions about their professional journey.",
-      img: img1,
-      link: "careerCompass",
-    },
-    {
-      title: "Career Advisor",
-      desc: "Introducing our cutting-edge Career Advisor Application - a comprehensive platform designed to guide individuals in making informed career choices based on their skills, interests, and market trends.",
-      img: img1,
-      link: "careerAdvisor",
-    },
-  ],
-  "health-care": [
-    {
-      title: "AI Doctor",
-      desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
-      img: img1,
-      link: "aiDoctor",
-    },
-  ],
-  // You can add more keys here as needed
-};
+export interface ProductPageSectionInterface {
+  title: string;
+  desc: string;
+  cards: ProductCardInterface[];
+}
+
+
+export const ProductPageData: { [key: string]: ProductPageSectionInterface } = {
+  "hr-services": {
+    title: "Transform Your Hiring Process",
+    desc: "Streamline hiring, enhance candidate selection, and empower your HR team with AI-driven tools.",
+    cards: [
+      {
+        title: "Resume-Job Matching",
+        desc: "Use AI to automatically match resumes with job descriptions based on skills, experience, and qualifications. Improve candidate fit and reduce turnover.",
+        img: img1, // Replace with actual image path or import
+        link: "resumeMatching",
+      },
+      {
+        title: "Interview Question Generation",
+        desc: "Automatically generate relevant interview questions based on the candidate’s resume and the job description. Ensure consistency and fairness in the interview process.",
+        img: img2, // Replace with actual image path or import
+        link: "interviewGeneration",
+      },
+      {
+        title: "HR Chatbot",
+        desc: "Leverage AI to create an HR chatbot that can answer employee queries, assist with onboarding, and automate routine HR tasks.",
+        img: img3, // Replace with actual image path or import
+        link: "hrChatbot",
+      },
+    ],
+  },
+  "finance": {
+    title: "Finance",
+    desc: "Advanced AI solutions to assist with financial decision-making.",
+    cards: [
+      {
+        title: "Loan Recommendation",
+        desc: "Simplify the loan selection process with tailored loan recommendations to meet diverse borrowing needs.",
+        img: img1, // Replace with actual image path or import
+        link: "loanRecommendation",
+      },
+      {
+        title: "Investment Insights",
+        desc: "Receive personalized stock recommendations, market trend analysis, and portfolio diversification suggestions.",
+        img: img2, // Replace with actual image path or import
+        link: "investmentInsights",
+      },
+      {
+        title: "Loan Eligibility Analysis",
+        desc: "Quickly and accurately assess your eligibility for various loan options with our advanced tool.",
+        img: img3, // Replace with actual image path or import
+        link: "loanEligibility",
+      },
+    ],
+  },
+  "education": {
+    title: "Education",
+    desc: "Empower your learning journey with AI-driven educational tools.",
+    cards: [
+      {
+        title: "Career Compass",
+        desc: "Personalized career guidance to help individuals make informed decisions about their professional journey.",
+        img: img1, // Replace with actual image path or import
+        link: "careerCompass",
+      },
+      {
+        title: "Career Advisor",
+        desc: "Comprehensive career advice based on skills, interests, and market trends.",
+        img: img2, // Replace with actual image path or import
+        link: "careerAdvisor",
+      },
+    ],
+  },
+  "health-care": {
+    title: "Health Care",
+    desc: "AI solutions to enhance healthcare services and improve patient outcomes.",
+    cards: [
+      {
+        title: "AI Doctor",
+        desc: "Use AI to match symptoms with potential diagnoses, offering preliminary advice and reducing the burden on healthcare providers.",
+        img: img1, // Replace with actual image path or import
+        link: "aiDoctor",
+      },
+    ],
+}
+}
