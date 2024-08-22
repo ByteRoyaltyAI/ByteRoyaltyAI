@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const ComingSoon = () => {
   return (
-    <div className="flex justify-center w-full  -mb-10 mt-10">
-        <div className="flex flex-col items-center  gap-10 ">
+    <div className="flex justify-center w-full  -mb-40 mt-10">
+        <div className="flex flex-col items-center  gap-10 text-center">
           <ComingSoonAnimation />
           <p className="text-[25px]">
             Contact us to stay updated with the best AI tools in market.
@@ -38,7 +38,7 @@ const ComingSoonAnimation: React.FC = () => {
     ];
   
     return (
-      <div className="text-[4.rem] sm:text-[55px] font-semibold flex flex-wrap">
+      <div className="text-[4rem] sm:text-[55px] font-semibold flex flex-wrap">
         {letters.map((letter, index) => (
           <motion.span
             key={index}
