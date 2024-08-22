@@ -608,7 +608,7 @@ export const contactData = {
   },
   description: {
     de: "Schreiben Sie mir gerne eine Nachricht, dann erwische ich Sie auf der anderen Seite. Lassen Sie uns das Gespräch am Laufen halten!.",
-    en: "Feel free to drop me a line, and I'll catch you on the flip side. Let's keep the conversation rolling!",
+    en: "Hurry! Stay ahead of 73% Competition! Schedule a Free Demo Now and Let Imaigen AI takes care of Rest.",
   },
   inputfields: [
     {
