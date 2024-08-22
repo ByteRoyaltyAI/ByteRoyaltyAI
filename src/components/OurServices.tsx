@@ -54,7 +54,7 @@ const TechStack: React.FC = () => {
             <h2 className="w-full px-4 sm:px-6 md:px-8 text-center">
               {language === "DE"
                 ? "Meine Techstack und Skills"
-                : "We Help You To Build High-Quality Digital Solutions And Products As Well As Deliver A Wide Range Of Related Professional Services. We Are Providing World-Class Service To Our Clients."}
+                : "We provide AI services using MachineLearning, GenerativeAI, DeepLearning, and Natural Language Processing to drive your business growth."}
             </h2>
 
           </motion.div>
