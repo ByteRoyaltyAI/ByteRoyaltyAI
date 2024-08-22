@@ -545,12 +545,12 @@ export const sideBarLeftSocials = [
 export const quotesData = [
   {
     de: '"Es ist überhaupt nicht wichtig, es beim ersten Mal richtig zu machen. Es ist entscheidend, es beim letzten Mal richtig zu machen."',
-    en: `"It's not at all important to get it right the first time. It's vitally important to get it right the last time."`,
+    en: `"85% of businesses using AI see significant growth. Curious how AI can transform your business?"`,
     author: "Andrew Hunt",
   },
   {
     de: '"Das Web ist wie eine Leinwand und der Code ist die Farbe. Erschaffe dein Meisterwerk."',
-    en: `"The web is like a canvas, and code is the paint. Create your masterpiece."`,
+    en: `"Companies that use Artificial Intelligence are 50% more likely to outpace their competitors. "`,
   },
 ] as const;
 
