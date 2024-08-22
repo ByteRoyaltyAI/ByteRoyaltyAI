@@ -212,6 +212,24 @@ export const formInputData: Record<string, FormSection> = {
                 placeholder: "Enter your interests",
             },
         ],
-    }
+    },
+    careerCompass: {
+        title: "Career Guidance ",
+        endPoint: "get_guidance",
+        inputFields: [
+            {
+                id: "age",
+                label: "Age",
+                type: "number",
+                placeholder: "Ex. 20",
+            },
+            {
+                id: "interests",
+                label: "interests",
+                type: "text",
+                placeholder: "Ex. Sceince and Technology",
+            },
+        ],
+    },
     
 };

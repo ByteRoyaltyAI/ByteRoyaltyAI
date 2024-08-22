@@ -2,9 +2,9 @@ import React from "react";
 import { IoLogoOctocat } from "react-icons/io5";
 
 let messageText =
-  "ml-5 text-black bg-[#1A2238] font-sans text-left p-6 text-[16px] rounded-xl max-w-[80%] ";
+  "ml-5 bg-[#1A2238] font-sans text-left p-6 text-[16px] rounded-xl max-w-[80%] ";
 let messageTextOwn =
-  "ml-5 text-black bg-[#1A2238] font-sans text-left p-6 text-[16px] rounded-xl max-w-[80%]";
+  "ml-5  bg-[#1A2238] font-sans text-left p-6 text-[16px] rounded-xl max-w-[80%]";
 
 type Props = {
   own: boolean;

@@ -14,7 +14,7 @@ const NeoAI: React.FC = () => {
   });
   const location=useLocation()
   const isHomePage=location.pathname==="/"
-  console.log(isHomePage)
+  
   useEffect(() => {
     if (!sceneRef.current) return;
 
