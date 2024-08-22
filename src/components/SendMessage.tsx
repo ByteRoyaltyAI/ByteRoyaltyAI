@@ -1,24 +1,45 @@
 import { KeyboardEvent, FormEvent, useState } from "react";
 import { IoSend } from "react-icons/io5";
+import axios from "axios";
 
 interface SendMessageProps {
-  setMessages: React.Dispatch<React.SetStateAction<{ own: boolean; text: string }[]>>;
+  setMessages: React.Dispatch<
+    React.SetStateAction<{ own: boolean; text: string }[]>
+  >;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SendMessage: React.FC<SendMessageProps> = ({ setMessages }) => {
+const SendMessage: React.FC<SendMessageProps> = ({
+  setMessages,
+  setLoading,
+}) => {
   const [newMessage, setNewMessage] = useState("");
 
-  const handleSendMessage = (e?: FormEvent) => {
+  const handleSendMessage = async (e?: FormEvent) => {
     e?.preventDefault();
-    if (newMessage.trim()) {
-      // Add the new message to the chat
+    if (newMessage.trim() === "") return;
+
+    try {
       setMessages((prev) => [...prev, { own: true, text: newMessage }]);
       setNewMessage("");
+      // display loader
+      setLoading(true);
+      // send message to chatbot api
+      let res = await axios.post(
+        "http://35.223.244.220:8000/api/chat_w?message=" + newMessage
+      );
+      console.log(res.data);
+      if (res.data) {
+        setMessages(res.data);
+      }
+    } catch (error:any) {
+      console.log(error,error.code);
     }
+    setLoading(false);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
+    if (event.key === "Enter" && !event.shiftKey) {
       handleSendMessage();
     }
   };
