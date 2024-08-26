@@ -5,8 +5,10 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 function Banner() {
+  const navigate = useNavigate();
   return (
     <div className="relative">
       <Swiper
@@ -34,6 +36,7 @@ function Banner() {
         {servicesSlidesData.map((slide, index) => (
           <SwiperSlide
             key={index}
+            onClick={() => navigate("/services/" + slide.link)}
             style={{
               background: "rgba(255, 255, 255, 0.5)",
               backdropFilter: "blur(5px)",
