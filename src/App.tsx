@@ -8,6 +8,7 @@ import SubProductPage from "./pages/SubProductPage"
 import Newnavbar from "./components/Newnavbar";
 import ProductsPage from "./pages/ProductsPage";
 import BookADemoPage from "./pages/BookADemoPage";
+import ServicesPage from "./pages/ServicesPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/product/:productName" element={<ProductsPage />}></Route>
                 <Route path="/product/:productName/:subProduct" element={<SubProductPage />}></Route>
                 <Route path="/product/book-a-demo" element={<BookADemoPage />}></Route>
+                <Route path="/services/:service" element={<ServicesPage />}></Route>
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </ActiveSectionContextProvider>
