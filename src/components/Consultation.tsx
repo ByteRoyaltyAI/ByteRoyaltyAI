@@ -6,6 +6,7 @@ import {  toast } from "react-toastify";
 const Consultation: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [selectedTime, setSelectedTime] = useState<string>("");
+  const [loading,setLoading]=useState<boolean>(false)
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
@@ -68,6 +69,7 @@ const Consultation: React.FC = () => {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
+    setLoading(true)
 
     const data = {
       date: formatDate(currentDate),
@@ -89,6 +91,7 @@ const Consultation: React.FC = () => {
       toast.error("Consultation Booking Failed :( ");
       
     }
+    setLoading(false)
   };
 
   const formatDate = (date: Date): string => {
@@ -225,9 +228,10 @@ const Consultation: React.FC = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
+                  disabled={loading}
                   className=" bg-orange text-white px-5 py-4 rounded-lg hover:bg-lightblue hover:translate-y-2 ease-in "
                 >
-                  Submit
+                  {loading?"Loading...":"Submit"}
                 </button>
               </div>
             </form>
