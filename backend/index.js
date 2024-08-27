@@ -11,20 +11,18 @@ const port = 5000;
 
 // Middleware
 const allowedOrigins = [
-  process.env.ALLOWED_ORIGIN1,
-  process.env.ALLOWED_ORIGIN2,
-  process.env.ALLOWED_ORIGIN3
+  process.env.ALLOWED_ORIGIN1, 
+  process.env.ALLOWED_ORIGIN2, 
+  process.env.ALLOWED_ORIGIN3  
 ];
-console.log(process.env.NODEMAILER_PASS,process.env.ALLOWED_ORIGIN3)
+
+// CORS configuration
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true 
 }));
+
 
 app.use(bodyParser.json());
 
@@ -229,5 +227,5 @@ app.post("/send-email", (req, res) => {
 });
 // Start server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at ${port}`);
 });
