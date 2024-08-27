@@ -209,7 +209,7 @@ app.post("/send-email", (req, res) => {
                 <div class="contact-info">
                     <p>Best Regards,</p>
                     <p>Imaigen Support Team</p>
-                    <p>Contact:+91 8179871764</p>
+                    <p>Contact:+91 7418754623</p>
                 </div>
             </div>
         </body>
