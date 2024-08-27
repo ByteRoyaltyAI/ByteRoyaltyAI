@@ -29,6 +29,7 @@ export const servicesSlidesData = [
         imageUrl: It,
         title: 'AI Consulting',
         description: 'Expertly guiding technology adoption, aligning solutions with business goals.',
+        link:"ai-consulting"
     }
     ,
     {
@@ -36,6 +37,7 @@ export const servicesSlidesData = [
         imageUrl: DataScience,
         title: 'Data Science',
         description: 'Harnessing statistical analysis and machine learning for predictive insights and decision support.',
+        link:"data-science"
     }
     ,
     {
@@ -43,12 +45,14 @@ export const servicesSlidesData = [
         imageUrl: DataAnalytic,
         title: 'Data Analytics',
         description: 'Collecting and analyzing data for actionable insights, empowering data-driven decisions.',
+        link:"data-analytics"
     },
     {
         tool: ChatBot_l,
         imageUrl: ChatBot,
         title: 'Chatbot Development',
         description: 'Developing AI-driven conversational agents for automated customer interactions, enhancing service and personalization.',
+        link:"chatbot-development"
     }
     ,
     {
@@ -56,13 +60,14 @@ export const servicesSlidesData = [
         imageUrl: Ml,
         title: 'Machine Learning Solutions',
         description: 'Developing algorithms for computers to learn, enabling accurate predictions and recommendations.',
+        link:"machine-learning-solutions"
     },
     {
         tool: ChatBot_l,
         imageUrl: NLP_GIF,
         title: 'Natural Language Processing',
-        description: 'Leveraging AI to understand, interpret, and generate human language, enhancing communication.'
+        description: 'Leveraging AI to understand, interpret, and generate human language, enhancing communication.',
+        link:"natural-language-processing"
     }
-
-
+    
 ];
