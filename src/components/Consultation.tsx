@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import axios from "axios";
+import {  toast } from "react-toastify";
 
 const Consultation: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
@@ -81,11 +82,12 @@ const Consultation: React.FC = () => {
         data
       );
       if(response?.data)
-      alert(response.data);
+      toast.success(response.data);
       
     } catch (error) {
       console.error("Error submitting data:", error);
-      alert("Consultation Booking Failed :(");
+      toast.error("Consultation Booking Failed :( ");
+      
     }
   };
 
