@@ -114,10 +114,10 @@ function Banner() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute -left-20 top-1/2 lg:left-0">
+      <div className="absolute -left-20 top-1/2 lg:left-0 xl:-left-[3%]">
         <button className="swiper-button-prev hidden sm:absolute"></button>
       </div>
-      <div className="absolute -right-20 top-1/2 lg:right-0">
+      <div className="absolute -right-20 top-1/2 lg:right-0 xl:-right-[3%]">
         <button className="swiper-button-next "></button>
       </div>
     </div>
