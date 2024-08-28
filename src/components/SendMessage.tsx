@@ -7,11 +7,13 @@ interface SendMessageProps {
     React.SetStateAction<{ own: boolean; text: string }[]>
   >;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  loading:boolean
 }
 
 const SendMessage: React.FC<SendMessageProps> = ({
   setMessages,
   setLoading,
+  loading
 }) => {
   const [newMessage, setNewMessage] = useState("");
 
@@ -55,10 +57,15 @@ const SendMessage: React.FC<SendMessageProps> = ({
         className="p-4 rounded-md w-full  h-20 text-[15px] bg-[#FFFFFF] placeholder-[#667781] border border-[#dfe3e8]"
         style={{ color: "black" }}
       />
+     { !loading ?
       <IoSend
-        onClick={handleSendMessage}
+        onClick={ handleSendMessage}
         className="p-2 h-16 w-16 hover:cursor-pointer text-white rounded-lg mt-1 hover:text-gray-200"
+      />:
+      <IoSend
+        className="p-2 h-16 w-16 hover:cursor-wait text-white rounded-lg mt-1 hover:text-gray-200"
       />
+      }
     </form>
   );
 };

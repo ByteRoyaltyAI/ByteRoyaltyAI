@@ -39,7 +39,7 @@ const Chatbot = () => {
             </div>
           </div>
 
-          <div className="h-[70%] bg-gradient-to-br from-[#bdc3c7]  to-[#2c3e50] flex flex-col overflow-hidden">
+          <div className="h-[70%] bg-gradient-to-br from-[#bdc3c7]  to-[#2c3e50] flex flex-col overflow-hidden py-2 pb-4">
             <div className="overflow-auto">
               {messages?.map((message, index) => (
                 <div ref={scrollRef} key={index}>
@@ -54,7 +54,7 @@ const Chatbot = () => {
             </div>
           </div>
 
-          <SendMessage setMessages={setMessages} setLoading={setLoading} />
+          <SendMessage setMessages={setMessages} setLoading={setLoading} loading={loading}/>
         </div>
       ) : (
         <IoLogoOctocat
