@@ -220,7 +220,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
 
           </div>
           <form
-            className="flex flex-col gap-6 justify-center items-center  px-32 w-1/2 max-lg:w-full max-lg:p-10"
+            className="Toastify__toast-body flex flex-col gap-6 justify-center items-center  px-32 w-1/2 max-lg:w-full max-lg:p-10"
             onSubmit={notifySentForm}
             autoComplete="off"
           >
