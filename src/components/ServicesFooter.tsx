@@ -4,7 +4,7 @@ const ServicesFooter = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center gap-10 min-h-screen px-10 bg-gradient-to-br from-[#042638] via-[#083849] to-[#053142]">
         <div className="w-full lg:w-2/5 space-y-10">
-          <p className="font-bold text-[40px] w-2/3">The Imaigen process</p>
+          <p className="font-bold text-[40px] w-3/4">Imaigen process</p>
           <p className="font-semibold text-[20px]">
             Our process is a systematic journey comprising four stages:
             Discovery, Proposal, Implementation, and Optimization.

@@ -102,7 +102,7 @@ const ResumeJobMatcher: React.FC = () => {
           </h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="group space-y-2">
-              <label htmlFor="resume" className="text-[12px]">
+              <label htmlFor="resume" className="text-[15px]">
                 Upload Resume (PDF only)
               </label>
               <div className="relative">
@@ -111,7 +111,7 @@ const ResumeJobMatcher: React.FC = () => {
                   type="file"
                   accept=".pdf"
                   onChange={handleResumeUpload}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
                   required
                 />
                 <div className="absolute top-4 right-0 flex justify-center items-center pr-3 pointer-events-none">
@@ -123,7 +123,7 @@ const ResumeJobMatcher: React.FC = () => {
               </div>
             </div>
             <div className="group">
-              <label htmlFor="jobDescription" className="text-[12px]">
+              <label htmlFor="jobDescription" className="text-[15px]">
                 Job Description
               </label>
               <textarea
@@ -131,7 +131,7 @@ const ResumeJobMatcher: React.FC = () => {
                 value={jobDescription}
                 onChange={handleJobDescriptionChange}
                 rows={5}
-                className="w-full px-4 py-3 text-[15px] border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 resize-none !text-black"
+                className="w-full px-4 py-3 text-[15px] border-2 border-gray-300 rounded-lg focus:outline-none !text-black"
                 placeholder="Paste the job description here..."
                 required
               />

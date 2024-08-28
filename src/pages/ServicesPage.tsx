@@ -9,13 +9,13 @@ import { data } from "../assets/lib/ServicesData";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ServicesPage = () => {
-  const params=useParams<{service:string}>()
-  const servicesData=data[params.service as string]
-  const navigate=useNavigate()
+  const params = useParams<{ service: string }>();
+  const servicesData = data[params.service as string];
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!servicesData) {
-      navigate('/');
+      navigate("/");
     }
   }, [servicesData, navigate]);
 
@@ -28,10 +28,15 @@ const ServicesPage = () => {
 
       <div className="flex justify-center  ">
         <div className="flex flex-col justify-center items-center h-[65vh] sm:h-[75vh] gap-10 w-[95%] sm:w-[80%] lg:w-[70%] xl:w-[65%] text-center pb-5">
-          <p className="text-[3.8rem] sm:text-[6.8rem] font-semibold ">
+          <p
+            className="text-[3.8rem] sm:text-[6rem] font-semibold "
+            style={{
+              textShadow: "0 0 10px rgba(0,255,255,0.5)",
+            }}
+          >
             {servicesData.title}
           </p>
-          <p className="text-[16px] ">{servicesData.desc}</p>
+          <p className="text-[20px] remainText ">{servicesData.desc}</p>
         </div>
       </div>
 
@@ -47,13 +52,13 @@ const ServicesPage = () => {
           }}
         >
           <div className="quote-container rotate-3 flex items-center flex-col justify-center p-20 sm:p-56 max-lg:p-20 text-center ">
-            <h3 className="text-[--white] text-center text-7xl   max-lg:text-[3rem] max-lg:mb-10 max-lg:leading-tight ">
+            {/* <h3 className="text-[--white] text-center text-7xl   max-lg:text-[3rem] max-lg:mb-10 max-lg:leading-tight ">
               Service Description
-            </h3>
+            </h3> */}
             <div className="px-0 sm:px-10 pt-10 space-y-5">
-              <p className="text-[30px] font-semibold pb-2"> </p>
+              {/* <p className="text-[30px] font-semibold pb-2"> </p> */}
               {servicesData.serviceDesc.map((text, index) => (
-                <p className="text-[15px]" key={index}>
+                <p className="text-[24px]" key={index}>
                   {text}
                 </p>
               ))}
@@ -88,14 +93,14 @@ const ServicesPage = () => {
 
         {/* benifits */}
         <div className="px-[3%] space-y-12 py-40">
-          <p className="font-bold text-[30px]">Benifits</p>
+          <p className="font-bold text-[30px] text-center">{servicesData.benifitsHeader}</p>
           {servicesData.benifits.map((benifit, index) => (
             <div className="flex gap-2 " key={index}>
               <div className="h-10 w-10">
                 <GoDotFill className="text-[#0EBAB1] pt-1.5 h-7 w-7" />
               </div>
-              <p className="text-[15px]">
-                <strong>{benifit.emphasis} </strong>
+              <p className="text-[16px]">
+                <strong className="text-[18px] ">{benifit.emphasis} </strong>
                 {benifit.text}
               </p>
             </div>
@@ -104,11 +109,9 @@ const ServicesPage = () => {
       </GlassmorphismWrapper>
 
       {/* footer */}
-      <ServicesFooter/>
+      <ServicesFooter />
     </div>
   );
 };
-
-
 
 export default ServicesPage;

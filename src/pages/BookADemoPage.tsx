@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import {  toast } from "react-toastify";
 
 interface FormData {
   firstName: string;
@@ -8,7 +9,7 @@ interface FormData {
   workEmail: string;
   companyName: string;
   message: string;
-}
+} 
 
 const BookADemoPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -18,6 +19,7 @@ const BookADemoPage: React.FC = () => {
     companyName: "",
     message: ""
   });
+  const [loading,setLoading]=useState<boolean>(false)
 
   const handleChange =async (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -29,19 +31,23 @@ const BookADemoPage: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+    setLoading(true)
+
     if (!formData.firstName.trim()) {
-      alert("First name cannot be empty.");
+      toast.warn("First name cannot be empty.");
+      setLoading(false)
       return;
     }
   
     if (!formData.workEmail.includes("@")) {
-      alert("Please enter a valid email address.");
+      toast.warn("Please enter a valid email address.");
+      setLoading(false)
       return;
     }
   
     if (!formData.message.trim()) {
-      alert("Message cannot be empty.");
+      toast.warn("Message cannot be empty.");
+      setLoading(false)
       return;
     }
 
@@ -51,7 +57,7 @@ const BookADemoPage: React.FC = () => {
         formData
       );
       console.log(response.data);
-      alert("Demo Successfully Booked!");
+      toast.success("Demo Successfully Booked!");
       setFormData({ 
         firstName: "",
         lastName: "",
@@ -60,8 +66,9 @@ const BookADemoPage: React.FC = () => {
         message: ""})
     } catch (error) {
       console.error("Error submitting data:", error);
-      alert("Demo Booking Failed :(");
+      toast.error("Demo Booking Failed :(");
     }
+    setLoading(false)
   };
   
 
@@ -125,7 +132,7 @@ const BookADemoPage: React.FC = () => {
             </div>
 
             {/* Company Name */}
-            <div className="flex flex-col mt-4">
+            <div className="flex flex-col mt-4 ">
               <label htmlFor="companyName" className="mb-2">Company name</label>
               <input
                 type="text"
@@ -152,10 +159,11 @@ const BookADemoPage: React.FC = () => {
 
             {/* Submit Button */}
             <button
+              disabled={loading}
               type="submit"
               className="bg-[#FF5982] p-6 rounded-xl text-[16px] hover:opacity-95 mt-6"
             >
-              Submit
+             { loading ? "Loading..." : "Submit"}
             </button>
           </form>
         </div>

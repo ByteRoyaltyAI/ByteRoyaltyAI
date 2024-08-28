@@ -19,7 +19,7 @@ export  const InputField: React.FC<InputFieldProps> = ({ id, label, type, placeh
         id={id}
         type={type}
         onChange={onChange}
-        className="p-4 text-[15px] bg-[#0C1220] rounded-lg placeholder:text-[#9AA0AD]"
+        className="p-4 text-[15px] bg-[#0C1220] rounded-lg placeholder:text-[#9AA0AD] focus:outline-none"
         placeholder={placeholder}
         required={required}
       />

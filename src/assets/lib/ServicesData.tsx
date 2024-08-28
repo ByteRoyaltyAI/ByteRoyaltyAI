@@ -4,77 +4,92 @@ interface servicesDataInterface {
   serviceDesc: string[];
   features: string[];
   img: string;
+  benifitsHeader:string,
   benifits: Array<{ emphasis: string; text: string }>;
 }
 
 export const data: { [key: string]: servicesDataInterface } = {
   "ai-consulting": {
     title: "AI Consultation",
-    desc: "Encompasses building and maintaining websites, including front-end (user interface) and back-end (server-side) development.",
+    desc: "Reveal hidden growth with Cutting-Edge AI Solutions",
     serviceDesc: [
-      "We offer Web Development Services to businesses of all sizes to give them a boost.",
-      "Web development involves a range of tasks, it involves a range of tasks, including designing the user interface, developing the back-end functionality, and ensuring that the website or web app is responsive and user-friendly.",
-      "Web development encompasses both the visual aspects of a website and its underlying technical infrastructure.",
+      "Artificial Intelligence is revolutionizing how businesses operate, with 73% of companies already using AI to enhance efficiency and drive growth. If your business hasn’t yet tapped into the power of AI, now is the time.  ",
     ],
     features: [
-      "Front-end Development",
-      "Back-end Development",
-      "Content Management System (CMS) Integration",
-      "E-commerce Features",
-      "Responsive Design",
+      "AI Strategy Development",
+      "AI Model Development and Optimization",
+      "AI Training and Education",
+      "AI Ethics and Compliance Consulting",
+      "AI Innovation and R&D",
     ],
     img: "https://cdn.prod.website-files.com/65e9d803e7334ec910a26f07/6601698cb7dff0363a482d7d_Web%20Development%20Service-p-800.webp",
+    benifitsHeader:"AI Consulting: A Game-Changer",
     benifits: [
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Maximize ROI: ",
+        text: "Boost Efficiency and Returns with Tailored AI Solutions. Companies using AI see up to 30% higher ROI.",
       },
       {
-        emphasis: "Enhanced Efficiency: ",
-        text: "Custom solutions streamline processes, automate tasks, and eliminate inefficiencies, boosting productivity and reducing manual work.",
+        emphasis: "Stay Ahead of the Curve: ",
+        text: "Gain a Competitive Edge with Advanced AI. 84% of industry leaders use AI to stay ahead. ",
       },
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Precision-Engineered Solutions: ",
+        text: "Achieve 25% Greater Accuracy with Custom AI. Unlock Impact with Custom AI Models for Precision Results.",
       },
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Outpace Competitors: ",
+        text: "Harness AI to Lead the Market 70% of businesses use AI to gain a competitive edge.",
+      },
+      {
+        emphasis: "Drive Innovation and R&D: ",
+        text: "Lead with Cutting-Edge AI Solutions. Stay ahead in tech with AI R&D. ",
+      },
+      {
+        emphasis: "Unlock Growth Opportunities: ",
+        text: "Transform Your Business Potential. Reveal hidden growth with a tailored AI strategy. ",
       },
     ],
   },
   "data-science": {
     title: "Data Science",
-    desc: "Encompasses building and maintaining websites, including front-end (user interface) and back-end (server-side) development.",
+    desc: "Reveal hidden growth with Cutting-Edge AI Solutions",
     serviceDesc: [
-      "We offer Web Development Services to businesses of all sizes to give them a boost.",
-      "Web development involves a range of tasks, it involves a range of tasks, including designing the user interface, developing the back-end functionality, and ensuring that the website or web app is responsive and user-friendly.",
-      "Web development encompasses both the visual aspects of a website and its underlying technical infrastructure.",
+      "Artificial Intelligence is revolutionizing how businesses operate, with 73% of companies already using AI to enhance efficiency and drive growth. If your business hasn’t yet tapped into the power of AI, now is the time.  ",
     ],
     features: [
-      "Front-end Development",
-      "Back-end Development",
-      "Content Management System (CMS) Integration",
-      "E-commerce Features",
-      "Responsive Design",
+      "AI Strategy Development",
+      "AI Model Development and Optimization",
+      "AI Training and Education",
+      "AI Ethics and Compliance Consulting",
+      "AI Innovation and R&D",
     ],
     img: "https://cdn.prod.website-files.com/65e9d803e7334ec910a26f07/6601698cb7dff0363a482d7d_Web%20Development%20Service-p-800.webp",
+    benifitsHeader:"AI Consulting: A Game-Changer",
     benifits: [
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Maximize ROI: ",
+        text: "Boost Efficiency and Returns with Tailored AI Solutions. Companies using AI see up to 30% higher ROI.",
       },
       {
-        emphasis: "Enhanced Efficiency: ",
-        text: "Custom solutions streamline processes, automate tasks, and eliminate inefficiencies, boosting productivity and reducing manual work.",
+        emphasis: "Stay Ahead of the Curve: ",
+        text: "Gain a Competitive Edge with Advanced AI. 84% of industry leaders use AI to stay ahead. ",
       },
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Precision-Engineered Solutions: ",
+        text: "Achieve 25% Greater Accuracy with Custom AI. Unlock Impact with Custom AI Models for Precision Results.",
       },
       {
-        emphasis: "Tailored to Specific Needs: ",
-        text: "Custom software is designed to address your organization's unique requirements and challenges, ensuring a perfect fit for your operations.",
+        emphasis: "Outpace Competitors: ",
+        text: "Harness AI to Lead the Market 70% of businesses use AI to gain a competitive edge.",
+      },
+      {
+        emphasis: "Drive Innovation and R&D: ",
+        text: "Lead with Cutting-Edge AI Solutions. Stay ahead in tech with AI R&D. ",
+      },
+      {
+        emphasis: "Unlock Growth Opportunities: ",
+        text: "Transform Your Business Potential. Reveal hidden growth with a tailored AI strategy. ",
       },
     ],
   },

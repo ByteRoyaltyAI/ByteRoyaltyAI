@@ -60,11 +60,16 @@ const Home: React.FC = () => {
           </GlassmorphismWrapper>
 
           <GlassmorphismWrapper>
-            <LazyBannerQuote
+            {/* <LazyBannerQuote
               style={"noBG"}
               quoteIndex={1}
               containerType="statement"
-            />
+            /> */}
+            <div className="py-40 pb-60 flex justify-center">
+             <h3 className="text-[--blue] text-center text-[25px]  sm:text-[3.2rem] max-lg:mb-10 max-lg:leading-tight w-[90%] sm:w-2/3">
+             "Companies that use Artificial Intelligence are 50% more likely to outpace their competitors. "
+             </h3>
+            </div>
           </GlassmorphismWrapper>
 
           <GlassmorphismWrapper>
