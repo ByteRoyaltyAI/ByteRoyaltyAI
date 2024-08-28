@@ -104,6 +104,27 @@
     animateImages();
 
   </script>
+<script>
+  document.addEventListener('click', function(e) {
+
+    if (e.target.closest('[value="Send"]')) {
+      var x = 0;
+      var timer = setInterval(function() {
+        if (document.querySelectorAll('.Toastify__toast-body').length > 0 && document.querySelector('.Toastify__toast-body').innerText.includes('Thank you for your email')) {
+          if (x == 0) {
+            gtag('event', 'form_submitted');
+            x = 1;
+          }
+          clearInterval(timer);
+        }
+      }, 1000);
+    }
+
+  }, {
+    capture: true
+  });
+
+</script>
 
 
 </body>
