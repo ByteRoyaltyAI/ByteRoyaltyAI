@@ -54,7 +54,7 @@ const SendMessage: React.FC<SendMessageProps> = ({
         type="text"
         value={newMessage}
         placeholder="Type a message"
-        className="p-4 rounded-md w-full  h-20 text-[15px] bg-[#FFFFFF] placeholder-[#667781] border border-[#dfe3e8]"
+        className="p-4 rounded-md w-full  h-20 text-[15px] bg-[#FFFFFF] placeholder-[#667781] border border-[#dfe3e8] focus:outline-none"
         style={{ color: "black" }}
       />
      { !loading ?
