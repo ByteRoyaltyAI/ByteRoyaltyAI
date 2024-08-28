@@ -34,17 +34,20 @@ const BookADemoPage: React.FC = () => {
     setLoading(true)
 
     if (!formData.firstName.trim()) {
-      alert("First name cannot be empty.");
+      toast.warn("First name cannot be empty.");
+      setLoading(false)
       return;
     }
   
     if (!formData.workEmail.includes("@")) {
-      alert("Please enter a valid email address.");
+      toast.warn("Please enter a valid email address.");
+      setLoading(false)
       return;
     }
   
     if (!formData.message.trim()) {
-      alert("Message cannot be empty.");
+      toast.warn("Message cannot be empty.");
+      setLoading(false)
       return;
     }
 
@@ -129,7 +132,7 @@ const BookADemoPage: React.FC = () => {
             </div>
 
             {/* Company Name */}
-            <div className="flex flex-col mt-4">
+            <div className="flex flex-col mt-4 ">
               <label htmlFor="companyName" className="mb-2">Company name</label>
               <input
                 type="text"
