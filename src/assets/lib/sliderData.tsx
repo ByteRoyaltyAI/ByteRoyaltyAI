@@ -4,8 +4,8 @@ import It from "../../assets/Slider-Images/it.gif"
 import It_l from "../../assets/Slider-Images/itcon-l.png"
 
 
-import DataScience from "../../assets/Slider-Images/ds.gif";
-import DataScience_l from "../../assets/Slider-Images/datasci-l.png";
+// import DataScience from "../../assets/Slider-Images/ds.gif";
+// import DataScience_l from "../../assets/Slider-Images/datasci-l.png";
 
 import DataAnalytic from "../../assets/Slider-Images/da.gif";
 import DataAnalytic_l from "../../assets/Slider-Images/analy_and_busin-l.png";
