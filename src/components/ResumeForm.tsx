@@ -60,7 +60,7 @@ const ResumeJobMatcher: React.FC = () => {
       formData.append('difficulty', difficulty);
     }
 
-    const API_URL = import.meta.env.VITE_AI_API_URL + (isInterviewGeneration ? 'interview_generation' : 'extract_resume');
+    const API_URL = import.meta.env.VITE_AI_API_URL + (isInterviewGeneration ? 'interview_generation' : 'extract_and_analyze');
     
     try {
       const response = await axios.post<MatchResult>(

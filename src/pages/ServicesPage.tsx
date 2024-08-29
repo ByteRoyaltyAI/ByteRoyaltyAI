@@ -7,6 +7,7 @@ import GlassmorphismWrapper from "../components/GlassmorphismWrapper";
 import ServicesFooter from "../components/ServicesFooter";
 import { data } from "../assets/lib/ServicesData";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "../components/Footer"
 
 const ServicesPage = () => {
   const params = useParams<{ service: string }>();
@@ -92,7 +93,7 @@ const ServicesPage = () => {
         </div>
 
         {/* benifits */}
-        <div className="px-[3%] space-y-12 py-40">
+        <div className="px-[3%] space-y-12 py-72">
           <p className="font-bold text-[30px] text-center">{servicesData.benifitsHeader}</p>
           {servicesData.benifits.map((benifit, index) => (
             <div className="flex gap-2 " key={index}>
@@ -110,6 +111,8 @@ const ServicesPage = () => {
 
       {/* footer */}
       <ServicesFooter />
+
+      <Footer/>
     </div>
   );
 };

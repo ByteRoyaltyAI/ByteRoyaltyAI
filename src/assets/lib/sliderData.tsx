@@ -4,8 +4,8 @@ import It from "../../assets/Slider-Images/it.gif"
 import It_l from "../../assets/Slider-Images/itcon-l.png"
 
 
-import DataScience from "../../assets/Slider-Images/ds.gif";
-import DataScience_l from "../../assets/Slider-Images/datasci-l.png";
+// import DataScience from "../../assets/Slider-Images/ds.gif";
+// import DataScience_l from "../../assets/Slider-Images/datasci-l.png";
 
 import DataAnalytic from "../../assets/Slider-Images/da.gif";
 import DataAnalytic_l from "../../assets/Slider-Images/analy_and_busin-l.png";
@@ -31,14 +31,14 @@ export const servicesSlidesData = [
         description: 'Expertly guiding technology adoption, aligning solutions with business goals.',
         link:"ai-consulting"
     }
-    ,
-    {
-        tool: DataScience_l,
-        imageUrl: DataScience,
-        title: 'Data Science',
-        description: 'Harnessing statistical analysis and machine learning for predictive insights and decision support.',
-        link:"data-science"
-    }
+    // ,
+    // {
+    //     tool: DataScience_l,
+    //     imageUrl: DataScience,
+    //     title: 'Data Science',
+    //     description: 'Harnessing statistical analysis and machine learning for predictive insights and decision support.',
+    //     link:"data-science"
+    // }
     ,
     {
         tool: DataAnalytic_l,
@@ -60,7 +60,7 @@ export const servicesSlidesData = [
         imageUrl: Ml,
         title: 'Machine Learning Solutions',
         description: 'Developing algorithms for computers to learn, enabling accurate predictions and recommendations.',
-        link:"machine-learning-solutions"
+        link:"machine-learning"
     },
     {
         tool: ChatBot_l,
