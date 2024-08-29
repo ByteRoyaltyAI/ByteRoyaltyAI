@@ -95,43 +95,47 @@ export const data: { [key: string]: servicesDataInterface } = {
   },
   "data-analytics": {
     "title": "Data Analytics",
-    "desc": "Unleash the Power of Data to Drive Smart Business Decisions",
+    "desc": "Unleash Business Potential with Data-Driven Insights",
     "serviceDesc": [
       "Data is the new oil, and businesses that harness its power gain a significant edge. With 85% of companies investing in data analytics to stay competitive, the time to leverage your data is now."
     ],
     "features": [
       "Data Strategy Development",
-      "Data Collection and Integration",
-      "Data Visualization and Reporting",
-      "Advanced Data Analytics and Machine Learning",
-      "Predictive Analytics and Forecasting"
+      "Advanced Data Modeling and Optimization",
+      "Data Training and Education",
+      "Data Governance and Compliance Consulting",
+      "Data Innovation and R&D"
     ],
     "img": "https://cdn.prod.website-files.com/65e9d803e7334ec910a26f07/6601698cb7dff0363a482d7d_Web%20Development%20Service-p-800.webp",
     "benifitsHeader": "Data Analytics: The Key to Informed Decision-Making",
     "benifits": [
       {
-        "emphasis": "Data-Driven Insights: ",
-        "text": "Make Smarter Decisions with Real-Time Data. 90% of leading businesses prioritize data-driven strategies."
+        "emphasis": "Maintain Competitive Advantage: ",
+        "text": "Stay ahead with advanced analytics. 90% of industry leaders rely on data to secure their position."
       },
       {
-        "emphasis": "Boost Efficiency: ",
-        "text": "Optimize Operations with Actionable Analytics. Companies using data analytics see a 15% increase in efficiency."
+        "emphasis": "Maximize ROI:  ",
+        "text": "Make smarter decisions with data-driven strategies. Companies using data analytics experience up to 20% higher returns."
       },
       {
-        "emphasis": "Enhance Customer Experience: ",
-        "text": "Tailor Solutions with Customer-Centric Data. 80% of companies using data analytics report improved customer satisfaction."
+        "emphasis": "Maintain Competitive Advantage: ",
+        "text": "Stay ahead with advanced analytics. 90% of industry leaders rely on data to secure their position."
       },
       {
-        "emphasis": "Competitive Advantage: ",
-        "text": "Outmaneuver Rivals with Predictive Analytics. 75% of businesses gain a competitive edge with advanced data analysis."
+        "emphasis": "Precision Insights: ",
+        "text": "Achieve up to 30% greater accuracy with custom data models, delivering precise and actionable insights."
       },
       {
-        "emphasis": "Innovative Growth: ",
-        "text": "Unlock New Opportunities with Predictive Data. Use analytics to discover untapped markets and drive growth."
+        "emphasis": "Outperform Competitors: ",
+        "text": " Use data analytics to lead your market. 75% of businesses harness data analytics to stay ahead."
       },
       {
-        "emphasis": "Improve Forecast Accuracy: ",
-        "text": "Predict Market Trends with Precision. Achieve 20% better forecasting accuracy using advanced analytics."
+        "emphasis": "Fuel Innovation:  ",
+        "text": " Drive innovation with cutting-edge data solutions. Stay on the forefront of technology with data-powered R&D."
+      },
+      {
+        "emphasis": "Unlock New Opportunities:   ",
+        "text": " Transform your business by uncovering growth potential with a customized data strategy."
       }
     ]
   },
@@ -146,7 +150,7 @@ export const data: { [key: string]: servicesDataInterface } = {
       "Natural Language Processing (NLP)",
       "AI-Powered Conversational Interfaces",
       "Multi-Platform Integration",
-      "Continuous Learning and Improvement"
+      "Chatbot Training and Optimization"
     ],
     "img": "https://cdn.prod.website-files.com/65e9d803e7334ec910a26f07/6601698cb7dff0363a482d7d_Web%20Development%20Service-p-800.webp",
     "benifitsHeader": "Chatbot Development: Elevate Customer Experience",
@@ -216,6 +220,10 @@ export const data: { [key: string]: servicesDataInterface } = {
       {
         "emphasis": "Real-Time Insights: ",
         "text": "Gain Immediate Insights for Better Decision-Making. Leverage real-time data to stay competitive and responsive."
+      },
+      {
+        "emphasis": "Proven Results: ",
+        "text": "Our solutions have helped businesses across industries achieve significant improvements in efficiency, cost savings, and revenue growth."
       }
     ]
   },

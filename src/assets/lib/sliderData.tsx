@@ -31,14 +31,14 @@ export const servicesSlidesData = [
         description: 'Expertly guiding technology adoption, aligning solutions with business goals.',
         link:"ai-consulting"
     }
-    ,
-    {
-        tool: DataScience_l,
-        imageUrl: DataScience,
-        title: 'Data Science',
-        description: 'Harnessing statistical analysis and machine learning for predictive insights and decision support.',
-        link:"data-science"
-    }
+    // ,
+    // {
+    //     tool: DataScience_l,
+    //     imageUrl: DataScience,
+    //     title: 'Data Science',
+    //     description: 'Harnessing statistical analysis and machine learning for predictive insights and decision support.',
+    //     link:"data-science"
+    // }
     ,
     {
         tool: DataAnalytic_l,
@@ -60,7 +60,7 @@ export const servicesSlidesData = [
         imageUrl: Ml,
         title: 'Machine Learning Solutions',
         description: 'Developing algorithms for computers to learn, enabling accurate predictions and recommendations.',
-        link:"machine-learning-solutions"
+        link:"machine-learning"
     },
     {
         tool: ChatBot_l,
