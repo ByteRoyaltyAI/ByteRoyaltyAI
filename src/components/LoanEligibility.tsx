@@ -3,6 +3,8 @@ import axios from "axios";
 import { InputField } from "./FormInputFeild";
 import { z } from "zod";
 import { toast } from "react-toastify";
+import InputDropdown from "./InputDropdown"
+
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
@@ -33,8 +35,6 @@ const LoanEligibility = () => {
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
@@ -60,6 +60,7 @@ const LoanEligibility = () => {
       max_debt_income_ratio,
       reqd_employment_status,
       required_income,
+      loan_type
     } = formData;
 
     let objectToSend = {
@@ -75,21 +76,20 @@ const LoanEligibility = () => {
         max_debt_income_ratio,
         reqd_employment_status,
         required_income,
+        loan_type
       },
     };
+    console.log(objectToSend);
 
     const validatedData = validateFormData(formData);
     if (!validatedData) {
       console.log(validatedData);
       return;
     }
-    console.log(objectToSend);
-    return;
 
     setLoading(true);
     setErrorMessage("");
     setResult(null);
-    console.log(formData);
 
     const API_URL = import.meta.env.VITE_AI_API_URL + inputData.endPoint;
     try {
@@ -139,6 +139,15 @@ const LoanEligibility = () => {
                         placeholder={input.placeholder}
                       />
                     ))}
+
+                  <div className="space-y-12">
+                  {inputData.checkboxFeilds.map((feild,index)=>(
+                    <div key={index}>
+                    <InputDropdown feild={feild} options={feild.options} setFormData={setFormData}/>
+                      </div>
+                  ))}
+                  </div>
+
                   </div>
                 </div>
                 <button
@@ -270,9 +279,14 @@ const inputData = {
     {
       id: "reqd_employment_status",
       label: "Required Employment Status",
-      type: "checkbox",
       options: ["Self Employed", "Salaried", "Buisness", "Unemployed"],
       placeholder: "ex. employed",
+    },
+    {
+      id: "loan_type",
+      label: "Loan Type",
+      options: ["Personal", "Buisness", "Goverment"],
+      placeholder: "ex. Personal",
     },
   ],
 };
