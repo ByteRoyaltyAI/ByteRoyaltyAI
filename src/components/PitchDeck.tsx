@@ -6,16 +6,16 @@ interface MatchResult {
   [key: string]: any;
 }
 
-const ResumeJobMatcher: React.FC = () => {
-  const [resume, setResume] = useState<File | null>(null);
+const PicthDeckAnalysis: React.FC = () => {
+  const [file, setFile] = useState<File | null>(null);
   const [formData, setFormData] = useState<Record<string, string | number>>({});
   const [result, setResult] = useState<MatchResult | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
 
-  const handleResumeUpload = (event: ChangeEvent<HTMLInputElement>) => {
+  const handlefileUpload = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
-      setResume(event.target.files[0]);
+      setFile(event.target.files[0]);
       setErrorMessage("");
     }
   };
@@ -26,20 +26,18 @@ const ResumeJobMatcher: React.FC = () => {
     setErrorMessage("");
     setResult(null);
 
-    const formData = new FormData();
-    if (resume) {
-      formData.append("pdf_file", resume);
+    const ObjectToSend = new FormData();
+    if (file) {
+      ObjectToSend.append("pdf_file", file);
     } else {
-      setErrorMessage("Please upload a resume.");
+      setErrorMessage("Please upload a file.");
       setLoading(false);
       return;
     }
-
-    const API_URL =
-      import.meta.env.VITE_AI_API_URL + "pitchdeck_analysis" ;
+    const API_URL = import.meta.env.VITE_AI_API_URL + "pitchdeck_analysis";
 
     try {
-      const response = await axios.post<MatchResult>(API_URL, formData, {
+      const response = await axios.post<MatchResult>(API_URL, ObjectToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -69,29 +67,34 @@ const ResumeJobMatcher: React.FC = () => {
       setLoading(false);
     }
   };
-  
-  const handleOptionChange=(e:ChangeEvent<HTMLSelectElement>)=>{
-  setFormData({...formData,[e.target.id]:e.target.value})
-  }
+
+  const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const { id, value } = event.target;
+    console.log(id, value);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [id]: value,
+    }));
+  };
 
   return (
     <div className="py-10 bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
       <div className="max-w-4xl  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="p-8">
           <h1 className="text-4xl font-extrabold text-center mb-8">
-          Pitchdeck Analysis
+            Pitchdeck Analysis
           </h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="group space-y-2">
-              <label htmlFor="resume" className="text-[15px]">
+              <label htmlFor="file" className="text-[15px]">
                 Upload Pitch Deck (PDF only)
               </label>
               <div className="relative">
                 <input
-                  id="resume"
+                  id="file"
                   type="file"
                   accept=".pdf"
-                  onChange={handleResumeUpload}
+                  onChange={handlefileUpload}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
                   required
                 />
@@ -122,18 +125,16 @@ const ResumeJobMatcher: React.FC = () => {
 
             {data.inputFields.map((feild) => (
               <div className="group " key={feild.id}>
-                <label htmlFor="difficulty" className="text-[12px]">
-                  {feild.label}
-                </label>
+                <label className="text-[12px]">{feild.label}</label>
                 <select
-                  id="difficulty"
+                  id={feild.id}
                   value={formData[feild.id]}
                   onChange={handleOptionChange}
                   className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black"
                   required
                 >
                   {feild.options.map((opt) => (
-                    <option value="easy" key={opt}>
+                    <option value={opt} key={opt}>
                       {opt}
                     </option>
                   ))}
@@ -264,4 +265,4 @@ const data = {
   ],
 };
 
-export default ResumeJobMatcher;
+export default PicthDeckAnalysis;
