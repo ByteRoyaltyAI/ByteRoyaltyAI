@@ -1,55 +1,54 @@
 import React, { useState, ChangeEvent, FormEvent, Suspense } from "react";
 import axios from "axios";
 import { InputField } from "./FormInputFeild";
-import { z } from 'zod';
-import {  toast } from "react-toastify";
+import { z } from "zod";
+import { toast } from "react-toastify";
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
+const LoanEligibility = () => {
+  const formSchema = z.object({
+    annual_income: z.number().positive(),
+    existing_debt: z.number().nonnegative(),
+    other_relevant_info: z.string().optional(),
+    credit_score: z.number().int(),
+    employment_status: z.string().optional(),
+    minimum_credit_score: z.number().int(),
+    max_debt_income_ratio: z.number().min(0.1).max(1),
+    reqd_employment_status: z.string().optional(),
+    required_income: z.number().positive(),
+  });
 
-
-const LoanEligibility= () => {
-    const formSchema = z.object({
-        annual_income: z.number().positive(),
-        existing_debt: z.number().nonnegative(),
-        other_relevant_info: z.string().optional(),
-        credit_score: z.number().int(),
-        employment_status: z.string().optional(),
-        minimum_credit_score: z.number().int(),
-        max_debt_income_ratio: z.number(),
-        reqd_employment_status: z.string().optional(),
-        required_income: z.number().positive(),
-      });
-      
-      const validateFormData = (data:any) => {
-        try {
-          return formSchema.parse(data);
-        } catch (error:any) {
-            toast.warn("Kindly fill all feilds to continue")
-          console.error('Validation error:', error.errors);
-          return null;
-        }
-      };
+  const validateFormData = (data: any) => {
+    try {
+      return formSchema.parse(data);
+    } catch (error: any) {
+      toast.warn("Kindly fill all feilds to continue");
+      console.error("Validation error:", error.errors);
+      return null;
+    }
+  };
 
   const [formData, setFormData] = useState<Record<string, string | number>>({});
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
-
-const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
-  
+
     const parsedValue = isNaN(Number(value)) ? value : Number(value);
-  
+
     setFormData((prevFormData) => ({
       ...prevFormData,
       [id]: parsedValue,
     }));
   };
-  
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
+    event.preventDefault();
 
     const {
       annual_income,
@@ -80,12 +79,12 @@ const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
     };
 
     const validatedData = validateFormData(formData);
-    if(!validatedData){
-      console.log(validatedData)
-        return 
+    if (!validatedData) {
+      console.log(validatedData);
+      return;
     }
-   console.log(objectToSend)
-   return 
+    console.log(objectToSend);
+    return;
 
     setLoading(true);
     setErrorMessage("");
@@ -263,13 +262,16 @@ const inputData = {
     {
       id: "max_debt_income_ratio",
       label: "Max Debt Income Ratio",
-      type: "number",
+      type: "double",
       placeholder: "ex. 0.8",
     },
+  ],
+  checkboxFeilds: [
     {
       id: "reqd_employment_status",
       label: "Required Employment Status",
-      type: "text",
+      type: "checkbox",
+      options: ["Self Employed", "Salaried", "Buisness", "Unemployed"],
       placeholder: "ex. employed",
     },
   ],
