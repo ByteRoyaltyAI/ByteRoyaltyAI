@@ -45,7 +45,8 @@
     "reactjs-popup": "^2.0.6",
     "swiper": "^10.3.1",
     "three": "^0.161.0",
-    "web-vitals": "^3.5.0"
+    "web-vitals": "^3.5.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/materialize-css": "^1.0.14",
