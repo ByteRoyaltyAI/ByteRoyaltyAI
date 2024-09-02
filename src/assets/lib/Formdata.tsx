@@ -105,66 +105,6 @@ export const formInputData: Record<string, FormSection> = {
             },
         ],
     },
-    loanEligibility: {
-        title: "Loan Eligibilty Assesment",
-        endPoint: "assess_eligibility",
-        inputFields: [
-            {
-                id: "annual_income",
-                label: "Annual Income",
-                type: "number",
-                placeholder: "Enter your annual income",
-            },
-            {
-                id: "credit_score",
-                label: "Credit Score",
-                type: "number",
-                placeholder: "Enter your credit score",
-            },
-            {
-                id: "existing_debt",
-                label: "Existing Debt",
-                type: "number",
-                placeholder: "Enter your existing debt",
-            },
-            {
-                id: "employment_status",
-                label: "Employment Status",
-                type: "text",
-                placeholder: "Enter your employment status",
-            },
-            {
-                id: "other_relevant_info",
-                label: "Other Relevant Information",
-                type: "text",
-                placeholder: "Enter other relevant info",
-            },
-            {
-                id: "required_income",
-                label: "Required Income",
-                type: "number",
-                placeholder: "ex. 60,000",
-            },
-            {
-                id: "minimum_credit_score",
-                label: "Minimum Credit Score",
-                type: "number",
-                placeholder: "ex. 30,000",
-            },
-            {
-                id: "max_debt_income_ratio",
-                label: "Max Debt Income Ratio",
-                type: "number",
-                placeholder: "ex. 30,000",
-            },
-            {
-                id: "reqd_employment_status",
-                label: "Required Employment Status",
-                type: "text",
-                placeholder: "ex. employed",
-            },
-        ],
-    },
     careerAdvice: {
         title: "Career Advice ",
         endPoint: "career_advice",
