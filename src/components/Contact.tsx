@@ -23,7 +23,6 @@ const Contact: React.FC = () => {
   const { ref } = useSectionInView("Contact");
   const { language } = useLanguage();
   const { theme } = useTheme();
-  const [error, setError] = useState<string | any>(null);
 
   const animationReference = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -34,10 +33,14 @@ const Contact: React.FC = () => {
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   const notifySentForm: React.FormEventHandler<HTMLFormElement> = async (e) => {
-    setError(null);
-    console.log(error);
-
+    
     e.preventDefault();
+
+    if (email.includes("gmail.com")) {
+      toast.warn("Only work emails are accepted, not personal Gmail addresses.");
+      return;
+    }
+
     let data = {
       user_email: email, user_name: name, user_subject: subject, user_message: message
     }
@@ -66,7 +69,7 @@ const Contact: React.FC = () => {
       } else {
         toast.error(toastMessages.failedEmailSent.en);
       }
-      setError("An Error occured, try again later");
+      toast.warn("An Error occured, try again later");
     }
     setLoading(false)
   };
@@ -255,7 +258,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
                 }}
                 onChange={handleInputChange}
                 className={`${theme === "dark"
-                  ? "bg-[--blackblue] dark-mode-shadow "
+                  ? "bg-[--blackblue] dark-mode-shadow focus:outline-none"
                   : "bg-[--icewhite] dark-shadow "
                   }`}
               />
@@ -280,7 +283,7 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""};
               onChange={handleInputChange}
               value={message}
               className={`${theme === "dark"
-                ? "bg-[--blackblue] dark-mode-shadow"
+                ? "bg-[--blackblue] dark-mode-shadow focus:outline-none"
                 : "bg-[--icewhite] dark-shadow"
                 }`}
             />
