@@ -70,7 +70,6 @@ const PicthDeckAnalysis: React.FC = () => {
 
   const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const { id, value } = event.target;
-    console.log(id, value);
     setFormData((prevFormData) => ({
       ...prevFormData,
       [id]: value,
@@ -78,8 +77,8 @@ const PicthDeckAnalysis: React.FC = () => {
   };
 
   return (
-    <div className="py-10 bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
-      <div className="max-w-4xl  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+    <div className="py-10 bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center ">
+      <div className="max-w-4xl  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300  bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="p-8">
           <h1 className="text-4xl font-extrabold text-center mb-8">
             Pitchdeck Analysis
@@ -130,11 +129,11 @@ const PicthDeckAnalysis: React.FC = () => {
                   id={feild.id}
                   value={formData[feild.id]}
                   onChange={handleOptionChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black"
+                  className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black "
                   required
                 >
                   {feild.options.map((opt) => (
-                    <option value={opt} key={opt}>
+                    <option  value={opt} key={opt}>
                       {opt}
                     </option>
                   ))}
@@ -145,7 +144,7 @@ const PicthDeckAnalysis: React.FC = () => {
             <button
               type="submit"
               className={`w-full py-3 px-4 border border-transparent rounded-lg shadow-sm text-[14px] font-medium text-white bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] hover:opacity-95 ${
-                loading ? "opacity-50 cursor-not-allowed" : "hover:scale-105"
+                loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading}
             >
