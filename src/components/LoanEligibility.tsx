@@ -122,7 +122,7 @@ const LoanEligibility = () => {
               <h1 className="text-center mb-8">{inputData.title}</h1>
               <form onSubmit={handleSubmit} className="space-y-2">
                 <div className="flex flex-col md:flex-row gap-10 lg:gap-20 mt-20 mb-10">
-                  <div className="space-y-2">
+                  <div className="space-y-2 w-full md:w-1/2">
                     <h2 className="text-center text-[20px]">
                       Financial Profile
                     </h2>
@@ -136,7 +136,7 @@ const LoanEligibility = () => {
                       />
                     ))}
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 w-full md:w-1/2">
                     <h2 className="text-center text-[20px]">Loan Criteria</h2>
                     {inputData?.inputFeilds2.map((input) => (
                       <InputField
