@@ -73,9 +73,9 @@ const LoanEligibility = () => {
       loan_criteria: {
         minimum_credit_score,
         max_debt_to_income_ratio:max_debt_income_ratio,
-        required_employment_status:reqd_employment_status,
+        required_employment_status:reqd_employment_status?reqd_employment_status:"Self Employed",
         required_income,
-        loan_type,
+        loan_type:loan_type?loan_type:"Personal",
       },
     };
     console.log(objectToSend);
