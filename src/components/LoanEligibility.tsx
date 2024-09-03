@@ -3,8 +3,7 @@ import axios from "axios";
 import { InputField } from "./FormInputFeild";
 import { z } from "zod";
 import { toast } from "react-toastify";
-import InputDropdown from "./InputDropdown"
-
+// import InputDropdown from "./InputDropdown";
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
@@ -60,7 +59,7 @@ const LoanEligibility = () => {
       max_debt_income_ratio,
       reqd_employment_status,
       required_income,
-      loan_type
+      loan_type,
     } = formData;
 
     let objectToSend = {
@@ -76,7 +75,7 @@ const LoanEligibility = () => {
         max_debt_income_ratio,
         reqd_employment_status,
         required_income,
-        loan_type
+        loan_type,
       },
     };
     console.log(objectToSend);
@@ -103,6 +102,14 @@ const LoanEligibility = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleOptionChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const { id, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [id]: value,
+    }));
   };
 
   return (
@@ -140,13 +147,33 @@ const LoanEligibility = () => {
                       />
                     ))}
 
-                  <div className="space-y-12">
+                    {/* <div className="space-y-12">
                   {inputData.checkboxFeilds.map((feild,index)=>(
                     <div key={index}>
                     <InputDropdown feild={feild} options={feild.options} setFormData={setFormData}/>
                       </div>
                   ))}
-                  </div>
+                  </div> */}
+                  <div className="space-y-10 ">
+                    {inputData.checkboxFeilds.map((feild) => (
+                      <div className="group space-y-1" key={feild.id}>
+                        <label className="text-[15px]">{feild.label}</label>
+                        <select
+                          id={feild.id}
+                          value={formData[feild.id]}
+                          onChange={handleOptionChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black hover:cursor-pointer"
+                          required
+                        >
+                          {feild.options.map((opt) => (
+                            <option value={opt} key={opt}>
+                              {opt}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ))}
+                    </div>
 
                   </div>
                 </div>
