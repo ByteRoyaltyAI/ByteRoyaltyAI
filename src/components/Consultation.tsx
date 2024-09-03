@@ -69,6 +69,12 @@ const Consultation: React.FC = () => {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
+    
+    if (email.includes("gmail.com")) {
+      toast.warn("Only work emails are accepted, not personal Gmail addresses.");
+      return;
+    }
+
     setLoading(true)
 
     const data = {
@@ -206,7 +212,7 @@ const Consultation: React.FC = () => {
                   value={email}
                   placeholder="Your Email"
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full  rounded px-3 py-5 text-white bg-[--blackblue] !text-4xl my-5"
+                  className="w-full  rounded p-5 text-white bg-[--blackblue] my-5 focus:outline-none"
                   required
                 />
               </div>
@@ -220,7 +226,7 @@ const Consultation: React.FC = () => {
                   value={message}
                   placeholder="Your Message"
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full  rounded px-5 py-5 text-white bg-[--blackblue]  "
+                  className="w-full  rounded p-5 text-white bg-[--blackblue]  focus:outline-none"
                   rows={10}
                   required
                 ></textarea>

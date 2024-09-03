@@ -45,7 +45,7 @@ const SubProductPage = () => {
               >
                 {data.topic.name}
               </h1>
-              <div>
+              <div className="mt-60">
                 <h3
                   style={{ color: "white" }}
                   className="backdrop-blur-[2px] text-[1.8rem] sm:text-[2.2rem]"

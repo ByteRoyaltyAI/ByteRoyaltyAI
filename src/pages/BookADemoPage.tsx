@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import {  toast } from "react-toastify";
+import z from "zod"
 
 interface FormData {
   firstName: string;
@@ -10,6 +11,13 @@ interface FormData {
   companyName: string;
   message: string;
 } 
+const formSchema = z.object({
+  firstName: z.string().min(1, { message: "First name cannot be empty." }),
+  lastName: z.string().optional(), 
+  workEmail: z.string().email({ message: "Please enter a valid email address." }),
+  companyName: z.string().optional(), 
+  message: z.string().min(1, { message: "Message cannot be empty." }),
+});
 
 const BookADemoPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -31,25 +39,21 @@ const BookADemoPage: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true)
 
-    if (!formData.firstName.trim()) {
-      toast.warn("First name cannot be empty.");
-      setLoading(false)
+    const validationResult = formSchema.safeParse(formData);
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      toast.warn(firstError.message);
       return;
     }
-  
-    if (!formData.workEmail.includes("@")) {
-      toast.warn("Please enter a valid email address.");
-      setLoading(false)
+    
+    if (formData.workEmail.includes("gmail.com")) {
+      toast.warn("Only work emails are accepted, not personal Gmail addresses.");
       return;
     }
-  
-    if (!formData.message.trim()) {
-      toast.warn("Message cannot be empty.");
-      setLoading(false)
-      return;
-    }
+
+    setLoading(true)
 
     try {
       const response = await axios.post(
