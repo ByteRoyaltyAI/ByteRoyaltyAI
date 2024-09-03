@@ -3,7 +3,7 @@ import axios from "axios";
 import { InputField } from "./FormInputFeild";
 import { z } from "zod";
 import { toast } from "react-toastify";
-// import InputDropdown from "./InputDropdown";
+// import InputDropdown from "./InputDropdown"; 
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
@@ -63,7 +63,7 @@ const LoanEligibility = () => {
     } = formData;
 
     let objectToSend = {
-      finiancial_profile: {
+      financial_profile: {
         annual_income,
         existing_debt,
         other_relevant_info,
@@ -72,8 +72,8 @@ const LoanEligibility = () => {
       },
       loan_criteria: {
         minimum_credit_score,
-        max_debt_income_ratio,
-        reqd_employment_status,
+        max_debt_to_income_ratio:max_debt_income_ratio,
+        required_employment_status:reqd_employment_status,
         required_income,
         loan_type,
       },
@@ -93,7 +93,8 @@ const LoanEligibility = () => {
     const API_URL = import.meta.env.VITE_AI_API_URL + inputData.endPoint;
     try {
       const response = await axios.post(API_URL, objectToSend);
-      setResult(response.data);
+      // console.log(response.data.generated_text)
+      setResult(response.data.generated_text);
     } catch (error: any) {
       setErrorMessage(
         error?.response?.data?.message ||
