@@ -28,11 +28,11 @@ const SendMessage: React.FC<SendMessageProps> = ({
       setLoading(true);
       // send message to chatbot api
       let res = await axios.post(
-        "http://35.223.244.220:8000/api/chat_w?message=" + newMessage
+        import.meta.env.VITE_AI_API_URL+"chat_w?message=" + newMessage
       );
       console.log(res.data);
       if (res.data) {
-        setMessages(res.data);
+        setMessages((prev) => [...prev, { own: false, text: res.data.response }]);
       }
     } catch (error:any) {
       console.log(error,error.code);

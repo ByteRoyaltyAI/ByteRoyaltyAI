@@ -8,7 +8,12 @@ interface MatchResult {
 
 const PicthDeckAnalysis: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
-  const [formData, setFormData] = useState<Record<string, string | number>>({});
+  const [formData, setFormData] = useState<Record<string, string | number>>({
+    geographical_focus:"North America",
+    industry_focus:"Technology",
+    investment_stage:"Pre-Seed",
+    risk_appetite:"low"
+  });
   const [result, setResult] = useState<MatchResult | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -25,16 +30,20 @@ const PicthDeckAnalysis: React.FC = () => {
     setLoading(true);
     setErrorMessage("");
     setResult(null);
-
+    console.log(formData)
     const ObjectToSend = new FormData();
     if (file) {
-      ObjectToSend.append("pdf_file", file);
-    } else {
+      ObjectToSend.append("pitch_file", file);
+      ObjectToSend.append("geographical_focus", formData.geographical_focus.toString());
+      ObjectToSend.append("industry_focus", formData.industry_focus.toString());
+      ObjectToSend.append("investment_stage", formData.investment_stage.toString());
+      ObjectToSend.append("risk_appetite", formData.risk_appetite.toString());
+    }else {
       setErrorMessage("Please upload a file.");
       setLoading(false);
       return;
     }
-    const API_URL = import.meta.env.VITE_AI_API_URL + "pitchdeck_analysis";
+    const API_URL = import.meta.env.VITE_AI_API_URL + "evaluate_pitch_deck";
 
     try {
       const response = await axios.post<MatchResult>(API_URL, ObjectToSend, {

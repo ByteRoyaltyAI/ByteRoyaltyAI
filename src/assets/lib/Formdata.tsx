@@ -1,7 +1,7 @@
-interface InputField {
+export interface InputFieldInterface {
   id: string;
   label: string;
-  type: "number" | "text" | "boolean" | "checkbox" | "file";
+  type: "number" | "text" ;
   placeholder: string;
   options?: string[];
 }
@@ -9,7 +9,7 @@ interface InputField {
 interface FormSection {
   title: string;
   endPoint: string;
-  inputFields: InputField[];
+  inputFields: InputFieldInterface[];
 }
 
 export const formInputData: Record<string, FormSection> = {
