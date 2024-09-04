@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/api/:path*",
-        "destination": "http://${import.meta.env.VITE_AI_API_URL}/:path*"
-      }
-    ]
-  }
-  
