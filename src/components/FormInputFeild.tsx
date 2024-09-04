@@ -12,14 +12,14 @@ interface InputFieldProps {
   
 export  const InputField: React.FC<InputFieldProps> = ({ id, label, type, placeholder, onChange, required = false }) => (
     <div>
-      <label htmlFor={id} className="">
+      <label htmlFor={id} className="pb-1">
         {label}
       </label>
       <input
         id={id}
         type={type}
         onChange={onChange}
-        className="p-4 text-[15px] bg-[#0C1220] rounded-lg placeholder:text-[#9AA0AD] focus:outline-none"
+        className="p-4 text-[15px] bg-[#0C1220] rounded-lg placeholder:text-[#9AA0AD] focus:outline-none mb-0"
         placeholder={placeholder}
         required={required}
       />

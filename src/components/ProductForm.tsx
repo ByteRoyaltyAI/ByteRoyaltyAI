@@ -1,7 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent, Suspense } from "react";
 import axios from "axios";
 import { InputField } from "./FormInputFeild";
+import { InputFieldInterface } from "../assets/lib/Formdata";
 import { formInputData } from "../assets/lib/Formdata";
+import {z} from "zod"
+import {toast} from "react-toastify"
+import LoadingIcon from "./LoadingIcon";
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
@@ -15,18 +19,58 @@ const ProductForm: React.FC<ProductFormProps> = ({ productName }) => {
   const [formData, setFormData] = useState<Record<string, string | number>>({});
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [event.target.id]: event.target.value });
+    const { id, value } = event.target;
+
+    const parsedValue = isNaN(Number(value)) ? value : Number(value);
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [id]: parsedValue,
+    }));
   };
+ 
+  const validateFormData = (data: any,formSchema:any) => {
+    try {
+      return formSchema.parse(data);
+    } catch (error:any) {
+      const newErrors: Record<string, string> = {};
+      error.errors.forEach((err:any) => {
+        newErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(newErrors);
+      toast.warn("Kindly fill all feilds to continue");
+      console.error("Validation error:", error.errors);
+      return null;
+    }
+  };
+
+const createZodSchema = (fields:Array<InputFieldInterface>) => {
+  const schema = fields.reduce((acc, field) => {
+    if (field.type === "number") {
+      acc[field.id] = z.number().nonnegative({ message: `${field.label} must be a positive number` }).max(100000000);
+    } else if (field.type === "text") {
+      acc[field.id] = z.string().min(1, { message: `${field.label} cannot be empty` });
+    }
+    return acc;
+  }, {}as Record<string,z.ZodTypeAny>);
+
+  return z.object(schema);
+};
+
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formSchema = createZodSchema(inputData.inputFields);
+    if(!validateFormData(formData,formSchema))
+      return
+    setErrors({});
     setLoading(true);
     setErrorMessage("");
     setResult(null);
-    console.log(formData);
 
     const API_URL = import.meta.env.VITE_AI_API_URL + inputData.endPoint;
     try {
@@ -47,10 +91,11 @@ const ProductForm: React.FC<ProductFormProps> = ({ productName }) => {
       {inputData !== undefined ? (
         <div className="bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] px-8 py-28 flex items-center justify-center">
           <div className="max-w-5xl w-full rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-r from-[#9656F5] via-[#CB759C] to-[#F98F55]">
-            <div className="p-8">
+            <div className="p-8 ">
               <h1 className="text-center mb-8">{inputData.title}</h1>
               <form onSubmit={handleSubmit} className="space-y-2">
                 {inputData?.inputFields.map((input) => (
+                  <div key={input.id} >
                   <InputField
                     onChange={handleFormChange}
                     id={input.id}
@@ -58,10 +103,18 @@ const ProductForm: React.FC<ProductFormProps> = ({ productName }) => {
                     type={input.type}
                     placeholder={input.placeholder}
                   />
+                  <div className="h-6 mt-0.5">
+                  {errors[input.id] && (
+                    <p className=" text-[12px] "
+                    style={{color:"#DC2626"}}>{errors[input.id]}</p>
+                  )}
+                  </div>
+                </div>
                 ))}
+                <div className="mt-8"></div>
                 <button
                   type="submit"
-                  className={`w-full py-3 px-4 border border-white text-[14px] rounded-lg from-[#0C1220] via-[#18243f] to-[#21262f] ${
+                  className={`w-full py-3 px-4 border border-white text-[14px] rounded-lg from-[#0C1220] via-[#18243f] to-[#21262f]  ${
                     loading
                       ? "opacity-50 cursor-not-allowed"
                       : "transform hover:scale-105"
@@ -69,26 +122,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ productName }) => {
                   disabled={loading}
                 >
                   {loading ? (
-                    <svg
-                      className="animate-spin h-5 w-5 mx-auto text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
+                   <LoadingIcon/>
                   ) : (
                     "Generate response"
                   )}

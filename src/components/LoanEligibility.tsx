@@ -3,7 +3,7 @@ import axios from "axios";
 import { InputField } from "./FormInputFeild";
 import { z } from "zod";
 import { toast } from "react-toastify";
-// import InputDropdown from "./InputDropdown"; 
+import LoadingIcon from "./LoadingIcon";
 
 const ComingSoon = React.lazy(() => import("./ComingSoon"));
 
@@ -11,12 +11,12 @@ const LoanEligibility = () => {
   const formSchema = z.object({
     annual_income: z.number().positive(),
     existing_debt: z.number().nonnegative(),
-    other_relevant_info: z.string().optional(),
+    other_relevant_info: z.string().min(3),
     credit_score: z.number().int(),
-    employment_status: z.string().optional(),
+    employment_status: z.string().min(3),
     minimum_credit_score: z.number().int(),
-    max_debt_income_ratio: z.number().min(0.1).max(1),
-    reqd_employment_status: z.string().optional(),
+    max_debt_to_income_ratio: z.number().min(0.1).max(1),
+    required_employment_status: z.string().min(3),
     required_income: z.number().positive(),
   });
 
@@ -24,16 +24,25 @@ const LoanEligibility = () => {
     try {
       return formSchema.parse(data);
     } catch (error: any) {
+      const newErrors: Record<string, string> = {};
+      error.errors.forEach((err: any) => {
+        newErrors[err.path[0] as string] = err.message;
+      });
+      setErrors(newErrors);
       toast.warn("Kindly fill all feilds to continue");
       console.error("Validation error:", error.errors);
       return null;
     }
   };
 
-  const [formData, setFormData] = useState<Record<string, string | number>>({});
+  const [formData, setFormData] = useState<Record<string, string | number>>({
+    loan_type: "Personal",
+    required_employment_status: "Self Employed",
+  });
   const [result, setResult] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleFormChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
@@ -56,8 +65,8 @@ const LoanEligibility = () => {
       credit_score,
       employment_status,
       minimum_credit_score,
-      max_debt_income_ratio,
-      reqd_employment_status,
+      max_debt_to_income_ratio,
+      required_employment_status,
       required_income,
       loan_type,
     } = formData;
@@ -72,10 +81,10 @@ const LoanEligibility = () => {
       },
       loan_criteria: {
         minimum_credit_score,
-        max_debt_to_income_ratio:max_debt_income_ratio,
-        required_employment_status:reqd_employment_status?reqd_employment_status:"Self Employed",
+        max_debt_to_income_ratio,
+        required_employment_status,
         required_income,
-        loan_type:loan_type?loan_type:"Personal",
+        loan_type,
       },
     };
     console.log(objectToSend);
@@ -93,7 +102,6 @@ const LoanEligibility = () => {
     const API_URL = import.meta.env.VITE_AI_API_URL + inputData.endPoint;
     try {
       const response = await axios.post(API_URL, objectToSend);
-      // console.log(response.data.generated_text)
       setResult(response.data.generated_text);
     } catch (error: any) {
       setErrorMessage(
@@ -126,56 +134,73 @@ const LoanEligibility = () => {
                     <h2 className="text-center text-[20px]">
                       Financial Profile
                     </h2>
+
                     {inputData?.inputFields.map((input) => (
-                      <InputField
-                        onChange={handleFormChange}
-                        id={input.id}
-                        label={input.label}
-                        type={input.type}
-                        placeholder={input.placeholder}
-                      />
+                      <div className="" key={input.id}>
+                        <InputField
+                          onChange={handleFormChange}
+                          id={input.id}
+                          label={input.label}
+                          type={input.type}
+                          placeholder={input.placeholder}
+                        />
+                        <div className="h-6 mt-0.5">
+                          {errors[input.id] && (
+                            <p
+                              className=" text-[12px] "
+                              style={{ color: "#DC2626" }}
+                            >
+                              {errors[input.id]}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     ))}
                   </div>
                   <div className="space-y-2 w-full md:w-1/2">
                     <h2 className="text-center text-[20px]">Loan Criteria</h2>
                     {inputData?.inputFeilds2.map((input) => (
-                      <InputField
-                        onChange={handleFormChange}
-                        id={input.id}
-                        label={input.label}
-                        type={input.type}
-                        placeholder={input.placeholder}
-                      />
+                      <div key={input.id}>
+                        <InputField
+                          onChange={handleFormChange}
+                          id={input.id}
+                          label={input.label}
+                          type={input.type}
+                          placeholder={input.placeholder}
+                        />
+                        <div className="h-6 mt-0.5">
+                          {errors[input.id] && (
+                            <p
+                              className=" text-[12px] "
+                              style={{ color: "#DC2626" }}
+                            >
+                              {errors[input.id]}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     ))}
 
-                    {/* <div className="space-y-12">
-                  {inputData.checkboxFeilds.map((feild,index)=>(
-                    <div key={index}>
-                    <InputDropdown feild={feild} options={feild.options} setFormData={setFormData}/>
-                      </div>
-                  ))}
-                  </div> */}
-                  <div className="space-y-10 ">
-                    {inputData.checkboxFeilds.map((feild) => (
-                      <div className="group space-y-1" key={feild.id}>
-                        <label className="text-[15px]">{feild.label}</label>
-                        <select
-                          id={feild.id}
-                          value={formData[feild.id]}
-                          onChange={handleOptionChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black hover:cursor-pointer"
-                          required
-                        >
-                          {feild.options.map((opt) => (
-                            <option value={opt} key={opt}>
-                              {opt}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    ))}
+                    <div className="space-y-10 ">
+                      {inputData.checkboxFeilds.map((feild) => (
+                        <div className="group space-y-1" key={feild.id}>
+                          <label className="text-[15px]">{feild.label}</label>
+                          <select
+                            id={feild.id}
+                            value={formData[feild.id]}
+                            onChange={handleOptionChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 text-[12px] rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-black hover:cursor-pointer"
+                            required
+                          >
+                            {feild.options.map((opt) => (
+                              <option value={opt} key={opt}>
+                                {opt}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      ))}
                     </div>
-
                   </div>
                 </div>
                 <button
@@ -187,30 +212,7 @@ const LoanEligibility = () => {
                   }`}
                   disabled={loading}
                 >
-                  {loading ? (
-                    <svg
-                      className="animate-spin h-5 w-5 mx-auto text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                  ) : (
-                    "Generate response"
-                  )}
+                  {loading ? <LoadingIcon /> : "Generate response"}
                 </button>
               </form>
               {errorMessage && (
@@ -297,7 +299,7 @@ const inputData = {
       placeholder: "ex. 30,000",
     },
     {
-      id: "max_debt_income_ratio",
+      id: "max_debt_to_income_ratio",
       label: "Max Debt Income Ratio",
       type: "double",
       placeholder: "ex. 0.8",
@@ -305,7 +307,7 @@ const inputData = {
   ],
   checkboxFeilds: [
     {
-      id: "reqd_employment_status",
+      id: "required_employment_status",
       label: "Required Employment Status",
       options: ["Self Employed", "Salaried", "Buisness", "Unemployed"],
       placeholder: "ex. employed",
