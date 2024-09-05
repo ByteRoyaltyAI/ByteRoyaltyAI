@@ -33,26 +33,25 @@ const SubProductPage = () => {
       <div className="flex justify-center   ">
         <div className="flex flex-col gap-72 w-[90%] sm:w-[80%] text-[#FFFFFF] ">
           <div className="flex justify-center gap-5 text-center  ">
-            <div className="w-full sm:w-[75%] mt-20">
+            <div className="flex flex-col w-full sm:w-[75%] mt-32 gap-10">
               <h1
                 style={{
                   fontSize: "clamp(2.6rem, 5vw, 5rem)",
                   textShadow: "0 0 10px rgba(0,255,255,0.5)",
-                  height: "clamp(2rem, 12vw, 4rem)",
                   fontWeight: "600",
                   marginBottom: "50px",
                 }}
               >
                 {data.topic.name}
               </h1>
-              <div className="mt-60">
+              
                 <h3
                   style={{ color: "white" }}
                   className="backdrop-blur-[2px] text-[1.8rem] sm:text-[2.2rem]"
                 >
                   {data.topic.desc}{" "}
                 </h3>
-              </div>
+              
 
               {/* <h3 className="text-[1.2rem] text-[#E8E8E8] mt-2">Updated over a week ago</h3> */}
             </div>
