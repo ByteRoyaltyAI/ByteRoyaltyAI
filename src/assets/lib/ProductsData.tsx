@@ -334,29 +334,29 @@ export const productsData: Record<string, ProductDataInterface> = {
 
   pitchDeckAnalysis: {
     topic: {
-      name: "AI-Powered Loan Eligibility Assessment",
-      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately. This innovative tool empowers borrowers to understand their borrowing capacity, explore loan options, and make informed financial decisions.",
+      name: "AI-Powered Pitch Deck Analysis",
+      desc: "Our AI-Powered Pitch Deck Analyzer offers deep insights into your business presentation. Upload your pitch deck along with inputs like industry focus, geographical state, and investment stage to receive tailored feedback. The tool helps investors and entrepreneurs evaluate key aspects of a pitch deck effectively and quickly.",
     },
     faq: [
       {
-        question: "What type of loans can I assess my eligibility for?",
-        answer: "Our Loan Eligibility Assessment Tool covers a wide range of loan types, including personal loans, home loans, auto loans, and business loans. The tool provides personalized recommendations based on your financial profile and loan preferences.",
+        question: "What inputs are required for the pitch deck analysis?",
+        answer: "You need to upload the pitch deck (PDF format) and provide inputs such as industry focus, geographical location, and investment stage to receive an accurate analysis.",
       },
       {
-        question: "Is the tool suitable for individuals with varying credit scores?",
-        answer: "Yes! The tool is designed to cater to borrowers with different credit profiles. Whether you have excellent credit or are looking to improve your score, the tool offers tailored advice and loan options that match your financial situation.",
+        question: "How accurate is the analysis?",
+        answer: "The analysis is powered by advanced AI models trained to evaluate pitch decks based on industry standards and investor expectations. While it offers valuable insights, it's always recommended to review the results alongside expert feedback.",
       },
       {
-        question: "How quickly can I get my eligibility results?",
-        answer: "The tool delivers instant results. Once you input your financial details, you will receive an immediate assessment of your loan eligibility, along with recommended loan options and interest rate estimates.",
+        question: "Can the tool analyze any type of business pitch?",
+        answer: "Yes, the tool is designed to analyze pitch decks across various industries and business stages, from startups to established companies seeking investment.",
       },
       {
-        question: "Can I compare different loan options using the tool?",
-        answer: "Absolutely! Our platform includes a loan comparison feature that allows you to evaluate multiple loan offers side by side. This helps you choose the loan that best suits your needs and budget.",
+        question: "How long does it take to analyze a pitch deck?",
+        answer: "The analysis is completed within minutes after you upload the pitch deck and input the required details.",
       },
       {
-        question: "How do I get started with the Loan Eligibility Assessment Tool?",
-        answer: "It's simple! Sign up on our website, enter your financial details, and within minutes, you'll receive a detailed assessment of your loan eligibility, along with personalized loan recommendations.",
+        question: "Can I download the analysis report?",
+        answer: "Yes, after the analysis is complete, you can download a detailed report that includes the key findings and recommendations for your pitch deck.",
       },
     ],
     imagesData: [
@@ -394,31 +394,32 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+  
   PitchDeckSummarizer: {
     topic: {
-      name: "AI-Powered Loan Eligibility Assessment",
-      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately. This innovative tool empowers borrowers to understand their borrowing capacity, explore loan options, and make informed financial decisions.",
+      name: "AI-Powered Pitch Deck Summarizer",
+      desc: "Our AI-powered Pitch Deck Summarizer quickly extracts key information from your pitch deck to provide concise summaries. Simply upload the pitch deck (PDF format), and the tool will summarize the critical points, helping you highlight the most important aspects of your presentation.",
     },
     faq: [
       {
-        question: "What type of loans can I assess my eligibility for?",
-        answer: "Our Loan Eligibility Assessment Tool covers a wide range of loan types, including personal loans, home loans, auto loans, and business loans. The tool provides personalized recommendations based on your financial profile and loan preferences.",
+        question: "What type of file is accepted?",
+        answer: "Currently, only PDF format pitch decks are accepted for summarization.",
       },
       {
-        question: "Is the tool suitable for individuals with varying credit scores?",
-        answer: "Yes! The tool is designed to cater to borrowers with different credit profiles. Whether you have excellent credit or are looking to improve your score, the tool offers tailored advice and loan options that match your financial situation.",
+        question: "What does the summarizer focus on?",
+        answer: "The summarizer extracts key sections such as company overview, problem/solution, market opportunity, business model, and financials.",
       },
       {
-        question: "How quickly can I get my eligibility results?",
-        answer: "The tool delivers instant results. Once you input your financial details, you will receive an immediate assessment of your loan eligibility, along with recommended loan options and interest rate estimates.",
+        question: "How long does the summarization process take?",
+        answer: "The summarization is usually completed within minutes, depending on the size and complexity of the pitch deck.",
       },
       {
-        question: "Can I compare different loan options using the tool?",
-        answer: "Absolutely! Our platform includes a loan comparison feature that allows you to evaluate multiple loan offers side by side. This helps you choose the loan that best suits your needs and budget.",
+        question: "Can I customize the summary format?",
+        answer: "At this time, the summary is generated in a standard format that highlights the most important sections of your pitch deck. Future updates may include customizable summary formats.",
       },
       {
-        question: "How do I get started with the Loan Eligibility Assessment Tool?",
-        answer: "It's simple! Sign up on our website, enter your financial details, and within minutes, you'll receive a detailed assessment of your loan eligibility, along with personalized loan recommendations.",
+        question: "Is the summarizer suitable for all industries?",
+        answer: "Yes, the summarizer is designed to work across various industries, from tech startups to established businesses in different sectors.",
       },
     ],
     imagesData: [
@@ -651,13 +652,13 @@ export const ProductPageData: { [key: string]: ProductPageSectionInterface } = {
     cards: [
       {
         title: "Pitch Deck Analysis",
-        desc: "Quickly and accurately assess your eligibility for various loan options with our advanced tool.",
+        desc: "Analyze your pitch deck quickly and accurately with our advanced tool, tailored to your business's industry, location, and investment stage.",
         img: img2, 
         link: "pitchDeckAnalysis",
       },
       {
         title: "Pitch Deck Summarizer",
-        desc: "Quickly and accurately assess your eligibility for various loan options with our advanced tool.",
+        desc: "Summarize key points from your pitch deck efficiently with our AI-powered tool, highlighting essential sections for quick review.",
         img: img3, 
         link: "PitchDeckSummarizer",
       },
