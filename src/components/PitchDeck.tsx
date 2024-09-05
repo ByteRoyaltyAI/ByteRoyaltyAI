@@ -30,7 +30,7 @@ const PicthDeckAnalysis: React.FC = () => {
     setLoading(true);
     setErrorMessage("");
     setResult(null);
-    console.log(formData)
+    
     const ObjectToSend = new FormData();
     if (file) {
       ObjectToSend.append("pitch_file", file);
@@ -52,6 +52,7 @@ const PicthDeckAnalysis: React.FC = () => {
         },
         timeout: 3000000,
       });
+      console.log(response.data)
       setResult(response.data);
     } catch (error) {
       console.error("Error:", error);
@@ -103,7 +104,7 @@ const PicthDeckAnalysis: React.FC = () => {
                   type="file"
                   accept=".pdf"
                   onChange={handlefileUpload}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
+                  className="w-full px-4 pr-20 overflow-hidden py-3 border-2 text-[12px]  border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
                   required
                 />
                 <div className="absolute top-4 right-0 flex justify-center items-center pr-3 pointer-events-none">
@@ -194,7 +195,7 @@ const PicthDeckAnalysis: React.FC = () => {
                 Extracted Data
               </h2>
               <pre className="whitespace-pre-wrap text-sm bg-white p-4 rounded-lg border border-indigo-200 overflow-x-auto text-black">
-                {JSON.stringify(result, null, 2)}
+                {result.summary}
               </pre>
             </div>
           )}

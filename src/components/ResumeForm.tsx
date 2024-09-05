@@ -74,7 +74,8 @@ const ResumeJobMatcher: React.FC = () => {
           timeout: 3000000,
         }
       );
-      setResult(response.data);
+      console.log(response.data.formatted_report)
+      setResult(response.data.formatted_report);
     } catch (error) {
       console.error('Error:', error);
       if (axios.isAxiosError(error)) {
@@ -95,7 +96,7 @@ const ResumeJobMatcher: React.FC = () => {
 
   return (
     <div className="py-10 bg-gradient-to-br from-[#0C1220] via-[#18243f] to-[#21262f] p-8 flex items-center justify-center">
-      <div className="max-w-4xl  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+      <div className="max-w-[60rem]  w-full rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
         <div className="p-8">
           <h1 className="text-4xl font-extrabold text-center mb-8">
            {isInterviewGeneration?" Interview Questions Generator " :
@@ -112,7 +113,7 @@ const ResumeJobMatcher: React.FC = () => {
                   type="file"
                   accept=".pdf"
                   onChange={handleResumeUpload}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
+                  className="w-full px-4 pr-20 overflow-hidden py-3 border-2 text-[12px] border-gray-300 rounded-lg  focus:outline-none file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 "
                   required
                 />
                 <div className="absolute top-4 right-0 flex justify-center items-center pr-3 pointer-events-none">
@@ -132,7 +133,7 @@ const ResumeJobMatcher: React.FC = () => {
                 value={jobDescription}
                 onChange={handleJobDescriptionChange}
                 rows={5}
-                className="w-full px-4 py-3 text-[15px] border-2 border-gray-300 rounded-lg focus:outline-none !text-black"
+                className="w-full px-4 py-3 text-[13px] sm:text-[15px] border-2 border-gray-300 rounded-lg focus:outline-none !text-gray-700"
                 placeholder="Paste the job description here..."
                 required
               />
@@ -174,7 +175,9 @@ const ResumeJobMatcher: React.FC = () => {
             <div className="mt-8 p-6 border-2 border-indigo-200 rounded-lg bg-indigo-50 transform transition-all duration-300 hover:shadow-lg">
               <h2 className="text-xl font-semibold mb-4 !text-indigo-700">Extracted Data</h2>
               <pre className="whitespace-pre-wrap text-sm bg-white p-4 rounded-lg border border-indigo-200 overflow-x-auto text-black">
-                {JSON.stringify(result, null, 2)}
+                {`${result.summary} 
+                ${result.recommendation}`
+                }
               </pre>
             </div>
           )}
