@@ -394,6 +394,68 @@ export const productsData: Record<string, ProductDataInterface> = {
       },
     ],
   },
+  PitchDeckSummarizer: {
+    topic: {
+      name: "AI-Powered Loan Eligibility Assessment",
+      desc: "Introducing our state-of-the-art Loan Eligibility Assessment Tool - a comprehensive platform designed to help you assess your eligibility for various loan options quickly and accurately. This innovative tool empowers borrowers to understand their borrowing capacity, explore loan options, and make informed financial decisions.",
+    },
+    faq: [
+      {
+        question: "What type of loans can I assess my eligibility for?",
+        answer: "Our Loan Eligibility Assessment Tool covers a wide range of loan types, including personal loans, home loans, auto loans, and business loans. The tool provides personalized recommendations based on your financial profile and loan preferences.",
+      },
+      {
+        question: "Is the tool suitable for individuals with varying credit scores?",
+        answer: "Yes! The tool is designed to cater to borrowers with different credit profiles. Whether you have excellent credit or are looking to improve your score, the tool offers tailored advice and loan options that match your financial situation.",
+      },
+      {
+        question: "How quickly can I get my eligibility results?",
+        answer: "The tool delivers instant results. Once you input your financial details, you will receive an immediate assessment of your loan eligibility, along with recommended loan options and interest rate estimates.",
+      },
+      {
+        question: "Can I compare different loan options using the tool?",
+        answer: "Absolutely! Our platform includes a loan comparison feature that allows you to evaluate multiple loan offers side by side. This helps you choose the loan that best suits your needs and budget.",
+      },
+      {
+        question: "How do I get started with the Loan Eligibility Assessment Tool?",
+        answer: "It's simple! Sign up on our website, enter your financial details, and within minutes, you'll receive a detailed assessment of your loan eligibility, along with personalized loan recommendations.",
+      },
+    ],
+    imagesData: [
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 1: Enter Annual Income",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 2: Enter Credit Score",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 3: Enter Existing Debt",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 4: Enter Employment Status",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 5: Enter Profession",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 6: Enter Location",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 7: Review Eligibility and Loan Options",
+      },
+      {
+        img: enterJobDesc, // Replace with the actual image variable
+        text: "Step 8: Apply for a Loan",
+      },
+    ],
+  },
 
    careerCompass : {
     topic: {
@@ -590,8 +652,14 @@ export const ProductPageData: { [key: string]: ProductPageSectionInterface } = {
       {
         title: "Pitch Deck Analysis",
         desc: "Quickly and accurately assess your eligibility for various loan options with our advanced tool.",
-        img: img3, 
+        img: img2, 
         link: "pitchDeckAnalysis",
+      },
+      {
+        title: "Pitch Deck Summarizer",
+        desc: "Quickly and accurately assess your eligibility for various loan options with our advanced tool.",
+        img: img3, 
+        link: "PitchDeckSummarizer",
       },
     ],
   }
