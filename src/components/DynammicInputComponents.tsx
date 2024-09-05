@@ -3,7 +3,8 @@ import ProductForm from "./ProductForm";
 import ResumeForm from "./ResumeForm";
 import { useParams } from "react-router-dom";
 import LoanEligibility from "./LoanEligibility";
-import PitchDeck from "./PitchDeck";
+import PitchDeckEvaluator from "./PitchDeckEvaluator";
+import PitchDeckSummarizer from "./PitchDeckSummarizer";
 
 const DynamicInputComponents: React.FC = () => {
   const { subProduct } = useParams<{ subProduct: string }>();
@@ -14,8 +15,10 @@ const DynamicInputComponents: React.FC = () => {
       subProduct === "interviewGeneration" ? (
         <ResumeForm />
       ) : subProduct === "pitchDeckAnalysis" ? (
-        <PitchDeck/>
-      ) : subProduct === "loanEligibility" ? (
+        <PitchDeckEvaluator/>
+      ) : subProduct === "PitchDeckSummarizer" ? (
+        <PitchDeckSummarizer/>
+      ) : subProduct === "pitchDeckAnalysis" ? (
         <LoanEligibility  />
       ) : (
         subProduct && <ProductForm productName={subProduct} />
