@@ -148,7 +148,7 @@ const PicthDeckAnalysis: React.FC = () => {
               }`}
               disabled={loading}
             >
-              {loading ? <LoadingIcon /> : "Extract  Data"}
+              {loading ? <LoadingIcon /> : "Summarize  Data"}
             </button>
           </form>
           {errorMessage && (
