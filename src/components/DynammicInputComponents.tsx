@@ -18,7 +18,7 @@ const DynamicInputComponents: React.FC = () => {
         <PitchDeckEvaluator/>
       ) : subProduct === "PitchDeckSummarizer" ? (
         <PitchDeckSummarizer/>
-      ) : subProduct === "pitchDeckAnalysis" ? (
+      ) : subProduct === "loanEligibility" ? (
         <LoanEligibility  />
       ) : (
         subProduct && <ProductForm productName={subProduct} />
