@@ -62,7 +62,7 @@ const ResumeJobMatcher: React.FC = () => {
     }
 
     // const API_URL = import.meta.env.VITE_AI_API_URL + (isInterviewGeneration ? 'interview_generation' : 'extract_and_analyze');
-    const API_URL = "http://localhost:8000/api/extract_and_analyze"
+    const API_URL = "http://20.197.35.243:8000/api/extract_and_analyze"
     
     try {
       const response = await axios.post<MatchResult>(
