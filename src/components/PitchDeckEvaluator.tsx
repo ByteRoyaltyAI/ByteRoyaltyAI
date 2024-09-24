@@ -180,7 +180,7 @@ const PicthDeckAnalysis: React.FC = () => {
                   ></path>
                 </svg>
               ) : (
-                "Extract  Data"
+                "Analyze  Data"
               )}
             </button>
           </form>
